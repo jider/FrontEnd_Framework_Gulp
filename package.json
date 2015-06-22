@@ -1,0 +1,23 @@
+{
+  "name": "frontend_framework_gulp",
+  "version": "0.0.1",
+  "description": "Front-End Framework using Gulp as task builder",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "env": "env",
+    "postinstall": "bower --allow-root cache clean  && bower --allow-root install",
+    "clean:dependencies": "rm -rf node_modules && rm -rf bower_components"
+  },
+  "author": "Ignacio Díaz Rovina <velanor@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.7.12",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "require-dir": "^0.3.0",
+    "sassdoc": "^2.1.15"
+  }
+}
