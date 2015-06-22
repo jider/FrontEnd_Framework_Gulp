@@ -24,17 +24,17 @@ While you're working on your project, run:
 And you're set!
 
 ## Directory Structure
-
-  * `node_modules`: Node dependencies specified in **package.json**
-  * `bower_components`: Bower dependencies specified in **bower.json**
-  * `gulp`: Gulp tasks used in the project.
-  * `src`: Source folder. Inside that folder:
-    ```
+  ```
     ├── src/
     │   ├── Framework
     │   ├── dist
     │   ├── lib
     │   ├── sites
-    ```
-  * `scss/_settings.scss`: Foundation configuration settings go in here
-  * `scss/app.scss`: Application styles go here
+  ```
+
+  * `node_modules`: Node dependencies specified in **package.json**
+  * `bower_components`: Bower dependencies specified in **bower.json**
+  * `gulp`: Gulp tasks used in the project.
+  * `src`: Source folder.
+  * `scss/_settings.scss`: Foundation configuration settings go in here.
+  * `scss/app.scss`: Application styles go here.
