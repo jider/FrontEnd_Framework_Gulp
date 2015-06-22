@@ -1,5 +1,4 @@
-# FrontEnd_Framework_Gulp
-FrontEnd de maquetación basada en Gulp
+# FrontEnd Gulp Framework
 
 This is a template to start your own project that uses Gulp and libsass!
 
