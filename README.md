@@ -25,16 +25,22 @@ And you're set!
 
 ## Directory Structure
   ```
+    ├── bower_components/
+    ├── gulp/
+    │   ├── tasks/
+    │   ├── util/
+    │   ├── config.js
+    ├── node_modules/
     ├── src/
-    │   ├── Framework
-    │   ├── dist
-    │   ├── lib
-    │   ├── sites
+    │   ├── Framework/
+    │   ├── dist/
+    │   ├── lib/
+    │   ├── sites/
   ```
 
-  * `node_modules`: Node dependencies specified in **package.json**
-  * `bower_components`: Bower dependencies specified in **bower.json**
+  * `bower_components`: Bower dependencies specified in *bower.json*
+  * `node_modules`: Node dependencies specified in *package.json*
   * `gulp`: Gulp tasks used in the project.
-  * `src`: Source folder.
+  * `src`: Main APP folder.
   * `scss/_settings.scss`: Foundation configuration settings go in here.
   * `scss/app.scss`: Application styles go here.
