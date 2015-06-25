@@ -1,0 +1,50 @@
+@import "../../mixins/placeholderSelectors";
+
+
+// ------------------------------
+//   Message Extends
+// ------------------------------
+%header_base {	
+	// Base
+	box-sizing: border-size;
+	margin: 0 0 10px 0;
+	font-weight: bold;
+	color: #fff;
+
+	&:hover {
+		color: $header-color-auxiliar;		
+	}
+}
+
+
+// ------------------------------
+//   Message Mixins
+// ------------------------------
+@mixin _header_size($size) {
+	$_size: map_get($header-size, $size);
+
+	@include Placeholder_Extend($size) {
+		font-size: $_size + rem;
+		padding-left: ($_size + 1) +rem;
+		line-height: 2;	
+	};
+}
+
+@mixin _header_color($color) {
+	$_color: map_get($header-color, $color);
+
+	@include Placeholder_Extend($color) {
+		background: $_color;
+		box-shadow: 0 5px 0 darken($_color, 10%);
+	}
+}
+
+@mixin Header($size, $color) {
+	@extend %header_base;
+
+	// Size
+	@include _header_size($size);
+
+	// Color
+	@include _header_color($color);	
+}

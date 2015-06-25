@@ -1,0 +1,58 @@
+// @import "../../mixins/placeholderSelectors";
+
+
+// ------------------------------
+//   Message Extends
+// ------------------------------
+// %message-base {
+// 	border-radius: .15rem;
+// 	border: 1px solid;
+// }
+
+
+
+// ------------------------------
+//   Message Mixins
+// ------------------------------
+
+// ----- Private Mixins
+// Crea las propiedades de tamaño del mensaje
+// @mixin _message-size($size) {
+// 	// Recuperamos el tamaño del mensaje
+// 	$_size: map-get($message-size, $size);
+
+// 	// Reciperamos el tamaño de fuente del mensaje
+// 	$_font_size:  map-get($message-font-size, $size);
+
+// 	// Creamos una extesión dinámica para el tamaño de los mensajes
+// 	@include Placeholder_Extend(message-#{$size}) {
+// 		padding: $_size + rem;
+// 		margin-bottom: $_size + rem;
+// 		font-size: $_font_size + rem;
+// 	};
+// }
+
+
+// Crea las propiedades de color del mensaje a partir de su tipo
+// @mixin _message-color($type) {
+// 	// Recuperamos el color asociado al tipo
+// 	$color: map-get($message-color-by-type, $type);
+
+// 	// Creamos una extesión dinámica para el color de los mensajes
+// 	@include Placeholder_Extend(message-#{$type}) {
+// 		color: $color;
+// 		border-color: lighten($color, 20%);
+// 		background: lighten($color, 40%);
+// 	};
+// }
+
+// // ----- Public Mixins
+// // Crea un mensaje
+// @mixin message($type, $size) {
+// 	@extend %message-base;
+	
+// 	@include _message-size($size);
+// 	@include _message-color($type);	
+// }
+// 
+// 

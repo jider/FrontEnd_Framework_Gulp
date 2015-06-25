@@ -15,6 +15,6 @@ module.exports = function() {
 		message: "<%= error %>"
 	}).apply(this, args);
 
-	// dejamos colgado a Gulp en esta tarea
+	// Dejamos colgado a Gulp en esta tarea
 	this.emit('end');
 };

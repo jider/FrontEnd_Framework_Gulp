@@ -1,0 +1,63 @@
+
+// Message Color
+$msg-color: #777;
+$msg-color-error: #b94a48;
+$msg-color-valid: #468847;
+$msg-color-warning: #c09853;
+$msg-color-info: #3a87ad;
+
+// Message Size
+$msg-size-s: .25;
+$msg-size-m: .5;
+$msg-size-l: .75;
+$msg-size-xl: 1.5;
+
+// Message Font Size
+$msg-font-s: .8;
+$msg-font-m: 1;
+$msg-font-l: 1.2;
+$msg-font-xl: 1.4;
+
+
+/// ----------------------------------------------------------------------------------------------------
+
+
+// Message color map
+$message-color-by-type: (
+	error: $msg-color-error,
+	valid: $msg-color-valid,
+	warning: $msg-color-warning,
+	info: $msg-color-info,
+);
+
+// Message size map
+$message-size: (
+	s: $msg-size-s,
+	m: $msg-size-m,
+	l: $msg-size-l,
+	xl: $msg-size-xl
+);
+
+// Message font size map
+$message-font-size: (
+	s: $msg-font-s,
+	m: $msg-font-m,
+	l: $msg-font-l,
+	xl: $msg-font-xl
+);
+
+
+/// ----------------------------------------------------------------------------------------------------
+
+
+// List of available messages
+// $messages-desc: (
+// 	// Small messages
+// 	(valid s), (info s),
+// 	// Medium messages (default value)
+// 	(error m), (valid m), (warning m), (info m),
+// 	// Large messages
+// 	(error l), (valid l), (warning l), (info l),
+// 	// Extra Large messages
+// 	(error xl), (warning xl),
+// ) !default;

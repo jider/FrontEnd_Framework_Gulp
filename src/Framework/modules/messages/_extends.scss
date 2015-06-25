@@ -1,0 +1,54 @@
+// Message Element
+%message {
+  padding: $msg-size-m + rem;
+	margin-bottom: $msg-size-m + rem;
+	border: 1px solid;
+	border-radius: .15rem;
+	font-size: $msg-font-m + rem;
+	color: $msg-color;
+	border-color: lighten($msg-color, 20%);
+	background: lighten($msg-color, 40%);
+	
+	&:hover {
+	  opacity: 0.75;
+	}
+}
+
+// Color modifiers
+%message--error{
+    color: $msg-color-error;
+	border-color: lighten($msg-color-error, 20%);
+	background: lighten($msg-color-error, 40%);
+}
+%message--valid {
+  color: $msg-color-valid;
+	border-color: lighten($msg-color-valid, 20%);
+	background: lighten($msg-color-valid, 40%);
+}
+%message--warning{
+  color: $msg-color-warning;
+	border-color: lighten($msg-color-warning, 20%);
+	background: lighten($msg-color-warning, 40%);
+}
+%message--info{
+  color: $msg-color-info;
+	border-color: lighten($msg-color-info, 20%);
+	background: lighten($msg-color-info, 40%);
+}
+
+// Size modifiers
+%message--small {
+  padding: $msg-size-s + rem;
+	margin-bottom: $msg-size-s + rem;
+	font-size: $msg-font-s + rem;
+}
+%message--large {
+  padding: $msg-size-l + rem;
+	margin-bottom: $msg-size-l + rem;
+	font-size: $msg-font-l + rem;
+}
+%message--xlarge {
+  padding: $msg-size-xl + rem;
+	margin-bottom: $msg-size-xl + rem;
+	font-size: $msg-font-xl + rem;
+}

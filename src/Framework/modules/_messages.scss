@@ -1,0 +1,60 @@
+
+/* ------------------------------
+   FUNCTIONAL
+------------------------------ */
+
+@import "messages/config";
+@import "messages/mixins";
+@import "messages/extends";
+
+
+/* ------------------------------
+   PRESENTATIONAL
+------------------------------ */
+
+// @each $message-def in $messages-desc {
+// 	$type: nth($message-def, 1);	
+// 	$size: nth($message-def, 2);
+
+// 	.message-#{$size}-#{$type} {
+// 		@include message($type, $size);
+// 	}
+// }
+
+
+// Message Module
+.msg {
+  @extend %message;
+  
+  // Color modifiers
+  &.-error {
+    @extend %message--error;
+  }
+  &.-valid {
+    @extend %message--valid;
+  }
+  &.-warning {
+    @extend %message--warning;
+  }
+  &.-info {
+    @extend %message--info;
+  }
+  
+  // Size modifiers
+  &.-small {
+    @extend %message--small;
+  }
+  &.-large {
+    @extend %message--large;
+  }
+  &.-xlarge {
+    @extend %message--xlarge;
+  }
+}
+
+// Error message
+ .msg-error{
+   @extend %message;
+   @extend %message--error;
+   @extend %message--xlarge;
+ }

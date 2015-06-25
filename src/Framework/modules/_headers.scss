@@ -1,0 +1,21 @@
+
+/* ------------------------------
+   FUNCTIONAL
+------------------------------ */
+
+@import "headers/config";
+@import "headers/mixins";
+
+
+/* ------------------------------
+   PRESENTATIONAL
+------------------------------ */
+
+@each $header-desc in $header-list {
+	$size: nth($header-desc, 1);
+	$color: nth($header-desc, 2);
+
+	.#{$size}-#{$color} {
+		@include Header($size, $color);
+	}
+};

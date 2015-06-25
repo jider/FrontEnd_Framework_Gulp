@@ -1,0 +1,22 @@
+// Global para almacenar los selectores
+$Placeholder-Selectors: ();
+
+// Crea placeholders (clases silenciosas) dinámicas para el parámetro y contenido informados
+@mixin Placeholder_Extend($extend) {
+	// Recuperamos el selector solicitado si existe
+	$selector: map-get($Placeholder-Selectors, $extend);
+
+	// Si el selector no existe lo creamos
+	@if $selector == null {
+		// Creamos un nuevo identificador para el placeholder dinámico y lo mapeamos para su futura recuperación
+		$selector: unique_id();
+		$Placeholder-Selectors: map-merge($Placeholder-Selectors, ($extend: $selector)) !global;
+
+		@at-root %#{$selector} {
+			@content;
+		}
+	}
+	
+	// Extendemos el selector creado
+	@extend %#{$selector};	
+}

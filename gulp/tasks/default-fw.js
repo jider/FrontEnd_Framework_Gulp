@@ -1,12 +1,11 @@
 // -----------------------------------------------------------------------------
-// Watchers
+// Default Framework Task
 // -----------------------------------------------------------------------------
 
 var gulp 	= require('gulp');
 var config 	= require('../config');
 
 
-gulp.task('watch', ['browserSync'], function() {
-	gulp.watch(config.sass_lib.src, ['sass-lib']);
-	gulp.watch(config.markup.src, ['markup']);
+gulp.task('default-fw', ['sass-fw'], function() {
+	gulp.watch(config.sass_fw.src, ['sass-fw']);	
 });
