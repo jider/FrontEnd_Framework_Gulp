@@ -25,8 +25,8 @@ And you're set!
 
 ## Gulp tasks
 
-* gulp - Default development task.
-* gulp sassdoc - Generate the framework documentation.
+* `gulp` - Default development task.
+* `gulp sassdoc` - Generate the framework documentation.
 
 ## Directory Structure
   ```
