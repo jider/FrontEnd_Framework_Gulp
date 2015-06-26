@@ -25,14 +25,28 @@ module.exports =  {
 	markup: {
 		src: appPath + '*.html',
 	},
+
+	markup_fw: {
+		src: root + 'sites/**/*.html',
+	},
 	
 	browserSync: { 
 		server: {
 			baseDir: appPath,
 			index: "index.html",
-			routes: {
+    		routes: {
         		"/bower_components": "bower_components"
-    		}	
+    		}
+		}
+	},
+
+	browserSync_fw: { 
+		server: {
+			baseDir: root + 'sites/',
+			index: "index.html",
+			routes: {
+        		"/dist" : "src/dist"
+    		}
 		}
 	},
 

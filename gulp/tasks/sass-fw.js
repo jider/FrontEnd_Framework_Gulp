@@ -26,5 +26,7 @@ gulp.task('sass-fw', function() {
 		// Escribe los mapas de código para el CSS generado
 		.pipe(sourcemaps.write(config.srcMapDest))		
 		// Escribe el CSS resultante en la ruta de salida especificada en 'cssOutput'
-		.pipe(gulp.dest(config.dest));
+		.pipe(gulp.dest(config.dest))
+		// Refrescamos los navegadores
+		.pipe(browserSync.stream());
 });
