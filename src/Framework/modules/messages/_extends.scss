@@ -1,4 +1,20 @@
-// Message Element
+////
+/// Placeholders para el módulo de 'messages'
+/// 
+/// @group Messages module
+/// @author Ignacio Díaz Rovina
+////
+
+
+///
+/// Placeholder principal del módulo de mensajes.
+/// Todo módulo de mensaje debe extender de este placeholder.
+/// 
+/// @example
+///   .m-msg{
+///   	@extend %message;
+///   }
+///
 %message {
   padding: $msg-size-m + rem;
 	margin-bottom: $msg-size-m + rem;
@@ -14,27 +30,46 @@
 	}
 }
 
-// Color modifiers
+/// 
+/// Placehorder para mensajes de error
+/// 
 %message--error{
 	@include _set_message_color(error);
 }
+/// 
+/// Placehorder para mensajes satisfactorios
+/// 
 %message--valid {
 	@include _set_message_color(valid);
 }
+/// 
+/// Placehorder para mensajes de aviso
+/// 
 %message--warning{
 	@include _set_message_color(warning);  
 }
+/// 
+/// Placehorder para mensajes de información
+/// 
 %message--info{
 	@include _set_message_color(info);
 }
 
-// Size modifiers
+///
+/// Placehorder para mensajes pequeños
+///  
 %message--small {
-	@include _set_message-size(s);
+	@include _set_message_size(s);
 }
+///
+/// Placehorder para mensajes grandes
+///  
 %message--large {
-	@include _set_message-size(l); 
+	@include _set_message_size(l); 
 }
+///
+/// Placehorder para mensajes muy grandes
+///  
 %message--xlarge {
-	@include _set_message-size(xl);
+	@include _set_message_size(xl);
 }

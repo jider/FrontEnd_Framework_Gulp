@@ -1,28 +1,30 @@
+////
+/// Message module
+/// 
+/// @group Messages module
+/// @author Ignacio Díaz Rovina
+////
 
-/* ------------------------------
-   FUNCTIONAL
------------------------------- */
 
+///
+/// Message module - Functional Imports
+/// 
 @import "messages/config";
 @import "messages/mixins";
 @import "messages/extends";
 
 
-/* ------------------------------
-   PRESENTATIONAL
------------------------------- */
-
-// @each $message-def in $messages-desc {
-// 	$type: nth($message-def, 1);	
-// 	$size: nth($message-def, 2);
-
-// 	.message-#{$size}-#{$type} {
-// 		@include message($type, $size);
-// 	}
-// }
-
-
-// Message Module
+///
+/// Message module main class
+/// 
+/// @name .msg
+/// 
+/// @example
+///   <p class="msg">{test}</p>
+///   <p class="msg -valid -large">{test}</p>
+///  
+/// @since 0.0.1
+///  
 .msg {
   @extend %message;
   
@@ -52,7 +54,16 @@
   }
 }
 
-// Error message
+///
+/// Message module - Error variant class
+/// 
+/// @name .msg-error
+/// 
+/// @example
+///   <p class="msg-error">{test}</p>
+///  
+/// @since 0.0.1
+///  
  .msg-error{
    @extend %message;
    @extend %message--error;

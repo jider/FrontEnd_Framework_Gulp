@@ -1,23 +1,23 @@
 ////
 /// Mixins para el módulo de 'messages'
+/// 
 /// @group Messages module
 /// @author Ignacio Díaz Rovina
 ////
+
 
 ///
 /// Crea las propiedades de color del mensaje a partir del tipo informado
 /// 
 /// @access private
-/// @author Ignacio Díaz Rovina
-///  
-/// @param {string} $type
-///  
+/// @param {string} $type - Tipo del mensaje [error/warning/...]
 /// @example
 ///   @include _set_message_color(error);
 ///   @include _smc(info);
 ///  
 /// @output Propiedades que afectan al color del mensaje  
 ///
+/// @author Ignacio Díaz Rovina
 /// @since 0.0.1
 /// 
 @mixin _set_message_color($type) {
@@ -42,14 +42,14 @@
 /// @param {string} $type
 ///  
 /// @example
-///   @include _set_message_size(error);
-///   @include _sms(info);
+///   @include _set_message_size(s);
+///   @include _sms(xl);
 ///  
 /// @output Propiedades que afectan al tamaño del mensaje  
 ///
 /// @since 0.0.1
 /// 
-@mixin _set_message-size($size) {
+@mixin _set_message_size($size) {
 	// Recuperamos el tamaño del mensaje
 	$_size: map-get($message-size, $size);
 
@@ -63,4 +63,4 @@
 ///
 /// @alias _sms 
 /// 
-@mixin _sms($type) { @include _set_message-size($size); }
+@mixin _sms($type) { @include _set_message_size($size); }
