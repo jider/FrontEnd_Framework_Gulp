@@ -23,6 +23,11 @@ While you're working on your project, run:
 
 And you're set!
 
+## Gulp tasks
+
+* gulp - Default development task.
+* gulp sassdoc - Generate the framework documentation.
+
 ## Directory Structure
   ```
     ├── bower_components/
