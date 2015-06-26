@@ -65,7 +65,7 @@ module.exports =  {
 		pro:sassPro
 	}, 
 	sassdoc: {
-		src: appPath + 'scss/**/*.scss',
+		src: fwPath + '**/*.scss',
 		options: {
 			dest: root + 'sassdoc'
 		}

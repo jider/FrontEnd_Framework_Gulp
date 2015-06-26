@@ -16,39 +16,25 @@
 
 // Color modifiers
 %message--error{
-    color: $msg-color-error;
-	border-color: lighten($msg-color-error, 20%);
-	background: lighten($msg-color-error, 40%);
+	@include _set_message_color(error);
 }
 %message--valid {
-  color: $msg-color-valid;
-	border-color: lighten($msg-color-valid, 20%);
-	background: lighten($msg-color-valid, 40%);
+	@include _set_message_color(valid);
 }
 %message--warning{
-  color: $msg-color-warning;
-	border-color: lighten($msg-color-warning, 20%);
-	background: lighten($msg-color-warning, 40%);
+	@include _set_message_color(warning);  
 }
 %message--info{
-  color: $msg-color-info;
-	border-color: lighten($msg-color-info, 20%);
-	background: lighten($msg-color-info, 40%);
+	@include _set_message_color(info);
 }
 
 // Size modifiers
 %message--small {
-  padding: $msg-size-s + rem;
-	margin-bottom: $msg-size-s + rem;
-	font-size: $msg-font-s + rem;
+	@include _set_message-size(s);
 }
 %message--large {
-  padding: $msg-size-l + rem;
-	margin-bottom: $msg-size-l + rem;
-	font-size: $msg-font-l + rem;
+	@include _set_message-size(l); 
 }
 %message--xlarge {
-  padding: $msg-size-xl + rem;
-	margin-bottom: $msg-size-xl + rem;
-	font-size: $msg-font-xl + rem;
+	@include _set_message-size(xl);
 }

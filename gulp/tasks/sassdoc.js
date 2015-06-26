@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------
-// Sass Documentation Generation
+// Sass Documentation Generation - Framework
 // -----------------------------------------------------------------------------
 
 var gulp 	= require('gulp');

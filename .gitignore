@@ -45,5 +45,6 @@ Temporary Items
 # Project Directories
 node_modules
 bower_components
-src/dist
-.sass-cache
+**/dist
+**/sassdoc
+**/.sass-cache
