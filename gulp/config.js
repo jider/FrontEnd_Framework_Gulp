@@ -23,7 +23,7 @@ var sassPro		= {
 
 module.exports =  {
 	markup: {
-		src: appPath + '*.html',	
+		src: appPath + '*.html',
 	},
 	
 	browserSync: { 
