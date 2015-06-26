@@ -13,8 +13,8 @@ You'll need to have the following items installed before continuing.
 ## Quickstart
 
 ```bash
-git clone https://github.com/jider/FrontEnd_Framework_Gulp
-npm install
+1. git clone https://github.com/jider/FrontEnd_Framework_Gulp
+2. sudo npm install --unsafe-perm
 ```
 
 While you're working on your project, run:
