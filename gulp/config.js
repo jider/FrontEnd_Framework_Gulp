@@ -24,6 +24,7 @@ var sassPro		= {
 module.exports =  {
 	markup: {
 		src: appPath + '*.html',
+		dest: buildPath
 	},
 
 	markup_fw: {
@@ -32,11 +33,11 @@ module.exports =  {
 	
 	browserSync: { 
 		server: {
-			baseDir: appPath,
-			index: "index.html",
-    		routes: {
-        		"/bower_components": "bower_components"
-    		}
+			baseDir: buildPath,
+			index: "index.html"
+			// routes: {
+			// 	"/bower_components": "bower_components"
+			// }
 		}
 	},
 
@@ -45,8 +46,8 @@ module.exports =  {
 			baseDir: root + 'sites/',
 			index: "index.html",
 			routes: {
-        		"/dist" : "src/dist"
-    		}
+				"/dist" : "src/dist"
+			}
 		}
 	},
 
@@ -69,5 +70,23 @@ module.exports =  {
 		options: {
 			dest: fwPath + 'sassdoc'
 		}
-	}
+	},
+	browserify: {
+	    // Se creará un bundle por cada configuración de bundle en la siguiente lista
+    	bundleConfigs: [{
+	    	entries: appPath + '/js/global.js',
+	    	dest: buildPath,
+	    	outputName: 'global.js',
+			// Extensiones de archivo adicionales para hacerlas opcionales
+			extensions: ['.hbs'],
+			// Lista de modulos a requerir externamente
+			require: ['jquery', 'underscore']
+  		}, {
+		  	entries: appPath + '/js/page.js',
+		  	dest: buildPath,
+		  	outputName: 'page.js',
+			// Lista de módulos que estan disponibles de forma externa y excluimos del bundle
+			external: ['jquery', 'underscore']
+  		}]
+	},
 };

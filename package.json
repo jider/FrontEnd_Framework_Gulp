@@ -10,18 +10,50 @@
   },
   "author": "Ignacio Díaz Rovina <velanor@gmail.com>",
   "license": "MIT",
-  "repository" : { 
-    "type" : "git", 
-    "url" : "https://github.com/jider/FrontEnd_Framework_Gulp.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jider/FrontEnd_Framework_Gulp.git"
+  },
+  "browser": {
+    "underscore": "backbone/node_modules/underscore",
+    "plugin": "./src/lib/js/vendor/jquery-plugin.js"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      "hbsfy"
+    ]
+  },
+  "browserify-shim": {
+    "plugin": {
+      "exports": "plugin",
+      "depends": [
+        "jquery:$"
+      ]
+    }
   },
   "devDependencies": {
     "browser-sync": "^2.7.12",
+    "browserify": "^10.2.4",
+    "browserify-shim": "^3.8.9",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-notify": "^2.2.0",
     "gulp-sass": "^2.0.1",
-    "gulp-sourcemaps": "^1.5.2",    
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-util": "^3.0.6",
+    "handlebars": "^3.0.3",
+    "hbsfy": "^2.2.1",
+    "lodash": "^3.9.3",
+    "merge-stream": "^0.1.7",
+    "pretty-hrtime": "^1.0.0",
     "require-dir": "^0.3.0",
-    "sassdoc": "^2.1.15"
+    "sassdoc": "^2.1.15",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.3"
+  },
+  "dependencies": {
+    "backbone": "^1.2.1",
+    "jquery": "^2.1.4"
   }
 }
