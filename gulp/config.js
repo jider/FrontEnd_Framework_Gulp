@@ -58,16 +58,16 @@ module.exports =  {
 		pro: sassPro
 	},
 	sass_fw: {
-		src: fwPath + '**/*.scss',
+		src: fwPath + 'scss/**/*.scss',
 		dest: buildPath +'css',
 		srcMapDest: '.',
 		dev:sassDev,
 		pro:sassPro
 	}, 
 	sassdoc: {
-		src: fwPath + '**/*.scss',
+		src: fwPath + 'scss/**/*.scss',
 		options: {
-			dest: root + 'sassdoc'
+			dest: fwPath + 'sassdoc'
 		}
 	}
 };
