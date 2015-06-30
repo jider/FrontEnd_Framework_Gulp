@@ -30,6 +30,11 @@ module.exports =  {
 	markup_fw: {
 		src: root + 'sites/**/*.html',
 	},
+
+	images: {
+    	src: appPath + "images/**",
+    	dest: buildPath + "images"
+  	},
 	
 	browserSync: { 
 		server: {
@@ -75,7 +80,7 @@ module.exports =  {
 	    // Se creará un bundle por cada configuración de bundle en la siguiente lista
     	bundleConfigs: [{
 	    	entries: appPath + '/js/global.js',
-	    	dest: buildPath,
+	    	dest: buildPath + 'js',
 	    	outputName: 'global.js',
 			// Extensiones de archivo adicionales para hacerlas opcionales
 			extensions: ['.hbs'],
@@ -83,7 +88,7 @@ module.exports =  {
 			require: ['jquery', 'underscore']
   		}, {
 		  	entries: appPath + '/js/page.js',
-		  	dest: buildPath,
+		  	dest: buildPath + 'js',
 		  	outputName: 'page.js',
 			// Lista de módulos que estan disponibles de forma externa y excluimos del bundle
 			external: ['jquery', 'underscore']
