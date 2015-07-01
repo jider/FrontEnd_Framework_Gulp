@@ -39,10 +39,10 @@ module.exports =  {
 	browserSync: { 
 		server: {
 			baseDir: buildPath,
-			index: "index.html"
-			// routes: {
-			// 	"/bower_components": "bower_components"
-			// }
+			index: "layout.html",
+			routes: {
+				"/bower_components": "bower_components"
+			}
 		}
 	},
 
@@ -58,7 +58,7 @@ module.exports =  {
 
 	sass_lib: {
 		src: appPath + 'scss/**/*.scss',
-		dest: appPath +'css',
+		dest: buildPath +'css',
 		srcMapDest: '.',
 		dev: sassDev,
 		pro: sassPro
@@ -78,20 +78,32 @@ module.exports =  {
 	},
 	browserify: {
 	    // Se creará un bundle por cada configuración de bundle en la siguiente lista
-    	bundleConfigs: [{
-	    	entries: appPath + '/js/global.js',
-	    	dest: buildPath + 'js',
-	    	outputName: 'global.js',
-			// Extensiones de archivo adicionales para hacerlas opcionales
-			extensions: ['.hbs'],
-			// Lista de modulos a requerir externamente
-			require: ['jquery', 'underscore']
-  		}, {
-		  	entries: appPath + '/js/page.js',
-		  	dest: buildPath + 'js',
-		  	outputName: 'page.js',
-			// Lista de módulos que estan disponibles de forma externa y excluimos del bundle
-			external: ['jquery', 'underscore']
-  		}]
+    	bundleConfigs: [
+    		// Vendors bundle
+    		{
+    			dest: buildPath + 'js',
+		    	outputName: 'vendor.js',
+		    	// Lista de modulos a requerir externamente
+				require: ['modernizr', 'jquery', 'foundation', 'underscore', 'fastClick']
+    		},
+    		// Global Backbone bundle
+    		{
+		    	entries: appPath + '/js/global.js',
+		    	dest: buildPath + 'js',
+		    	outputName: 'global.js',
+				// Extensiones de archivo adicionales para hacerlas opcionales
+				extensions: ['.hbs'],
+				// Lista de módulos que estan disponibles de forma externa y excluimos del bundle
+				external: ['jquery', 'underscore'],
+  			},
+  			// Page specific bundle
+  			{
+			  	entries: appPath + '/js/page.js',
+			  	dest: buildPath + 'js',
+			  	outputName: 'page.js',
+				// Lista de módulos que estan disponibles de forma externa y excluimos del bundle
+				external: ['jquery', 'underscore']
+  			}
+  		]
 	},
 };

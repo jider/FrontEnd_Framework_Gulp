@@ -7,6 +7,7 @@ var sass 		 = require('gulp-sass');
 var handleErrors = require('../util/handleErrors');
 var config 		 = require('../config').sass;
 
+// gulp.task('production', ['sassdoc', 'markup', 'images', 'minifyCss', 'uglifyJs']);
 
 gulp.task('production', ['sassdoc'], function() {
 	return gulp
