@@ -26,7 +26,7 @@ var browserifyTask = function(devMode) {
 	var browserifyThis = function(bundleConfig) {
 
 		if (devMode) {
-			// Add watchify args and debug (sourcemaps) option
+			// Añadimos los argumentos de 'watchify' y la opción de debug que genera los 'sourcemaps'
 			_.extend(bundleConfig, watchify.args, { debug: true });
 
 			// A watchify require/external bug that prevents proper recompiling,

@@ -16,6 +16,7 @@
   },
   "browser": {
     "underscore": "backbone/node_modules/underscore",
+    "jquery": "./bower_components/jquery/dist/jquery.js",
     "plugin": "./src/lib/js/vendor/jquery-plugin.js"
   },
   "browserify": {
@@ -55,7 +56,6 @@
     "watchify": "^3.2.3"
   },
   "dependencies": {
-    "backbone": "^1.2.1",
-    "jquery": "^2.1.4"
+    "backbone": "^1.2.1"
   }
 }
