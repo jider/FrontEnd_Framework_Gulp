@@ -1,35 +1,36 @@
 {
   "name": "frontend_framework_gulp",
+  "private": true,
   "version": "0.0.1",
   "description": "Front-End Framework using Gulp as task builder",
   "main": "Gulpfile.js",
   "scripts": {
     "env": "env",
-    "postinstall": "bower --allow-root cache clean  && bower --allow-root install",
-    "clean:dependencies": "rm -rf node_modules && rm -rf bower_components"
+    "publish": "echo \"Don't publish me, bro!\" && exit 1",
+    "clean:dependencies": "rm -rf node_modules"
   },
   "author": "Ignacio Díaz Rovina <velanor@gmail.com>",
-  "license": "MIT",
+  "license": "ISC",
   "repository": {
     "type": "git",
     "url": "https://github.com/jider/FrontEnd_Framework_Gulp.git"
   },
+  "bugs": {
+    "url": "https://github.com/jider/FrontEnd_Framework_Gulp/issues"
+  },
+  "homepage": "https://github.com/jider/FrontEnd_Framework_Gulp",
   "browser": {
-    "modernizr": "./bower_components/modernizr/modernizr.js",
-    "jquery": "./bower_components/jquery/dist/jquery.js",
-    "foundation": "./bower_components/foundation/js/foundation.js",
+    "jquery": "./node_modules/jquery/dist/jquery.js",
     "underscore": "backbone/node_modules/underscore",
-    "fastClick": "./bower_components/fastclick/lib/fastclick.js",
     "plugin": "./src/lib/js/vendor/jquery-plugin.js"
   },
   "browserify-shim": {
-    "modernizr": "modernizr",
     "jquery": "jQuery",
-    "foundation": "foundation",
-    "fastClick": "FastClick",
     "plugin": {
       "exports": "plugin",
-      "depends": ["jquery"]
+      "depends": [
+        "jquery:$"
+      ]
     }
   },
   "browserify": {
@@ -61,6 +62,8 @@
     "watchify": "^3.2.3"
   },
   "dependencies": {
-    "backbone": "^1.2.1"
+    "backbone": "^1.2.1",
+    "foundation-sites": "^5.5.2",
+    "jquery": "^2.1.4"
   }
 }

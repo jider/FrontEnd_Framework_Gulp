@@ -1,9 +1,9 @@
 var _, Backbone, plugin;
 
-_           = require('underscore');
-Backbone    = require('backbone');
-Backbone.$  = require('jquery');
-plugin      = require('plugin');
+_               = require('underscore');
+Backbone        = require('backbone');
+Backbone.$ = $  = require('jquery');
+plugin          = require('plugin');
 
 
 module.exports = Backbone.View.extend({

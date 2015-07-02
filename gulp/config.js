@@ -11,12 +11,12 @@ var buildPath 	= root + 'dist/';
 
 var sassDev		= {
 	errLogToConsole: true,
-	includePaths: ['bower_components/foundation/scss'],
+	includePaths: ['node_modules/foundation-sites/scss'],
 	outputStyle: 'expanded'
 };
 var sassPro		= {
 	errLogToConsole: true,		
-	includePaths: ['bower_components/foundation/scss'],
+	includePaths: ['node_modules/foundation-sites/scss'],
 	outputStyle: 'compressed'
 };
 
@@ -32,14 +32,14 @@ module.exports =  {
 	},
 
 	images: {
-    	src: appPath + "images/**",
+		src: appPath + "images/**",
     	dest: buildPath + "images"
   	},
 	
 	browserSync: { 
 		server: {
 			baseDir: buildPath,
-			index: "layout.html",
+			index: "index.html",
 			routes: {
 				"/bower_components": "bower_components"
 			}
@@ -84,7 +84,7 @@ module.exports =  {
     			dest: buildPath + 'js',
 		    	outputName: 'vendor.js',
 		    	// Lista de modulos a requerir externamente
-				require: ['modernizr', 'jquery', 'foundation', 'underscore', 'fastClick']
+				require: ['jquery', 'underscore']
     		},
     		// Global Backbone bundle
     		{
@@ -93,8 +93,8 @@ module.exports =  {
 		    	outputName: 'global.js',
 				// Extensiones de archivo adicionales para hacerlas opcionales
 				extensions: ['.hbs'],
-				// Lista de módulos que estan disponibles de forma externa y excluimos del bundle
-				external: ['jquery', 'underscore'],
+				// Lista de modulos a requerir externamente
+				external: ['jquery', 'underscore']
   			},
   			// Page specific bundle
   			{
