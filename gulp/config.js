@@ -41,7 +41,7 @@ module.exports =  {
 			baseDir: buildPath,
 			index: "index.html",
 			routes: {
-				"/bower_components": "bower_components"
+				"/node_modules": "node_modules"
 			}
 		}
 	},
@@ -79,7 +79,7 @@ module.exports =  {
 	browserify: {
 	    // Se creará un bundle por cada configuración de bundle en la siguiente lista
     	bundleConfigs: [
-    		// Vendors bundle
+    		// Vendors bundle    		
     		{
     			dest: buildPath + 'js',
 		    	outputName: 'vendor.js',
@@ -104,6 +104,14 @@ module.exports =  {
 				// Lista de módulos que estan disponibles de forma externa y excluimos del bundle
 				external: ['jquery', 'underscore']
   			}
+  			/*
+  			{
+  				entries: appPath + '/js/app.js',
+  				dest: buildPath + 'js',
+			  	outputName: 'app.js',
+			  	external: ['jquery', 'plugin']
+  			}
+  			*/
   		]
 	},
 };

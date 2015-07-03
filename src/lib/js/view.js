@@ -2,7 +2,7 @@ var _, Backbone, plugin;
 
 _               = require('underscore');
 Backbone        = require('backbone');
-Backbone.$ = $  = require('jquery');
+Backbone.$      = require('jquery');
 plugin          = require('plugin');
 
 
@@ -29,7 +29,7 @@ module.exports = Backbone.View.extend({
         'Non common-js plugins with common-js dependencies',
         'Using modules already bundled with other modules',
       ]
-    }));
+    }));    
 
     return plugin();
   }
