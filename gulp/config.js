@@ -22,6 +22,10 @@ var sassPro		= {
 
 
 module.exports =  {
+	clean_js: {
+		src: [buildPath + 'js/**/*.js']
+	},
+
 	markup: {
 		src: appPath + '*.html',
 		dest: buildPath
