@@ -21,6 +21,13 @@ var sassPro		= {
 
 
 module.exports =  {
+	production: {
+		jsSrc: appBuildPath + 'js/*.js',
+		cssSrc: appBuildPath + 'css/*.css',
+		jsDest: appBuildPath + 'js/',
+	    cssDest: appBuildPath + 'css/'
+  	},
+
 	// Configuración para la creación del servidor y sincronización de la aplicación de desarrollo del framwork en diferentes dispositivos
 	browserSync: { 
 		server: {
