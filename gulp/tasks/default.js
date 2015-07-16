@@ -1,9 +1,11 @@
 // -----------------------------------------------------------------------------
 // Default Task
 // -----------------------------------------------------------------------------
+'use strict';
 
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
+
 
 // Forzamos 'browserSync.reload' tras lanzar todas las tareas de 'default', para asegurarnos 
 // de que se han cargado en el navegador todos los assets de 'dist'.

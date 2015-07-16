@@ -10,16 +10,16 @@ var startTime;
 module.exports = {
   start: function(filepath) {
     startTime = process.hrtime();
-    gutil.log('Bundling', gutil.colors.green(filepath) + '...');
+    gutil.log('Bundling', gutil.colors.green.bold(filepath) + '...');
   },
 
   watch: function(bundleName) {
-    gutil.log('Watching files required by', gutil.colors.yellow(bundleName));
+    gutil.log('Watching files required by', gutil.colors.green.bold(bundleName));
   },
 
-  end: function(filepath) {
+  end: function(filepath, fileSize) {
     var taskTime = process.hrtime(startTime);
     var prettyTime = prettyHrtime(taskTime);
-    gutil.log('Bundled', gutil.colors.green(filepath), 'in', gutil.colors.magenta(prettyTime));
+    gutil.log('Bundled', gutil.colors.green.bold(filepath), '[' + gutil.colors.yellow(fileSize) + ']', 'after', gutil.colors.magenta(prettyTime));
   }
 };

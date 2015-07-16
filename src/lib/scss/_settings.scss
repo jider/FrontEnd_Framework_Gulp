@@ -113,7 +113,7 @@ $include-html-global-classes: $include-html-classes;
 // $tuatara     : #444444;
 // $oil         : #333333;
 // $jet         : #222222;
-// $black       : #000000;
+$black       : #000000;
 
 // We use these as default colors throughout
 // $primary-color: #008CBA;
@@ -898,6 +898,7 @@ $include-html-global-classes: $include-html-classes;
 // $off-canvas-overlay-transition: background 300ms ease;
 // $off-canvas-overlay-cursor: pointer;
 // $off-canvas-overlay-box-shadow: -4px 0 4px rgba($black, .5), 4px 0 4px rgba($black, .5);
+$off-canvas-overlay-box-shadow: none;
 // $off-canvas-overlay-background: rgba($white, .2);
 // $off-canvas-overlay-background-hover: rgba($white, .05);
 

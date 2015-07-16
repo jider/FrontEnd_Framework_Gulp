@@ -1,13 +1,12 @@
+// -----------------------------------------------------------------------------
+// Configuration de las tareas automatizadas de GULP
+// -----------------------------------------------------------------------------
 'use strict';
 
-// -----------------------------------------------------------------------------
-// Configuration
-// -----------------------------------------------------------------------------
-
-var root		= './src/';
-var appPath 	= root + 'lib/';
-var fwPath		= root + 'Framework/';
-var buildPath 	= root + 'dist/';
+var root			= './src/';
+var appPath 		= root + 'lib/';
+var appBuildPath	= appPath + 'build/';
+var fwPath			= root + 'Framework/';
 
 var sassDev		= {
 	errLogToConsole: true,
@@ -22,13 +21,24 @@ var sassPro		= {
 
 
 module.exports =  {
+	// Configuración para la creación del servidor y sincronización de la aplicación de desarrollo del framwork en diferentes dispositivos
+	browserSync: { 
+		server: {
+			baseDir: appBuildPath,
+			index: "index.html"
+			// routes: {
+			// 	"/node_modules": "node_modules"
+			// }
+		}
+	},
+
 	clean_js: {
-		src: [buildPath + 'js/**/*.js']
+		src: [appBuildPath + 'js/**/*.js']
 	},
 
 	markup: {
 		src: appPath + '*.html',
-		dest: buildPath
+		dest: appBuildPath
 	},
 
 	markup_fw: {
@@ -37,18 +47,8 @@ module.exports =  {
 
 	images: {
 		src: appPath + "images/**",
-    	dest: buildPath + "images"
+    	dest: appBuildPath + "images"
   	},
-	
-	browserSync: { 
-		server: {
-			baseDir: buildPath,
-			index: "index.html",
-			routes: {
-				"/node_modules": "node_modules"
-			}
-		}
-	},
 
 	browserSync_fw: { 
 		server: {
@@ -62,14 +62,14 @@ module.exports =  {
 
 	sass_lib: {
 		src: appPath + 'scss/**/*.scss',
-		dest: buildPath +'css',
+		dest: appBuildPath +'css',
 		srcMapDest: '.',
 		dev: sassDev,
 		pro: sassPro
 	},
 	sass_fw: {
 		src: fwPath + 'scss/**/*.scss',
-		dest: buildPath +'css',
+		dest: appBuildPath +'css',
 		srcMapDest: '.',
 		dev:sassDev,
 		pro:sassPro
@@ -83,27 +83,29 @@ module.exports =  {
 	browserify: {
 	    // Se creará un bundle por cada configuración de bundle en la siguiente lista
     	bundleConfigs: [
-    		// Vendors bundle    		
+    		// Vendors bundle
     		{
-    			dest: buildPath + 'js',
-		    	outputName: 'vendor.js',
+    			entries: appPath + '/js/commons.js',
+    			dest: appBuildPath + 'js',
+		    	outputName: 'commons.js',
 		    	// Lista de modulos a requerir externamente
-				require: ['jquery', 'underscore']
+				require: ['jquery', 'underscore', 'foundation']
     		},
     		// Global Backbone bundle
     		{
 		    	entries: appPath + '/js/global.js',
-		    	dest: buildPath + 'js',
+		    	dest: appBuildPath + 'js',
 		    	outputName: 'global.js',
 				// Extensiones de archivo adicionales para hacerlas opcionales
 				extensions: ['.hbs'],
 				// Lista de modulos a requerir externamente
-				external: ['jquery', 'underscore']
-  			},
+				external: ['jquery', 'underscore', 'foundation']
+  			}
+  			/*
   			// Page specific bundle
   			{
 			  	entries: appPath + '/js/page.js',
-			  	dest: buildPath + 'js',
+			  	dest: appBuildPath + 'js',
 			  	outputName: 'page.js',
 				// Lista de módulos que estan disponibles de forma externa y excluimos del bundle
 				external: ['jquery', 'underscore']
@@ -111,7 +113,7 @@ module.exports =  {
   			/*
   			{
   				entries: appPath + '/js/app.js',
-  				dest: buildPath + 'js',
+  				dest: appBuildPath + 'js',
 			  	outputName: 'app.js',
 			  	external: ['jquery', 'plugin']
   			}

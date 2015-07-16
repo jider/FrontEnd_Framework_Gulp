@@ -21,11 +21,13 @@
   "homepage": "https://github.com/jider/FrontEnd_Framework_Gulp",
   "browser": {
     "jquery": "./node_modules/foundation-sites/js/vendor/jquery.js",
+    "foundation": "./node_modules/foundation-sites/js/foundation.js",
     "underscore": "backbone/node_modules/underscore",
     "plugin": "./src/lib/js/vendor/jquery-plugin.js"
   },
   "browserify-shim": {
-    "jquery": "jquery",
+    "jquery": "$",
+    "foundation": "foundation",
     "plugin": {
       "exports": "plugin",
       "depends": [

@@ -18,6 +18,7 @@ var mergeStream		= require('merge-stream');
 var source 			= require('vinyl-source-stream');
 var bundleLogger	= require('../util/bundleLogger');
 var handleErrors	= require('../util/handleErrors');
+var fileSize		= require('../util/fileSizeCalc');
 var config 			= require('../config').browserify;
 
 
@@ -45,11 +46,11 @@ var browserifyTask = function(devMode) {
 				.bundle()
 				// Report compile errors
 				.on('error', handleErrors)
-				// Use vinyl-source-stream to make the stream gulp compatible. 
+				// Use vinyl-source-stream to make the stream gulp compatible.
 				// Specify the desired output filename here.
 				.pipe(source(bundleConfig.outputName))
 				// Specify the output destination
-				.pipe(gulp.dest(bundleConfig.dest))
+				.pipe(gulp.dest(bundleConfig.dest))				
 				.pipe(browserSync.stream());
 		}
 
@@ -65,6 +66,9 @@ var browserifyTask = function(devMode) {
 			b = watchify(b);
 			// Rebundle and update
 			b.on('update', bundle);
+			b.on('bytes', function (bytes) {
+				bundleLogger.end(bundleConfig.outputName, fileSize(bytes));
+			});
 			bundleLogger.watch(bundleConfig.outputName);
 
 		} //else {

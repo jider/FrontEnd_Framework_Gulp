@@ -40,3 +40,22 @@
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
+
+/// Custom modules
+/// ---------------------------------------
+@import "header_breadcrumbs";
+
+
+/// Custom styles
+/// ---------------------------------------
+
+.fullWidth {
+   width: 100% !important;
+   margin-left: auto !important;
+   margin-right: auto !important;
+   max-width: initial !important;
+}
+
+.header-breadcrumbs {
+    @extend %header-breadcrumbs;
+}
