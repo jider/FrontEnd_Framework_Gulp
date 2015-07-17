@@ -11,7 +11,7 @@ var handleErrors	= require('../util/handleErrors');
 var config       	= require('../config').sass_fw;
 
 
-gulp.task('sass-fw', function() {
+gulp.task('sass:fw', function() {
 	return gulp
 		// Busca todos los ficheros '.scss' en el directorio de origen especificado en 'cssInput'
 		.src(config.src)

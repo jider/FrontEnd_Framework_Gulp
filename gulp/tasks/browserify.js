@@ -16,9 +16,9 @@ var browserSync 	= require('browser-sync');
 var watchify 		= require('watchify');
 var mergeStream		= require('merge-stream');
 var source 			= require('vinyl-source-stream');
-var bundleLogger	= require('../util/bundleLogger');
+var streamify 		= require('gulp-streamify')
+var logger			= require('../util/logger');
 var handleErrors	= require('../util/handleErrors');
-var fileSize		= require('../util/fileSizeCalc');
 var config 			= require('../config').browserify;
 
 
@@ -35,7 +35,7 @@ var browserifyTask = function(devMode) {
 
 		var bundle = function() {
 			// Log when bundling starts
-      		bundleLogger.start(bundleConfig.outputName);
+      		logger.bundle.start(bundleConfig.outputName);
 
 			return b
 				.bundle()
@@ -43,9 +43,11 @@ var browserifyTask = function(devMode) {
 				.on('error', handleErrors)
 				// Use vinyl-source-stream to make the stream gulp compatible.
 				// Specify the desired output filename here.
-				.pipe(source(bundleConfig.outputName))
+				.pipe(source(bundleConfig.outputName))				
 				// Specify the output destination
 				.pipe(gulp.dest(bundleConfig.dest))
+				.pipe(streamify(logger.bundle.pipeEnd()))
+				// Update browsers
 				.pipe(browserSync.stream());
 		}
 
@@ -61,11 +63,8 @@ var browserifyTask = function(devMode) {
 			b = watchify(b);
 			// Rebundle and update
 			b.on('update', bundle);
-			b.on('bytes', function (bytes) {
-				bundleLogger.end(bundleConfig.outputName, fileSize(bytes));
-			});
-			bundleLogger.watch(bundleConfig.outputName);
-
+			
+			logger.bundle.watch(bundleConfig.outputName);
 		}
 
 		return bundle();
@@ -78,7 +77,7 @@ var browserifyTask = function(devMode) {
 
 
 // Task to create JS bundles
-gulp.task('browserify', function() {
+gulp.task('browserify', ['clean:js'], function() {
 	return browserifyTask();
 });
 
