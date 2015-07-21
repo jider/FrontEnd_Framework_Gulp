@@ -1,10 +1,9 @@
-// Browserify entry point for the global.js bundle (yay JavaScript!)
-
 'use strict';
 
+var _header = require('./tpls/_main_header');
 
-var _header = require('./_main_header');
-var context = {
+
+module.exports = {
   header: _header,
   description: 'Starter Gulp + Browserify project to demonstrate some common tasks:',
   tools: [
@@ -20,10 +19,3 @@ var context = {
     'Using modules already bundled with other modules',
   ]
 };
-
-var View = require('./view')(context);
-var view = new View({
-	el: '#content'
-});
-
-console.log('global.js loaded!!');

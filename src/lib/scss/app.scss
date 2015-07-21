@@ -59,3 +59,7 @@
 .header-breadcrumbs {
     @extend %header-breadcrumbs;
 }
+
+.mainNav, .inner-wrap {
+	height: 100vw;
+}

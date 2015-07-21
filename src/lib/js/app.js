@@ -1,14 +1,9 @@
 'use strict';
 
-var modA = require('./modA.js');
-var modB = require('./modB.js');
+var router = require('./router');
 
-var jQuery = require('jquery');
 
-console.log('App Loaded -->');
-console.log(modA);
-console.log(modB);
-console.log('<-- App Loaded');
+// Inicializamos el enrutado de la aplicación
+router.initilize();
 
-jQuery('body').append('<p>Loaded by jQuery!!!</p>');
-
+console.log('App.js Loaded!!');	

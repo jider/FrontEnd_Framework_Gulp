@@ -1,6 +1,5 @@
-var _, foundation, Backbone;
+var foundation, Backbone;
 
-_           = require('underscore');
 foundation  = require('foundation');
 Backbone    = require('backbone');
 Backbone.$  = require('jquery');
@@ -8,7 +7,7 @@ Backbone.$  = require('jquery');
 
 module.exports = function(context) {
   return Backbone.View.extend({
-    template: require('./template'),
+    template: require('./tpls/modulesViewr'),
 
     initialize: function() {
       return this.render();

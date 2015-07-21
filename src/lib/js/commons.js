@@ -2,16 +2,17 @@
 
 
 // Recuperamos o creamos un objeto de espacio de nombres
-var App = window.App || {};
+var _fwApp = window.fwApp || {};
 
-
-// Especificamos los módulos que necesitamos que tengan acceso global
-// Ej. App.Module_A = require('module_A');
-
-
-// Necesitamos que jQuery funcione como una varible global y como una varuiable instanciable desde require
+// Necesitamos que jQuery funcione como una varible global y como una variable instanciable desde require
 window.jQuery  = require('jquery');
 
 
+// Especificamos los módulos que necesitamos que tengan acceso global
+// Ej. _fwApp.Module_A = require('module_A');
+
+
 // Reemplazamos o creamos el espacio de nombres global
-window.App = App;
+window.fwApp = _fwApp;
+
+console.log('commons.js Loaded!!');	

@@ -95,36 +95,21 @@ module.exports =  {
     			entries: appPath + '/js/commons.js',
     			dest: appBuildPath + 'js',
 		    	outputName: 'commons.js',
+		    	// Extensiones de archivo adicionales para hacerlas opcionales
+				extensions: ['.hbs'],
 		    	// Lista de modulos a requerir externamente
-				require: ['jquery', 'underscore', 'foundation']
+				require: ['jquery', 'foundation']
     		},
-    		// Global Backbone bundle
+    		// APP Backbone bundle
     		{
-		    	entries: appPath + '/js/global.js',
+		    	entries: appPath + '/js/app.js',
 		    	dest: appBuildPath + 'js',
-		    	outputName: 'global.js',
+		    	outputName: 'app.js',
 				// Extensiones de archivo adicionales para hacerlas opcionales
 				extensions: ['.hbs'],
 				// Lista de modulos a requerir externamente
-				external: ['jquery', 'underscore', 'foundation']
+				external: ['jquery', 'foundation']
   			}
-  			/*
-  			// Page specific bundle
-  			{
-			  	entries: appPath + '/js/page.js',
-			  	dest: appBuildPath + 'js',
-			  	outputName: 'page.js',
-				// Lista de módulos que estan disponibles de forma externa y excluimos del bundle
-				external: ['jquery', 'underscore']
-  			}
-  			/*
-  			{
-  				entries: appPath + '/js/app.js',
-  				dest: appBuildPath + 'js',
-			  	outputName: 'app.js',
-			  	external: ['jquery', 'plugin']
-  			}
-  			*/
   		]
 	},
 };

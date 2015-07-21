@@ -1,4 +1,6 @@
-{{!> (lookup . 'header') }}
+{{#if header}}
+	{{> (lookup . 'header') }}
+{{/if}}
 
 <p>
   {{description}}
