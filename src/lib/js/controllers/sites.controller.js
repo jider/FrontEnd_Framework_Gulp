@@ -5,13 +5,19 @@ var sitesModel	= {};
 var sitesTpl	= require('../views/tpls/sites');
 
 
-// Sites view constructor
-var _view = sitesView.init(sitesModel, sitesTpl);
+module.exports = function(name, id) {
+	console.log('Site Ctlr -->', 'name: ' + name, '| id: ' + id);
 
+	sitesModel.name = name;
+	sitesModel.id = id;
 
-module.exports = {
-	view: _view,
-	params: sitesView.defaultParams,
-	title: "Sites",
-	menu: 0
+	// Sites view constructor
+	var _view = sitesView.init(sitesModel, sitesTpl);
+
+	return {
+		view: _view,
+		params: sitesView.defaultParams,
+		title: "Sites",
+		menu: 0
+	};
 };

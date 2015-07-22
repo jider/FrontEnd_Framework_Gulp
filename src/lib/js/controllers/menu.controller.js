@@ -31,15 +31,15 @@ var _default = {
 			items: [
 				{
 					name: "Site_Name_1",
-					link: "#sites",
+					link: "#sites/cuatro/25",
 				},
 				{
 					name: "Site_Name_2",
-					link: "#sites"
+					link: "#sites/t5"
 				},
 				{
 					name: "Site_Name_3",
-					link: "#sites"
+					link: "#sites/divinity/999"
 				}
 			]
 		}, // Sites
@@ -118,7 +118,7 @@ var _default = {
 			items: [
 				{
 					name: "Sass Doc",
-					link: "#docs"
+					link: "#docs/58"
 				},
 				{
 					name: "JS Doc",

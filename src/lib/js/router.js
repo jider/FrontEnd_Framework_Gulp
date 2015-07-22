@@ -10,10 +10,15 @@ var _router = Backbone.Router.extend({
 	execute: function(callback, args, name) {
 		// Si hemos definido una acción para la ruta solicitada la llamamos,
 		// en vez de acceder al método por defecto 
-		if (callback) callback.apply(this, args);
+		if (callback) {
+			callback.apply(this, args);
 
-		// Muestra una vista basado en la configuración dce la misma
-		viewsCtlr.setView(routerCtlr.getViewConfig(name));
+		} else {
+			// Muestra una vista basada en el controlador de la misma
+			// Se informan los parámetros introducidos en la solicitud, al instanciar el controlador
+			var _viewCtlr = routerCtlr.getViewCtlr(name);
+			viewsCtlr.setView(_viewCtlr.apply(this, args));			
+		}
 	}
 });
 

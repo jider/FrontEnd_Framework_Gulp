@@ -1,10 +1,6 @@
 'use strict';
 
-var _header = require('../views/tpls/_main_header');
-
-
 module.exports = {
-  header: _header,
   description: 'Starter Gulp + Browserify project to demonstrate some common tasks:',
   tools: [
     'CommonJS bundling and watching',

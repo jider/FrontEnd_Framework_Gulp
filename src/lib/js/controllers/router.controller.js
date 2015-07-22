@@ -15,9 +15,9 @@ module.exports = function() {
 	// Routes mapping
 	var _routes = {
 		'': 'home',
-		'sites': 'sites',
+		'sites/:name(/:id)': 'sites',
 		'modules': 'modules',
-		'docs' : 'docs'
+		'docs(/:id)' : 'docs'
 	};
 
 	var controllers = {
@@ -31,11 +31,11 @@ module.exports = function() {
 	// Public config Object
 	return {
 		// Routes mapping
-		routes: _routes,		
+		routes: _routes,
 
-		// Routes getter
-		getViewConfig: function(action) {
-			console.log('getViewConfig ' + action);
+		// Devuelve el controlador correspondiente a la acción del enrutado solicitada
+		getViewCtlr: function(action) {
+			console.log('Controller: ' + action);
 			return controllers[action];
 		}		
 	};

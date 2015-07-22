@@ -5,13 +5,18 @@ var docModel = {};
 var docTpl	 = require('../views/tpls/documentation');
 
 
-// Documentation view constructor
-var _view = docView.init(docModel, docTpl);
+module.exports = function(id) {
+	console.log('Site Ctlr -->', 'id: ' + id);
 
+	docModel.id = id;
 
-module.exports = {
-	view: _view,
-	params: docView.defaultParams,
-	title: "Documentation",
-	menu: 0
+	// Documentation view constructor
+	var _view = docView.init(docModel, docTpl);
+
+	return {
+		view: _view,
+		params: docView.defaultParams,
+		title: "Documentation",
+		menu: 0
+	}
 };

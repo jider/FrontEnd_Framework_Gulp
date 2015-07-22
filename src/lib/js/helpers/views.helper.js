@@ -19,7 +19,7 @@ module.exports = function() {
 		    // Informamos el título de la vista
 		    jQuery(".mainTitle").html(viewCfg.title || '');
 		    
-		    // Mostramos la vista
+		    // Creamos una nueva instancia de la vista y la mostramos
 		    return new viewCfg.view(viewCfg.params);
   		}
 	};
