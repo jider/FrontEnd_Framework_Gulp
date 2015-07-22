@@ -1,6 +1,6 @@
 'use strict';
 
-var _header = require('./tpls/_main_header');
+var _header = require('../views/tpls/_main_header');
 
 
 module.exports = {

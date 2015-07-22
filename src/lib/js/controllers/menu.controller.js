@@ -1,5 +1,16 @@
 'use strict';
 
+var foundation =  require('foundation');
+var menuView  = require('../views/defaultView');
+var menuModel = {};
+var menuTpl	  = require('../views/tpls/mainMenu');
+
+var _currentMenu;
+var _viewParams = { 
+	el: '.mainNav' 
+};
+
+
 // Main default menu
 // -----------------------------------
 var _default = {
@@ -118,45 +129,27 @@ var _default = {
 	] // Sections
 };
 
-/*
-var _telecinco = {
-	secciones:[
-	{
-		label:"telecinco",
-		items:[
-			{
-				name:"Home-telecinco",
-				url:"#home",
-			},
+var _menuCollection = [_default];
 
 
-			{
-				name:"Documentacion",
-				url:"#docs",
-			}
-		]
-	},
-	{
-		label:"modulos_telecinco",
-		items:[
-			{
-				name:"modulo_1",
-				url:"#menu/0"
-			}
-		]
-	}]
+// Carga la vista de menú solicitada
+var _initMenu = function(menuType) {
+	menuModel = _menuCollection[menuType];
+
+	// Menu view constructor
+	var _cb = function() { jQuery(document).foundation(); };
+	var _view = menuView.init(menuModel, menuTpl, _cb);
+
+	_currentMenu = menuType;
+    return new _view(_viewParams);
 };
-*/
-
-//var _menus = [_global, _telecinco];
-var _menus = [_default];
 
 
 // Public menu object
 module.exports = {
-
-	getMenu: function(site) {
-		return _menus[site];
+	initMenu: function(menuType) {
+		if (menuType !== _currentMenu) {
+			_initMenu(menuType);
+		}
 	}
-	
 };
