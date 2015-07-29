@@ -2,7 +2,6 @@
 
 var router = require('./router');
 
-
 // Inicializamos el enrutado de la aplicación
 router.initilize();
 

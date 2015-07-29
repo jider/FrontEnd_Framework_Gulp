@@ -1,6 +1,5 @@
 'use strict';
 
-
 // Recuperamos o creamos un objeto de espacio de nombres
 var _fwApp = window.fwApp || {};
 

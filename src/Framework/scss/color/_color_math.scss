@@ -1,4 +1,4 @@
-@import "./default/default_color_palette";  // No eliminar, esta dependencia es necesaria para crear los valores por defecto
+@import "default/default_color_palette";  // No eliminar, esta dependencia es necesaria para crear los valores por defecto
 
 $alpha_color:$alpha_primary;
 $alpha_color_bravo:scale-color($alpha_color,$lightness:10%);

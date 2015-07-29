@@ -28,11 +28,13 @@
 
 // $alpha_gray:      #333;           //black
 
-/////// Color Math ///////
+
+
+/////// Color ///////
 // -----------------------------------------------------------------------------
-// Funciones locales de color para crear la paleta de color por defecto
-@import "color/color_math";					// Carga los colores por defecto y sus versionados
-@import "color/grayscale_math";				// Carga la escala de grises
+@import "color";
+
+
 
 /////// Semantic variables ///////
 // Las variables semánticas deben estar siemre asociadas a valores abstractos, 
@@ -42,34 +44,8 @@
 // Valor abstracto 'blanco' para aplicarlo de forma sencilla a clases de objeto semánticas
 // $white:                               #fff;
 
-// default shadow colors
-// $shadow_color:                        fade-out($alpha_gray, 0.5);
+// default heading font weight
+// $heading_font_weight:                 normal;
 
-// primary header font color
-// $primary_header_color:                $alpha_gray;
 
-// primary font color for the app
-// $primary_text:                        $bravo_gray;
-// $secondary_text:                      $bravo_gray;
 
-// default <a href="#"> link color
-// $href_color:                          $delta_color;
-// $href_color_alt:                      $bravo_color;
-
-// used with the <ins> tag
-// http://www.w3schools.com/tags/tag_ins.asp
-// $ins_color:                           $charlie_color;
-
-// used with the <mark> tag
-// http://www.w3schools.com/html5/tag_mark.asp
-// $mark_color:                          $charlie_color;
-
-// webkit tap highlight color
-// $webkit_tap_hightlight:               $delta_color_bravo;
-
-// Sobreescribe el color por defecto del contenido seleccionado en el navegador
-// $selection_color:                     lighten($alpha_color, 50%);
-// $selection_text_color:                $primary_text;
-
-// default border color
-// $border_color:                         $charlie_gray;

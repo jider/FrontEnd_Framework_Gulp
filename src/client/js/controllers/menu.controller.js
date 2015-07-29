@@ -25,6 +25,16 @@ var _default = {
 				}
 			]
 		}, // Default
+		// Framework Examples
+		{
+			title: "Framework",
+			items: [
+				{
+					name: "Color palettes",
+					link: "#fw"
+				}
+			]
+		}, // Framework Examples
 		// Sites
 		{
 			title: "Sites",

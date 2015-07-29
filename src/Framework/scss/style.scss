@@ -13,7 +13,7 @@
 // Common mixins / functions / extends
 // ------------------------------------------------------------------------------
 @import "mixins";
-@import "color/extends";
+@import 'color/extends';			// Silent class para extender de forma sencilla desde componentes y modulos del framework
 
 
 

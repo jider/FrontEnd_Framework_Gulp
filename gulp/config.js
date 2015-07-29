@@ -4,9 +4,11 @@
 'use strict';
 
 var root			= './src/';
-var appPath 		= root + 'lib/';
+var appPath 		= root + 'client/';
 var appBuildPath	= appPath + 'build/';
+
 var fwPath			= root + 'Framework/';
+var fwBuildPath		= fwPath + 'build/';
 
 var sassDev		= {
 	errLogToConsole: true,
@@ -32,10 +34,10 @@ module.exports =  {
 	browserSync: { 
 		server: {
 			baseDir: appBuildPath,
-			index: "index.html"
-			// routes: {
-			// 	"/node_modules": "node_modules"
-			// }
+			index: "index.html",
+			routes: {
+		 		"/fw": "src/Framework/build"
+			}
 		}
 	},
 
@@ -76,7 +78,7 @@ module.exports =  {
 	},
 	sass_fw: {
 		src: fwPath + 'scss/**/*.scss',
-		dest: appBuildPath +'css',
+		dest: fwBuildPath +'css',
 		srcMapDest: '.',
 		dev:sassDev,
 		pro:sassPro

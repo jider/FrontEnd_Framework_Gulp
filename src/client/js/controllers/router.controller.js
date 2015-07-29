@@ -9,6 +9,8 @@ var sitesCtlr = require('./sites.controller');
 var modulesCtlr = require('./modules.controller');
 // Documentation
 var docCtlr = require('./doc.controller');
+// Framework examples
+var fwCtlr = require('./fw.controller');
 
 
 module.exports = function() {
@@ -17,14 +19,16 @@ module.exports = function() {
 		'': 'home',
 		'sites/:name(/:id)': 'sites',
 		'modules': 'modules',
-		'docs(/:id)' : 'docs'
+		'docs(/:id)' : 'docs',
+		'fw' : 'fw'
 	};
 
 	var controllers = {
 		'home': homeCtlr,
 		'sites': sitesCtlr,
 		'modules': modulesCtlr,
-		'docs': docCtlr
+		'docs': docCtlr,
+		'fw': fwCtlr
 	};
 
 

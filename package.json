@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "description": "Front-End Framework using Gulp as task builder",
-  "main": "Gulpfile.js",
+  "main": "index.js",
   "scripts": {
     "env": "env",
     "publish": "echo \"Don't publish me, bro!\" && exit 1",
@@ -22,18 +22,11 @@
   "browser": {
     "jquery": "./node_modules/foundation-sites/js/vendor/jquery.js",
     "foundation": "./node_modules/foundation-sites/js/foundation.js",
-    "underscore": "backbone/node_modules/underscore",
-    "plugin": "./src/lib/js/vendor/jquery-plugin.js"
+    "underscore": "backbone/node_modules/underscore"    
   },
   "browserify-shim": {
     "jquery": "$",
-    "foundation": "foundation",
-    "plugin": {
-      "exports": "plugin",
-      "depends": [
-        "jquery:$"
-      ]
-    }
+    "foundation": "foundation"
   },
   "browserify": {
     "transform": [

@@ -1,6 +1,3 @@
-@import "../config";
-
-
 // Mixin que recorre una lista de valores para generar los 'placeholders' de color de automáticamente
 @mixin name_color_loop {
 	@each $name in $color_names {
@@ -67,7 +64,7 @@ $color_var: $echo_color $echo_color_bravo $echo_color_charlie $echo_color_delta 
 /////// semantic color blocks ////////
 // ----------------------------------------------
 
-$color_names: 'white' shadow_color primary_header_color heading_font_weight primary_text secondary_text href_color ins_color mark_color webkit_tap_hightlight selection_color selection_text_color border_color;
-$color_var: $white $shadow_color $primary_header_color $heading_font_weight $primary_text $secondary_text $href_color $ins_color $mark_color $webkit_tap_hightlight $selection_color $selection_text_color $border_color; 
+$color_names: 'white' shadow_color primary_header_color heading_font_weight primary_text secondary_text href_color ins_color mark_color webkit_tap_hightlight selection_color selection_text_color border_color standard_hr_color standard_border_color;
+$color_var: $white $shadow_color $primary_header_color $heading_font_weight $primary_text $secondary_text $href_color $ins_color $mark_color $webkit_tap_hightlight $selection_color $selection_text_color $border_color $standard_hr_color $standard_border_color; 
 
 @include name_color_loop;

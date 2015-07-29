@@ -1,7 +1,6 @@
 //
-// Objetos abstractos de color estandarizados 
-// NO para ser utilizados directamente en bloques de HTML.
-// Es preferible utilizar '@extend %class;' o dar un valor semántico a al valor del color
+// Standardized abstract color objects.  NOT to be used as classes appended to a block in the HTML.
+// Preferred uses include @extend %class; or repurpose the mixin within the class.
 //
 
 $alpha_primary:         #A9071E !default;        // red
@@ -18,12 +17,11 @@ $alpha_gray:            #333 !default;           //black
 
 
 
-/////// Semantic variables ///////
-// Las variables semánticas deben estar siemre asociadas a valores abstractos, 
-// nunca asociamos valores semánticos con valores semánticos
-// -----------------------------------------------------------------------------
+/////// Toadstool's semantic combinations ////////
+// Semantic variables should always be matched up with abstract values, never semantic to semantic
+// ---------------------------------------------------------------------------------------------------
 
-// Valor abstracto 'blanco' para aplicarlo de forma sencilla a clases de objeto semánticas
+// abstract 'white' value to easily applied to semantic class objects
 $white:                               #fff !default;
 
 // default shadow colors
@@ -31,6 +29,9 @@ $shadow_color:                        fade-out($alpha_gray, 0.5) !default;
 
 // primary header font color
 $primary_header_color:                $alpha_gray !default;
+
+// default heading font weight
+$heading_font_weight:                 normal !default;
 
 // primary font color for the app
 $primary_text:                        $bravo_gray !default;
@@ -51,9 +52,19 @@ $mark_color:                          $charlie_color !default;
 // webkit tap highlight color
 $webkit_tap_hightlight:               $delta_color_bravo !default;
 
-// Sobreescribe el color por defecto del contenido seleccionado en el navegador
+// overrides the default content selection color in the browser
 $selection_color:                     lighten($alpha_color, 50%) !default;
 $selection_text_color:                $primary_text !default;
 
 // default border color
-$border_color:                         $charlie_gray !default;
+$border_color:                        $charlie_gray !default;
+
+
+// Config defaults for buttons
+// -----------------------------------------------------------------------------
+$button-color:                         $delta-color !default;
+$secondary_button_border_color:        $bravo_gray !default;
+$button_text:                          $white !default;
+
+// Depricated variable
+$primary_button_border_color:          $bravo_color !default;
