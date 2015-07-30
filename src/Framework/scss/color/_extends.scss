@@ -1,17 +1,3 @@
-// Mixin que recorre una lista de valores para generar los 'placeholders' de color de automáticamente
-@mixin name_color_loop {
-	@each $name in $color_names {
-	  $i: index($color_names, $name);
-	  %#{$name} {
-	    background: nth($color_var, $i);
-	  }
-	}
-}
-
-
-/////// OOCSS color blocks ////////
-// ----------------------------------------------
-
 // Standard grayscale objects
 // ----------------------------------------------
 %white {
@@ -23,6 +9,8 @@ $color_var: $alpha_gray $bravo_gray $charlie_gray $delta_gray $echo_gray $fox_gr
 
 @include name_color_loop;
 
+
+
 // Alpha and Bravo color objects
 // ----------------------------------------------
 $alpha_color_names: alpha_color alpha_color_bravo alpha_color_charlie alpha_color_delta alpha_color_echo alpha_color_fox alpha_color_golf alpha_color_hotel alpha_color_india alpha_color_juliet;
@@ -31,13 +19,12 @@ $alpha_color_var: $alpha_color $alpha_color_bravo $alpha_color_charlie $alpha_co
 $bravo_color_names: bravo_color bravo_color_bravo bravo_color_charlie bravo_color_delta bravo_color_echo bravo_color_fox bravo_color_golf bravo_color_hotel bravo_color_india bravo_color_juliet;
 $bravo_color_var: $bravo_color $bravo_color_bravo $bravo_color_charlie $bravo_color_delta $bravo_color_echo $bravo_color_fox $bravo_color_golf $bravo_color_hotel $bravo_color_india $bravo_color_juliet;
 
-// Sass' join function can only jpin two lists.
-// Until I get a better idea, this is what I get.
-
 $color_names: join($alpha_color_names, $bravo_color_names);
 $color_var: join($alpha_color_var, $bravo_color_var);
 
 @include name_color_loop;
+
+
 
 // Charlie and Delta color objects
 // ----------------------------------------------
@@ -52,6 +39,8 @@ $color_var: join($charlie_color_var, $delta_color_var);
 
 @include name_color_loop;
 
+
+
 // Echo color objects
 // ----------------------------------------------
 $color_names: echo_color echo_color_bravo echo_color_charlie echo_color_delta echo_color_echo echo_color_fox echo_color_golf echo_color_hotel echo_color_india echo_color_juliet;
@@ -64,7 +53,7 @@ $color_var: $echo_color $echo_color_bravo $echo_color_charlie $echo_color_delta 
 /////// semantic color blocks ////////
 // ----------------------------------------------
 
-$color_names: 'white' shadow_color primary_header_color heading_font_weight primary_text secondary_text href_color ins_color mark_color webkit_tap_hightlight selection_color selection_text_color border_color standard_hr_color standard_border_color;
-$color_var: $white $shadow_color $primary_header_color $heading_font_weight $primary_text $secondary_text $href_color $ins_color $mark_color $webkit_tap_hightlight $selection_color $selection_text_color $border_color $standard_hr_color $standard_border_color; 
+$color_names: 'white' shadow_color primary_header_color primary_text secondary_text href_color ins_color mark_color webkit_tap_hightlight selection_color selection_text_color border_color standard_hr_color standard_border_color;
+$color_var: $white $shadow_color $primary_header_color $primary_text $secondary_text $href_color $ins_color $mark_color $webkit_tap_hightlight $selection_color $selection_text_color $border_color $standard_hr_color $standard_border_color; 
 
 @include name_color_loop;

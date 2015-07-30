@@ -1,13 +1,30 @@
 // App Config - this is where most of your magic will happen
 // ------------------------------------------------------------------------------
-@import "fw_style/config";  // Editing defaults here will override any set in the Framework
+@import "config";  					// Modificar este fichero para sobreescribir cualquier valor por defecto definido en el framework
 
 
-// Framework styleguide manifest
+
+// Reset / normalize
 // ------------------------------------------------------------------------------
-@import "fw_style/manifest";
+@import "reset";
 
 
-// Framework UI patterns
+
+// Common mixins / functions / extends
 // ------------------------------------------------------------------------------
-@import "fw_style/ui_patterns";
+@import "mixins";
+@import "extends";
+
+
+
+// Vendor / external libraries
+// ------------------------------------------------------------------------------
+@import "vendor";
+
+
+
+// Our own styles
+// ------------------------------------------------------------------------------
+@import "typography";
+@import "fw_style/typography";
+@import "fw_style/ui_patterns/color_grid";

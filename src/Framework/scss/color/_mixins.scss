@@ -1,0 +1,29 @@
+
+/////// name color loop ///////
+// -----------------------------------------------------------------------------
+// Mixin que recorre una lista de valores para generar las 'silent class' de color automáticamente
+@mixin name_color_loop {
+	@each $name in $color_names {
+	  $i: index($color_names, $name);
+	  
+	  %#{$name} {
+	    background: nth($color_var, $i);
+	  }
+	}
+}
+
+
+
+/////// extend color loop ///////
+// -----------------------------------------------------------------------------
+// Mixin que recorre una lista de valores para generar las clases de color automáticamente, 
+// extendiendo de 'silent class' que han debido de crearse previamente
+@mixin extend_color_loop {
+  @each $name in $color_names {
+    $i: index($color_names, $name);
+    
+    .#{$name} {
+      @extend %#{nth($color_names, $i)} !optional;
+    }
+  }
+}

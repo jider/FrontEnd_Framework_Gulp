@@ -1,4 +1,9 @@
-// Parciales de color para crear la paleta de color por defecto
-@import "color/color_math";			// Carga los colores por defecto y sus versionados
-@import "color/grayscale_math";		// Carga la escala de grises
-@import "color/color_defaults";		// Colores por defecto con valores semánticos
+
+// Default config
+// -----------------------------------------------------------------------------
+@import "color/config";
+@import "color/mixins";
+
+@import "color/default";		// Colores por defecto con valores semánticos
+
+@import "color/extends";

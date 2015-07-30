@@ -1,0 +1,68 @@
+//
+// Colores abstractos estandarizados. No se han creado para aplicarlos directamente en bloques HTML.
+// El uso recomendado es a través de @extend or definir una variable semántica que herede de un abstracto
+// 
+
+$alpha_primary:         #5a2e2e !default;        // red
+$bravo_primary:         #3C4E47 !default;        // green
+$charlie_primary:       #fffedf !default;        // yellow
+$delta_primary:         #2a2c31 !default;        // blue
+$echo_primary:          #dfba69 !default;        // accent
+                  
+$alpha_gray:            #333 !default;           //black
+
+
+@import "config_color";
+@import "config_gray";
+
+
+
+/////// Semantic variables ///////
+// Las variables semánticas deben estar siemre asociadas a valores abstractos, 
+// nunca asociamos valores semánticos con valores semánticos
+// -----------------------------------------------------------------------------
+
+// Valor abstracto para el color blanco
+$white:                               #fff !default;
+
+// Color de sombras por defecto
+$shadow_color:                        fade-out($alpha_gray, 0.5) !default;
+
+// Color de fuente de la cabecera principal
+$primary_header_color:                $alpha_gray !default;
+
+// Color de fuente por defecto de los sites
+$primary_text:                        $bravo_gray !default;
+$secondary_text:                      $bravo_gray !default;
+
+// Color por defecto de los bordes
+$border_color:                        $charlie_gray !default;
+
+
+
+/////// Colores para elementos de HTML 5 ///////
+// -----------------------------------------------------------------------------
+// Color por defecto de un link <a href="#">
+$href_color:                          $delta_color !default;
+$href_color_alt:                      $bravo_color !default;
+
+// Color por defecto de la etiqueta <ins>
+$ins_color:                           $charlie_color !default;
+
+// Color por defecto de la etiqueta  <mark>
+$mark_color:                          $charlie_color !default;
+
+// Color por defecto del webkit tap highlight
+$webkit_tap_hightlight:               $delta_color_bravo !default;
+
+// Color por defecto de la selección de texto
+$selection_color:                     lighten($alpha_color, 50%) !default;
+$selection_text_color:                $primary_text !default;
+
+
+
+// Colores por defecto de los botones
+// -----------------------------------------------------------------------------
+$button-color:                         $delta-color !default;
+$secondary_button_border_color:        $bravo_gray !default;
+$button_text:                          $white !default;

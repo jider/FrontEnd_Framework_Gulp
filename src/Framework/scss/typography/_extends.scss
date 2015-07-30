@@ -1,9 +1,3 @@
-// Default silent classes. To use in your final CSS, use the following syntax:
-// .foo {
-//   @extend %silent_class;
-// }
-
-
 //* Text classes */
 %headings_1 {
   @include heading();

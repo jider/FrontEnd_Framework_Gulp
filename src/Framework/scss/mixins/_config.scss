@@ -1,0 +1,50 @@
+
+// Valores por defecto necesarios para el soporte de prefijos por vendor
+// -----------------------------------------------------------------------------
+$prefix_defaults: -moz- -webkit- -o- -ms- '' !default;
+$webkit_support: -webkit- '' !default;
+$moz_support: -moz- '' !default;
+$ms_support: -ms- '' !default;
+$moz_webkit_support: -moz- -webkit- '' !default;
+$moz_ms_support: -moz- -ms- '' !default;
+$webkit_ms_support: -webkit- -ms- '' !default;
+
+
+
+// Valores de configuración por defecto para los mixins de 'shadow'
+// -----------------------------------------------------------------------------
+$h-shadow:                             0 !default;                // horizontal shadow settings
+$v-shadow:                             2 !default;                // vertical shaddow settings
+$blur:                                 3 !default;                // blur settings
+
+$inset_color:                          $shadow_color !default;    // for use with ``dual_box_shadow`` mixin
+$ih-shadow:                            0 !default;                // inset horizontal shadow settings
+$iv-shadow:                            2 !default;                // inset vertical shaddow settings
+$is-shadow:                            2 !default;                // inset spread shaddow settings
+$iblur:                                3 !default;                // inset blur settings
+
+$shadow: em($h-shadow) em($v-shadow) em($blur);
+$inset_shadow: em($ih-shadow) em($iv-shadow) em($iblur) em($is-shadow);
+
+
+
+// Configuración por defecto del mixin 'standard_block_spacing'
+// -----------------------------------------------------------------------------
+$default_block_spacing: 20 !default;					// margin-bottom por defecto
+
+
+
+// Configuración por defecto del mixin 'standard_rounded_border'
+// -----------------------------------------------------------------------------
+$standard_round_corner: 3 !default;                		// border radius por defecto
+$standard_corner_width: 1px !default;              		// border width por defecto
+$standard_border_color: $border_color !default;    		// border color por defecto
+$standard_border_style: solid !default;					// border style por defecto
+
+
+
+// Configuración por defecto del mixin 'standard_hr'
+// -----------------------------------------------------------------------------
+$standard_hr_spacing: 40 !default;						// padding y margin bottom por defecto
+$standard_hr_color: $delta_gray !default;				// color por defecto
+$standard_hr_width: 1px !default;						// width por defecto

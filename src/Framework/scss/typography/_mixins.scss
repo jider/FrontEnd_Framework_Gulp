@@ -1,7 +1,7 @@
 
 //////// heading text mixin //////////
 // ------------------------------------------------
-// default values are being set in /stipe/stylesheets/stipe/_typography.scss
+// default values are being set in /typography/_config.scss
 @mixin heading ($heading_size: $heading_size, $heading_font_family: $heading_font_family, $heading_color: $heading_color, $heading_font_weight: $heading_font_weight) {
   font-size: em($heading_size);
   line-height: baseline($heading_size);
@@ -38,7 +38,7 @@
 
 @mixin medium ($baseline_size: $font_size) {
   @include text($baseline_size);
-}
+}// -----------------------------------------------------------------------------
 
 @mixin large ($baseline_size: $large_point_size) {
   @include text($baseline_size);
@@ -62,25 +62,4 @@
       margin-bottom: 0;
     }
   }
-}
-
-
-////////// @font-face builder //////////////
-// --------------------------------------------
-$webfont_font_family: zocial !default;
-$webfont-file: zocial-regular-webfont !default;
-$webfont_weight: normal !default;
-$webfont_style: normal !default;
-$webfont_directory: "/fonts/" !default;
-
-
-@mixin font-face($font_family: $webfont_font_family, $font-file: $webfont-file, $font_weight: $webfont_weight, $font_style: $webfont_style, $webfont_directory: $webfont_directory ) {
-  font-family: '#{$font_family}';
-  font-style: $font_style;
-  font-weight: $font_weight;
-  src: url('#{$webfont_directory}#{$font-file}.eot');
-  src: url('#{$webfont_directory}#{$font-file}.eot?#iefix') format('embedded-opentype'),
-         url('#{$webfont_directory}#{$font-file}.woff') format('woff'),
-         url('#{$webfont_directory}#{$font-file}.ttf') format('truetype'),
-         url('#{$webfont_directory}#{$font-file}.svg##{$font-file}') format('svg');
 }

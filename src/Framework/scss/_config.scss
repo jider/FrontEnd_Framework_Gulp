@@ -1,4 +1,4 @@
-// External Libraries Settings
+/////// External Libraries Settings ///////
 // ------------------------------------------------------------------------------
 @import "vendor/foundation/settings";
 
@@ -13,10 +13,59 @@
 //
 
 
-/////// OOCSS generic base colors///////
+// Valores por defecto necesarios para el soporte de prefijos por vendor
 // -----------------------------------------------------------------------------
-// Rojo, verde, amarillo, azul, énfasis(accent) y nero no son norma, pero son 
-// comunes en la mayoría de deseños.
+// $prefix_defaults: -moz- -webkit- -o- -ms- '';
+// $webkit_support: -webkit- '';
+// $moz_support: -moz- '';
+// $ms_support: -ms- '';
+// $moz_webkit_support: -moz- -webkit- '';
+// $moz_ms_support: -moz- -ms- '';
+// $webkit_ms_support: -webkit- -ms- '';
+
+
+
+/////// Typography configuration ///////
+// -----------------------------------------------------------------------------
+$font_size:             12;
+
+// $heading_1:             46;
+// $heading_2:             32;
+// $heading_3:             28;
+// $heading_4:             18;
+// $heading_5:             18;
+// $heading_6:             18;
+
+// $small_point_size:      10;
+// $large_point_size:      14;
+
+$line: 					$font_size * 1.5;
+
+// $primary_font_family: #{"Helvetica Neue", Arial, sans-serif};
+// $secondary_font_family: #{"Helvetica Neue", Arial, sans-serif};
+// $heading_font_family: #{"Helvetica Neue", Arial, sans-serif};
+
+// $icon_font_alpha: #{'ico-fonts'};
+
+// Headings default arguments
+// $heading_font_weight: normal;
+
+//// ¡¡¡NO MODIFICAR!!!! ////
+$em: 					$font_size; 			// $em SIEMPRE == $font-size
+$line_height: 			#{$line / $em}em;
+
+
+
+/////// Default webfont directory ///////
+// -----------------------------------------------------------------------------
+// $webfont_directory: "/fonts/";
+
+
+
+/////// Color ///////
+// -----------------------------------------------------------------------------
+// Rojo, verde, amarillo, azul, énfasis(accent) y negro no son norma, pero son 
+// comunes en la mayoría de diseños.
 // Todo lo que necesitamos hacer es modificar cualquiera de estos valores y el 
 // resto de tonos y colores se crearán automáticamente.
 
@@ -28,24 +77,93 @@
 
 // $alpha_gray:      #333;           //black
 
-
-
-/////// Color ///////
-// -----------------------------------------------------------------------------
 @import "color";
-
-
 
 /////// Semantic variables ///////
 // Las variables semánticas deben estar siemre asociadas a valores abstractos, 
 // nunca asociamos valores semánticos con valores semánticos
 // -----------------------------------------------------------------------------
 
-// Valor abstracto 'blanco' para aplicarlo de forma sencilla a clases de objeto semánticas
+// Valor abstracto para el color blanco
 // $white:                               #fff;
 
-// default heading font weight
-// $heading_font_weight:                 normal;
+// Color de sombras por defecto
+// $shadow_color:                        fade-out($alpha_gray, 0.5);
+
+// Color de fuente de la cabecera principal
+// $primary_header_color:                $alpha_gray;
+
+// Color de fuente por defecto de los sites
+// $primary_text:                        $bravo_gray;
+// $secondary_text:                      $bravo_gray;
+
+// Color por defecto de los bordes
+// $border_color:                        $charlie_gray;
 
 
 
+/////// Colores para elementos de HTML 5 ///////
+// -----------------------------------------------------------------------------
+// Color por defecto de un link <a href="#">
+// $href_color:                          $delta_color;
+// $href_color_alt:                      $bravo_color;
+
+// Color por defecto de la etiqueta <ins>
+// $ins_color:                           $charlie_color;
+
+// Color por defecto de la etiqueta  <mark>
+// $mark_color:                          $charlie_color;
+
+// Color por defecto del webkit tap highlight
+// $webkit_tap_hightlight:               $delta_color_bravo;
+
+// Color por defecto de la selección de texto
+// $selection_color:                     lighten($alpha_color, 50%);
+// $selection_text_color:                $primary_text;
+
+
+
+// Colores por defecto de los botones
+// -----------------------------------------------------------------------------
+// $button-color:                         $delta-color;
+// $secondary_button_border_color:        $bravo_gray;
+// $button_text:                          $white;
+
+
+// Valores de configuración por defecto para los mixins de 'shadow'
+// -----------------------------------------------------------------------------
+// $h-shadow:                             0;                // horizontal shadow settings
+// $v-shadow:                             2;                // vertical shaddow settings
+// $blur:                                 3;                // blur settings
+
+// $inset_color:                          $shadow_color;    // for use with ``dual_box_shadow`` mixin
+// $ih-shadow:                            0;                // inset horizontal shadow settings
+// $iv-shadow:                            2;                // inset vertical shaddow settings
+// $is-shadow:                            2;                // inset spread shaddow settings
+// $iblur:                                3;                // inset blur settings
+
+// $shadow: em($h-shadow) em($v-shadow) em($blur);
+// $inset_shadow: em($ih-shadow) em($iv-shadow) em($iblur) em($is-shadow);
+
+
+
+// Configuración por defecto del mixin 'standard_block_spacing'
+// -----------------------------------------------------------------------------
+// $default_block_spacing: 20;					// margin-bottom por defecto
+
+
+
+// Configuración por defecto del mixin 'standard_rounded_border'
+// -----------------------------------------------------------------------------
+// $standard_round_corner: 3;                		// border radius por defecto
+// $standard_corner_width: 1px;              		// border width por defecto
+// $standard_border_color: $border_color;    		// border color por defecto
+// $standard_border_style: solid;					// border style por defecto
+
+
+
+// Configuración por defecto del mixin 'standard_hr'
+// -----------------------------------------------------------------------------
+// $standard_hr_spacing: 40;						// padding y margin bottom por defecto
+// $standard_hr_color: $delta_gray;				// color por defecto
+// $standard_hr_width: 1px;						// width por defecto

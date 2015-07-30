@@ -1,0 +1,177 @@
+
+/////// border-radius /////////
+// -----------------------------------------------------------------------------
+@mixin border_radius ($border_radius, $prefixes: $webkit_support) {
+  @each $prefix in $prefixes {
+    #{$prefix}border-radius: $border_radius;
+  }
+}
+
+
+
+/////// Standardized border radius ///////
+// -----------------------------------------------------------------------------
+@mixin standard_rounded_border ($standard_round_corner: $standard_round_corner, $standard_border_style: $standard_border_style, $standard_corner_width: $standard_corner_width, $standard_border_color: $standard_border_color) {
+  @include border_radius(#{$standard_round_corner / $em}rem);
+  border: $standard_corner_width $standard_border_style $standard_border_color;
+}
+
+
+
+/////// box-sizing /////////
+// -----------------------------------------------------------------------------
+@mixin box_sizing ($box_sizing: border-box, $prefixes: $prefix_defaults) {
+  @each $prefix in $prefixes {
+    #{$prefix}box-sizing: $box_sizing;
+  }
+}
+
+
+
+/////// center text trick /////////
+// ---------------------------------
+// Configurando los atributos height y line-height de un elemento de bloque al mismo valor
+// suele ser suficinete para centrar el texto en dicho elemento.
+// Si por cualquier motivo se necesita un ajuste, indicar un nuevo valor en el parametro $line_height.
+@mixin center_text ($block_height, $line_height: $block_height) {
+  height: $block_height;
+  line-height: $line-height;
+}
+
+
+
+/////// clearfix //////////
+// -----------------------------------------------------------------------------
+@mixin clearfix () {
+  zoom: 1;
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+
+/////// input_placeholder /////////
+// -----------------------------------------------------------------------------
+@mixin input_placeholder ($placeholder_color: $placeholder_text) {
+  &::-webkit-input-placeholder {
+    color: $placeholder_color;
+  }
+  &::-moz-placeholder {
+    color: $placeholder_color;
+  }
+  &:-ms-input-placeholder {
+    color: $placeholder_color;
+  }
+}
+
+
+
+/////// inset border /////////
+// -----------------------------------------------------------------------------
+@mixin inset_border () {
+  @include box_shadow(inset 0 0 1px, $alpha_gray);
+}
+
+
+
+////////////// hide text ////////////
+// -----------------------------------------------------------------------------
+// Kellum Method
+// http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/
+@mixin hide_text {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  display: none;
+}
+
+
+
+/////// shadow /////////
+// -----------------------------------------------------------------------------
+// Los valores por defecto pueden ser modificados a través del fichero de configuración '_config.scss'
+@mixin box_shadow ($shadow_color: $shadow_color, $shadow: $shadow, $prefixes: $prefix_defaults) {
+  @each $prefix in $prefixes {
+    #{$prefix}box-shadow: $shadow_color $shadow;
+  }
+}
+
+@mixin dual_box_shadow ($shadow_color: $shadow_color, $shadow: $shadow, $inset_color: $inset_color, $inset_shadow: $inset_shadow, $prefixes: $prefix_defaults) {
+  @each $prefix in $prefixes {
+    #{$prefix}box-shadow: $shadow_color $shadow, inset $inset_color $inset_shadow;
+  }
+}
+
+@mixin text_shadow ($shadow_color: $shadow_color, $shadow: $shadow, $prefixes: $prefix_defaults) {
+  @each $prefix in $prefixes {
+    #{$prefix}text-shadow: $shadow_color $shadow;
+  }
+}
+
+// Esta serie de mixins marcan los valores por defecto para un uso consistente de text y box shadows en los sites
+@mixin primary_text_shadow ($h-shadow: $h-shadow, $v-shadow: $v-shadow, $blur: $blur) {
+  @include text_shadow ($shadow_color, #{$h-shadow / $em}em #{$v-shadow / $em}em #{$blur / $em}em);
+}
+
+@mixin disabled_text_shadow ($h-shadow: $h-shadow, $v-shadow: $v-shadow, $blur: $blur) {
+  @include text_shadow (fade-out($shadow_color, 0.5), #{$h-shadow / $em}em #{$v-shadow / $em}em #{$blur / $em}em);
+}
+
+@mixin primary_box_shadow ($h-shadow: $h-shadow, $v-shadow: $v-shadow, $blur: $blur) {
+  @include box_shadow ($shadow_color, #{$h-shadow / $em}em #{$v-shadow / $em}em #{$blur / $em}em);
+}
+
+@mixin disabled_box_shadow ($h-shadow: $h-shadow, $v-shadow: $v-shadow, $blur: $blur) {
+  @include box_shadow (fade-out($shadow_color, 0.4), #{$h-shadow / $em}em #{$v-shadow / $em}em #{$blur / $em}em);
+}
+
+
+
+/////// Standard block clear and default spacing ///////
+// -----------------------------------------------------------------------------
+// Esta herramienta esta diseñada para definir el estandar de espacio entre bloques del marcado.
+// El único valor a ajustar es el margin-bottom. El argumento $default_block_spacing puede ser modificado en
+// el fichero de configuración '_config.scss'.
+@mixin standard_block_spacing ($default_block_spacing: $default_block_spacing) {
+  @include clearfix;
+  margin-bottom: #{$default_block_spacing / $em}em;
+}
+
+
+
+/////// Standard hr element ///////
+// -----------------------------------------------------------------------------
+// This mixin allows for quick application of a UI to the <hr> tag
+// All values are set in the ``_config.scss`` file
+@mixin standard_hr ($standard_border_style: $standard_border_style, $standard_hr_width: $standard_hr_width, $standard_hr_spacing: $standard_hr_spacing, $standard_hr_color: $standard_hr_color){
+  border-bottom: $standard_hr_width $standard_border_style $standard_hr_color;
+  padding-bottom: #{$standard_hr_spacing / $em}rem;
+  margin-bottom: #{$standard_hr_spacing / $em}rem;
+}
+
+
+
+/////// transition //////////
+// -----------------------------------------------------------------------------
+@mixin transition ($property, $duration, $timing_function, $delay, $prefixes: $prefix_defaults) {
+  @each $prefix in $prefixes {
+    #{$prefix}transition: $property $duration $timing_function $delay;
+  }
+}
+
+
+
+/////// transform //////////
+// -----------------------------------------------------------------------------
+@mixin transform ($function, $prefixes: $prefix_defaults) {
+  @each $prefix in $prefixes {
+    #{$prefix}transform: $function;
+  }
+}
