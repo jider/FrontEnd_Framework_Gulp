@@ -65,11 +65,11 @@ var _default = {
 						items: [
 							{
 								name: "Module_Name_1_1",
-								link: "#modules"
+								link: "#modules/messages"
 							},
 							{
 								name: "Module_Name_1_2",
-								link: "#modules"
+								link: "#modules/prueba"
 							},
 							{
 								name: "Module_Name_1_3",

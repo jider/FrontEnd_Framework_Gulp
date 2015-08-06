@@ -10,6 +10,8 @@ window.jQuery  = require('jquery');
 // Especificamos los módulos que necesitamos que tengan acceso global
 // Ej. _fwApp.Module_A = require('module_A');
 
+_fwApp.modules = require('../../Framework/scripts/modules/modules');
+
 
 // Reemplazamos o creamos el espacio de nombres global
 window.fwApp = _fwApp;

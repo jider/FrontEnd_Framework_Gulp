@@ -18,7 +18,7 @@ module.exports = function() {
 	var _routes = {
 		'': 'home',
 		'sites/:name(/:id)': 'sites',
-		'modules': 'modules',
+		'modules/:moduleName': 'modules',
 		'docs(/:id)' : 'docs',
 		'fw' : 'fw'
 	};
