@@ -17,7 +17,7 @@ module.exports = function() {
 	  		_setMenu(viewCfg.menu || 0);
 
 		    // Informamos el título de la vista
-		    jQuery(".mainTitle").html(viewCfg.title || '');
+		    jQuery(".mainTitle").html(viewCfg.headerTitle || '');
 		    
 		    // Creamos una nueva instancia de la vista y la mostramos
 		    return new viewCfg.view(viewCfg.params);

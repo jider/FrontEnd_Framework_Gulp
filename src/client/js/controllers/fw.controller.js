@@ -2,7 +2,7 @@
 
 var fwView 	= require('../views/defaultView');
 var fwModel = {};
-var fwTpl	= require('../../../Framework/views/tpls/color_palettes');
+var fwTpl	= require('../../../Framework/views/color_palettes');
 
 
 module.exports = function() {

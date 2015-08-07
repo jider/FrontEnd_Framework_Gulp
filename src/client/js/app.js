@@ -6,11 +6,4 @@ var router = require('./router');
 router.initilize();
 
 
-// Inicializador de modulos
-// jQuery('.msg, [class^="msg-"]').each(function(index, el) {
-// 	fwApp.modules.message(el);
-// });
-
-
-
 console.log('App.js Loaded!!');	

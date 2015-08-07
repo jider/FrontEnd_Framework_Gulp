@@ -10,8 +10,9 @@
 
 
 
-// Common mixins / functions / extends
+// Common functions / mixins / extends
 // ------------------------------------------------------------------------------
+@import "functions";
 @import "mixins";
 @import "extends";
 
@@ -33,3 +34,5 @@
 //@import "ui_patterns";
 @import "modules";
 @import "layouts";
+
+@import "shame";                    // El css de la vergüenza, este fichero debería estar vacio

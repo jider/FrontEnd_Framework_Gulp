@@ -2,7 +2,7 @@
 
 var sitesView 	= require('../views/defaultView');
 var sitesModel	= {};
-var sitesTpl	= require('../views/tpls/sites');
+var sitesTpl	= require('../views/pages/sites');
 
 
 module.exports = function(name, id) {

@@ -2,7 +2,7 @@
 
 var docView  = require('../views/defaultView');
 var docModel = {};
-var docTpl	 = require('../views/tpls/documentation');
+var docTpl	 = require('../views/pages/documentation');
 
 
 module.exports = function(id) {

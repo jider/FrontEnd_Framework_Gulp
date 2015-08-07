@@ -2,26 +2,25 @@
 
 var modulesView  = require('../views/defaultView');
 var modulesModel = {};
-var modulesTpl	 = require('../views/tpls/modules/layout');
-var partials 	 = require('../views/tpls/modules/partials');
+var modulesTpl	 = require('../views/modules/layout');
+var modulesCfg 	 = require('../views/modules/config');
 
 
-module.exports = function(moduleName) {
+module.exports = function(module, tpl) {
+
+    // Título
+    modulesModel.title = module;
 
 	// Añadimos las vistas parciales
-	modulesModel._module = partials[moduleName];
+	modulesModel._module = modulesCfg[module].tpls[tpl];
 
 	// Modules view constructor
-	var _view = modulesView.init(modulesModel, modulesTpl, function() {
-		jQuery('.msg, [class^="msg-"]').each(function(index, el) {
-			fwApp.modules.message(el);
-		});
-	});
+	var _view = modulesView.init(modulesModel, modulesTpl, modulesCfg[module].initializer);
 
 	return {
 		view: _view,
 		params: modulesView.defaultParams,
-		title: "Modules Viewr",
+		headerTitle: "Modules viewr - " + module,
 		menu: 0
 	};
 };

@@ -2,10 +2,10 @@
 
 var homeView 	= require('../views/defaultView');
 var homeModel 	= require('../models/home.model');
-var homeTpl		= require('../views/tpls/home');
+var homeTpl		= require('../views/pages/home');
 
 // Partials
-var _header = require('../views/tpls/_main_header');
+var _header = require('../views/pages/_main_header');
 
 
 module.exports = function() {

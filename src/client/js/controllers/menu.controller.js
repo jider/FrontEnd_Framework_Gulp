@@ -1,144 +1,18 @@
 'use strict';
 
-var foundation =  require('foundation');
-var menuView  = require('../views/defaultView');
-var menuModel = {};
-var menuTpl	  = require('../views/tpls/mainMenu');
+var foundation 	=  require('foundation');
+var menuView  	= require('../views/defaultView');
+var menuModel 	= {};
+var menuTpl	  	= require('../views/pages/mainMenu');
 
 var _currentMenu;
 var _viewParams = { 
 	el: '.mainNav' 
 };
 
-
 // Main default menu
 // -----------------------------------
-var _default = {
-	// Sections
-	sections: [
-		// Default
-		{
-			items: [
-				{
-					name: "Home",
-					link: "#"
-				}
-			]
-		}, // Default
-		// Framework Examples
-		{
-			title: "Framework",
-			items: [
-				{
-					name: "Color palettes",
-					link: "#fw"
-				}
-			]
-		}, // Framework Examples
-		// Sites
-		{
-			title: "Sites",
-			items: [
-				{
-					name: "Site_Name_1",
-					link: "#sites/cuatro/25",
-				},
-				{
-					name: "Site_Name_2",
-					link: "#sites/t5"
-				},
-				{
-					name: "Site_Name_3",
-					link: "#sites/divinity/999"
-				}
-			]
-		}, // Sites
-		// Modules Viewr
-		{
-			title:"Modules Viewr",
-			items: [
-				// Module_Name_1
-				{
-					name: "Module_Name_1",
-					subsection: {
-						title: "Module_Name_1",
-						items: [
-							{
-								name: "Module_Name_1_1",
-								link: "#modules/messages"
-							},
-							{
-								name: "Module_Name_1_2",
-								link: "#modules/prueba"
-							},
-							{
-								name: "Module_Name_1_3",
-								link: "#modules"
-							}
-						]
-					}
-				}, // Module_Name_1
-				// Module_Name_2
-				{
-					name: "Module_Name_2",
-					subsection: {
-						title: "Module_Name_2",
-						items: [
-							{
-								name: "Module_Name_2_1",
-								link: "#modules"
-							},
-							{
-								name: "Module_Name_2_2",
-								link: "#modules"
-							},
-							{
-								name: "Module_Name_2_3",
-								link: "#modules"
-							}
-						]
-					}
-				}, // Module_Name_2
-				// Module_Name_3
-				{
-					name: "Module_Name_3",
-					subsection: {
-						title: "Module_Name_3",
-						items: [
-							{
-								name: "Module_Name_3_1",
-								link: "#modules"
-							},
-							{
-								name: "Module_Name_3_2",
-								link: "#modules"
-							},
-							{
-								name: "Module_Name_3_3",
-								link: "#modules"
-							}
-						]
-					}
-				} // Module_Name_3
-			]
-		}, // Modules Viewr
-		// Documentation
-		{
-			title: "Documentation",
-			items: [
-				{
-					name: "Sass Doc",
-					link: "#docs/58"
-				},
-				{
-					name: "JS Doc",
-					link: "#docs"
-				}
-			]
-		} // Documentation
-	] // Sections
-};
-
+var _default 		= require('./menu.config');
 var _menuCollection = [_default];
 
 

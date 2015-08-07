@@ -45,6 +45,7 @@ Temporary Items
 # Project Directories
 node_modules
 bower_components
+.idea
 **/dist
 **/build
 **/sassdoc

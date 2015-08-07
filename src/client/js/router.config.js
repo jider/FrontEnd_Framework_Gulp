@@ -2,15 +2,15 @@
 
 // Require de vistas
 // Home
-var homeCtlr = require('./home.controller');
+var homeCtlr = require('./controllers/home.controller.js');
 // Sites
-var sitesCtlr = require('./sites.controller');
+var sitesCtlr = require('./controllers/sites.controller.js');
 // Modules Viewr
-var modulesCtlr = require('./modules.controller');
+var modulesCtlr = require('./controllers/modules.controller.js');
 // Documentation
-var docCtlr = require('./doc.controller');
+var docCtlr = require('./controllers/doc.controller.js');
 // Framework examples
-var fwCtlr = require('./fw.controller');
+var fwCtlr = require('./controllers/fw.controller.js');
 
 
 module.exports = function() {
@@ -18,7 +18,7 @@ module.exports = function() {
 	var _routes = {
 		'': 'home',
 		'sites/:name(/:id)': 'sites',
-		'modules/:moduleName': 'modules',
+		'modules/:module/:tpl': 'modules',
 		'docs(/:id)' : 'docs',
 		'fw' : 'fw'
 	};
