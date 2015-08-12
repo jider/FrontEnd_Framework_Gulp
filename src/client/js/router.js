@@ -1,7 +1,7 @@
 'use strict';
 
 var Backbone = require('backbone');
-var routerCtlr = require('./router.config')();
+var routerCtlr = require('./router.config');
 var viewsCtlr	= require('./helpers/views.helper')();
 
 var _router = Backbone.Router.extend({

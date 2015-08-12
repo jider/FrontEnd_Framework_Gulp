@@ -15,8 +15,6 @@ module.exports = {
     },
 
     initializer: function() {
-        jQuery('.msg, [class^="msg-"]').each(function(index, el) {
-            fwApp.modules.message(el);
-        });
+        fwApp.modules.loadModule('messages');
     }
 };

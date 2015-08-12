@@ -69,3 +69,32 @@
    @extend %message--error;
    @extend %message--xlarge;
  }
+
+///
+/// Message module - Fixed variant class
+///
+/// @name .msg-fixed
+///
+/// @example
+///   <p class="msg-fixed">{test}</p>
+///
+/// @since 0.0.1
+///
+ .msg-fixed {
+   @extend %message;
+   @extend %message--fixed;
+
+   // Color modifiers
+   &.-error {
+     @extend %message--error;
+   }
+   &.-valid {
+     @extend %message--valid;
+   }
+   &.-warning {
+     @extend %message--warning;
+   }
+   &.-info {
+     @extend %message--info;
+   }
+ }

@@ -1,47 +1,31 @@
 'use strict';
 
-// Require de vistas
-// Home
-var homeCtlr = require('./controllers/home.controller.js');
-// Sites
-var sitesCtlr = require('./controllers/sites.controller.js');
-// Modules Viewr
-var modulesCtlr = require('./controllers/modules.controller.js');
-// Documentation
-var docCtlr = require('./controllers/doc.controller.js');
-// Framework examples
-var fwCtlr = require('./controllers/fw.controller.js');
+// Controllers mapping
+var controllers = {
+    'home': require('./controllers/home.controller.js'),
+    'sites': require('./controllers/sites.controller.js'),
+    'modules': require('./controllers/modules.controller.js'),
+    'docs': require('./controllers/doc.controller.js'),
+    'fw': require('./controllers/fw.controller.js')
+};
+
+// Routes mapping
+var _routes = {
+	'': 'home',
+	'sites/:name(/:id)': 'sites',
+	'modules/:module/:tpl': 'modules',
+	'docs(/:id)' : 'docs',
+	'fw' : 'fw'
+};
 
 
-module.exports = function() {
+module.exports = {
 	// Routes mapping
-	var _routes = {
-		'': 'home',
-		'sites/:name(/:id)': 'sites',
-		'modules/:module/:tpl': 'modules',
-		'docs(/:id)' : 'docs',
-		'fw' : 'fw'
-	};
+	routes: _routes,
 
-	var controllers = {
-		'home': homeCtlr,
-		'sites': sitesCtlr,
-		'modules': modulesCtlr,
-		'docs': docCtlr,
-		'fw': fwCtlr
-	};
-
-
-	// Public config Object
-	return {
-		// Routes mapping
-		routes: _routes,
-
-		// Devuelve el controlador correspondiente a la acción del enrutado solicitada
-		getViewCtlr: function(action) {
-			console.log('Controller: ' + action);
-			return controllers[action];
-		}		
-	};
-
+	// Devuelve el controlador correspondiente a la acción del enrutado solicitada
+	getViewCtlr: function(action) {
+		console.log('Controller: ' + action);
+		return controllers[action];
+	}
 };

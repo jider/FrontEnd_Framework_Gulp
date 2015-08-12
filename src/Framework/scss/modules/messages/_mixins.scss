@@ -64,3 +64,28 @@
 /// @alias _sms 
 /// 
 @mixin _sms($type) { @include _set_message_size($size); }
+
+///
+/// Permite crear mensajes fijos en la parte superior del viewport
+///
+/// @access private
+/// @author Ignacio Díaz Rovina
+///
+/// @example
+///   @include _set_message_fixed(s);
+///   @include _sms(xl);
+///
+/// @output Propiedades que afectan al tamaño del mensaje
+///
+/// @since 0.0.1
+///
+@mixin _set_message_fixed($top: 90%) {
+  position: fixed;
+  width: $top;
+  top: 0;
+  left: 5%;
+}
+///
+/// @alias _smf
+///
+@mixin _smf($top: 90%) { @include _set_message_fixed($top); }

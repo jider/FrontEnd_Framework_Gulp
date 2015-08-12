@@ -5,10 +5,11 @@
 
 var root			= './src/';
 var appPath 		= root + 'client/';
-var appBuildPath	= appPath + 'build/';
 
 var fwPath			= root + 'Framework/';
 var fwBuildPath		= fwPath + 'build/';
+
+var publicPath		= './public/';
 
 var sassDev		= {
 	errLogToConsole: true,
@@ -16,7 +17,7 @@ var sassDev		= {
 	outputStyle: 'expanded'
 };
 var sassPro		= {
-	errLogToConsole: true,		
+	errLogToConsole: true,
 	includePaths: ['node_modules/foundation-sites/scss'],
 	outputStyle: 'compressed'
 };
@@ -24,39 +25,39 @@ var sassPro		= {
 
 module.exports =  {
 	production: {
-		jsSrc: appBuildPath + 'js/*.js',
-		cssSrc: appBuildPath + 'css/*.css',
-		jsDest: appBuildPath + 'js/',
-	    cssDest: appBuildPath + 'css/'
+		jsSrc: publicPath + 'js/*.js',
+		cssSrc: publicPath + 'css/*.css',
+		jsDest: publicPath + 'js/',
+	    cssDest: publicPath + 'css/'
   	},
 
 	// Configuración para la creación del servidor y sincronización de la aplicación de desarrollo del framwork en diferentes dispositivos
-	browserSync: { 
-		server: {
-			baseDir: appBuildPath,
-			index: "index.html",
-			routes: {
+	"browserSync": {
+		"server": {
+			"baseDir": publicPath,
+			"index": "index.html",
+			"routes": {
 		 		"/fw": "src/Framework/build"
 			}
 		}
 	},
 
-	clean_js: {
-		src: [appBuildPath + 'js/**/*.js']
+	"clean_js": {
+		"src": [publicPath + 'js/**/*.js']
 	},
 
-	markup: {
-		src: appPath + '*.html',
-		dest: appBuildPath
+	"markup": {
+		"src": appPath + '*.html',
+		"dest": publicPath
 	},
 
-	markup_fw: {
-		src: root + 'sites/**/*.html',
+	"markup_fw": {
+		"src": root + 'sites/**/*.html',
 	},
 
-	images: {
-		src: appPath + "images/**",
-    	dest: appBuildPath + "images"
+	"images": {
+		"src": appPath + "images/**",
+    	"dest": publicPath + "images"
   	},
 
 	browserSync_fw: { 
@@ -71,7 +72,7 @@ module.exports =  {
 
 	sass_lib: {
 		src: appPath + 'scss/**/*.scss',
-		dest: appBuildPath +'css',
+		dest: publicPath +'css',
 		srcMapDest: '.',
 		dev: sassDev,
 		pro: sassPro
@@ -83,35 +84,48 @@ module.exports =  {
 		dev:sassDev,
 		pro:sassPro
 	}, 
-	sassdoc: {
+
+    sassdoc: {
 		src: fwPath + 'scss/**/*.scss',
 		options: {
 			dest: fwPath + 'sassdoc'
 		}
 	},
-	browserify: {
+
+    "browserify": {
 	    // Se creará un bundle por cada configuración de bundle en la siguiente lista
-    	bundleConfigs: [
+    	"bundleConfigs": [
     		// Vendors bundle
     		{
-    			entries: appPath + '/js/commons.js',
-    			dest: appBuildPath + 'js',
-		    	outputName: 'commons.js',
-		    	// Extensiones de archivo adicionales para hacerlas opcionales
-				extensions: ['.hbs'],
-		    	// Lista de modulos a requerir externamente
-				require: ['jquery', 'foundation']
+    			"dest": publicPath + 'js',
+		    	"outputName": 'commons.js',
+		    	// Lista de modulos a requerir
+				"require": ['jquery', 'foundation']
     		},
+            // APP Main bundle
+            {
+                "entries": fwPath + '/scripts/main.js',
+                "dest": publicPath + 'js',
+                "outputName": 'main.js',
+                // Lista de modulos a requerir externamente
+                "external": ['jquery']
+            },
+            // Initialization bundle
+            {
+                "entries": fwPath + '/scripts/inits.js',
+                "dest": publicPath + 'js',
+                "outputName": 'inits.js'
+            },
     		// APP Backbone bundle
     		{
-		    	entries: appPath + '/js/app.js',
-		    	dest: appBuildPath + 'js',
-		    	outputName: 'app.js',
+		    	"entries": appPath + '/js/app.js',
+		    	"dest": publicPath + 'js',
+		    	"outputName": 'app.js',
 				// Extensiones de archivo adicionales para hacerlas opcionales
-				extensions: ['.hbs'],
+				"extensions": ['.hbs'],
 				// Lista de modulos a requerir externamente
-				external: ['jquery', 'foundation']
+				"external": ['jquery', 'foundation']
   			}
   		]
-	},
+	}
 };

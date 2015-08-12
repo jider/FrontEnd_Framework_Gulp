@@ -25,7 +25,7 @@
     "underscore": "backbone/node_modules/underscore"    
   },
   "browserify-shim": {
-    "jquery": "$",
+    "jquery": "jQuery",
     "foundation": "foundation"
   },
   "browserify": {

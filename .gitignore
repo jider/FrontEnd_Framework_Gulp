@@ -43,11 +43,13 @@ Temporary Items
 .apdisk
 
 # Project Directories
+.idea
 node_modules
 bower_components
-.idea
 **/dist
 **/build
 **/sassdoc
 **/jsdoc
 **/.sass-cache
+public
+dist
