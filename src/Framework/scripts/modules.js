@@ -1,6 +1,7 @@
 'use strict';
 
-var _messages  = require('./modules/messages');
+var _satelite = require('./modules/satelite');
+var _messages = require('./modules/messages');
 
 // Modules mapping
 var _modules = {
@@ -38,4 +39,5 @@ module.exports.loader = loader;
 module.exports.loadModule = loadModule;
 
 // Modules exposed
+module.exports.satelite = _satelite;
 module.exports.messages = _messages;

@@ -1,8 +1,9 @@
 'use strict';
 
+
 var fwView 	= require('../views/defaultView');
 var fwModel = {};
-var fwTpl	= require('../../../Framework/views/color_palettes');
+var fwTpl	= require('../../../../public/fw/color_palettes');
 
 
 module.exports = function() {

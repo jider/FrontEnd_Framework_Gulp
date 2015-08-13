@@ -12,4 +12,5 @@ gulp.task('watch', ['watchify', 'browserSync'], function() {
 	gulp.watch(config.sass_lib.src, ['sass:lib']);
 	gulp.watch(config.sass_fw.src, ['sass:fw']);
 	gulp.watch(config.markup.src, ['markup']);
+	gulp.watch(config.markup_fw.src, ['markup:fw']);
 });

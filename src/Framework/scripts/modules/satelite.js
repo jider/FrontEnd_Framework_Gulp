@@ -1,7 +1,14 @@
 'use strict';
 
-var util   = require('util');
-var eventEmitter = require('events').EventEmitter;
+var Util   = require('util');
+var EventEmitter = require('events').EventEmitter;
+
+// Constructor
+function _satelite() {
+    EventEmitter.call(this);
+};
+
+Util.inherits(_satelite, EventEmitter);
 
 
-module.exports = new eventEmitter();
+module.exports = new _satelite();

@@ -7,8 +7,9 @@ var browserSync = require('browser-sync');
 var config 		= require('../config').markup_fw;
 
 
-gulp.task('markup-fw', function() {
+gulp.task('markup:fw', function() {
 	return gulp
 		.src(config.src)
+		.pipe(gulp.dest(config.dest))
 		.pipe(browserSync.stream());
 });

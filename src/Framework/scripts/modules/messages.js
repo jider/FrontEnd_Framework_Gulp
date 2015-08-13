@@ -1,8 +1,13 @@
 'use strict';
 
 var jquery = require('jquery');
-var util   = require('util');
-var eventEmitter = require('events').EventEmitter;
+
+// Custom events
+var Util   = require('util');
+var EventEmitter = require('events').EventEmitter;
+
+// Shared events
+var Satelite = require('./satelite');
 
 var myNS = 'MSG-';
 var cssClassObj = '.msg, [class^="msg-"]';
@@ -44,13 +49,19 @@ function Message (el) {
        }, 3000);
     });
 
+    // (Ejemplo) Evento compartido al que puede llamar cualquier otro módulo
+    // fwApp.modules.satelite.emit({message.id})
+    Satelite.on(this.id, function() {
+        console.log('My name is: ' + _self.id);
+    });
+
     // Incluimos el mensaje en la lista de mensajes
     msgList.push(this);
 
     // Emitter constructor
-    eventEmitter.call(this);
+    EventEmitter.call(this);
 }
-util.inherits(Message, eventEmitter);
+Util.inherits(Message, EventEmitter);
 
 // Class methods  ----------
 Message.prototype.close = function() {
@@ -63,7 +74,9 @@ Message.prototype.close = function() {
         // Actualizamos la lista de mensajes
         _self.emit(myNS + 'updateList');
         _self.emit(myNS + 'close');
-        _self.emit(myNS + 'custom');  // Este evento puede ser definido accediendo al objeto message desde el cliente
+        // (Ejemplo) Este evento se puede definir accediendo al objeto message desde el cliente utilizando 'msgList'
+        // fwApp.modules.messages.list[0].on('{NS + custom}', function() { ... })
+        _self.emit(myNS + 'custom');
     });
 };
 // Message Class - END  -----------------------------------------------------------------------

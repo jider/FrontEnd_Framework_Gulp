@@ -10,6 +10,7 @@ var fwPath			= root + 'Framework/';
 var fwBuildPath		= fwPath + 'build/';
 
 var publicPath		= './public/';
+var publicPathFW	= './public/fw';
 
 var sassDev		= {
 	errLogToConsole: true,
@@ -52,7 +53,8 @@ module.exports =  {
 	},
 
 	"markup_fw": {
-		"src": root + 'sites/**/*.html',
+		"src": fwPath + 'views/**/*.hbs',
+        "dest": publicPathFW
 	},
 
 	"images": {
@@ -122,7 +124,7 @@ module.exports =  {
 		    	"dest": publicPath + 'js',
 		    	"outputName": 'app.js',
 				// Extensiones de archivo adicionales para hacerlas opcionales
-				"extensions": ['.hbs'],
+				"extensions": ['.hbs', '.html', '.htm'],
 				// Lista de modulos a requerir externamente
 				"external": ['jquery', 'foundation']
   			}

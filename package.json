@@ -22,7 +22,7 @@
   "browser": {
     "jquery": "./node_modules/foundation-sites/js/vendor/jquery.js",
     "foundation": "./node_modules/foundation-sites/js/foundation.js",
-    "underscore": "backbone/node_modules/underscore"    
+    "underscore": "backbone/node_modules/underscore"
   },
   "browserify-shim": {
     "jquery": "jQuery",
