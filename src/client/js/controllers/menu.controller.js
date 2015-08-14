@@ -1,6 +1,8 @@
 'use strict';
 
-var foundation 	=  require('foundation');
+var jquery      = require('jquery');
+var foundation  = require('foundation');
+var offcanvas   = require('foundation.offcanvas');
 var menuView  	= require('../views/defaultView');
 var menuModel 	= {};
 var menuTpl	  	= require('../views/pages/mainMenu');
@@ -21,8 +23,9 @@ var _initMenu = function(menuType) {
 	menuModel = _menuCollection[menuType];
 
 	// Menu view constructor
-	var _cb = function() { jQuery(document).foundation(); };
-	var _view = menuView.init(menuModel, menuTpl, _cb);
+	var _view = menuView.init(menuModel, menuTpl, function() {
+        jquery(document).foundation();
+    });
 
 	_currentMenu = menuType;
     return new _view(_viewParams);

@@ -17,7 +17,7 @@ module.exports = function(name, id) {
 	return {
 		view: _view,
 		params: sitesView.defaultParams,
-		title: "Sites",
+		headerTitle: "Sites",
 		menu: 0
 	};
 };

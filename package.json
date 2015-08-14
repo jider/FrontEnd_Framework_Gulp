@@ -21,11 +21,14 @@
   "homepage": "https://github.com/jider/FrontEnd_Framework_Gulp",
   "browser": {
     "jquery": "./node_modules/foundation-sites/js/vendor/jquery.js",
-    "foundation": "./node_modules/foundation-sites/js/foundation.js",
+    "modernizr": "./node_modules/foundation-sites/js/vendor/modernizr.js",
+    "foundation": "./node_modules/foundation-sites/js/foundation/foundation.js",
+    "foundation.offcanvas": "./node_modules/foundation-sites/js/foundation/foundation.offcanvas.js",
     "underscore": "backbone/node_modules/underscore"
   },
   "browserify-shim": {
     "jquery": "jQuery",
+    "modernizr": "modernizr",
     "foundation": "foundation"
   },
   "browserify": {

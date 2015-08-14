@@ -13,7 +13,7 @@ module.exports = function() {
 	return {
 		view: _view,
 		params: fwView.defaultParams,
-		title: "Framework Examples",
+        headerTitle: "Framework Examples",
 		menu: 0
 	};
 };

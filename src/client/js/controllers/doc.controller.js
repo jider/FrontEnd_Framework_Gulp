@@ -16,7 +16,7 @@ module.exports = function(id) {
 	return {
 		view: _view,
 		params: docView.defaultParams,
-		title: "Documentation",
+		headerTitle: "Documentation",
 		menu: 0
 	}
 };

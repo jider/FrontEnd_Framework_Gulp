@@ -53,7 +53,7 @@ module.exports =  {
 	},
 
 	"markup_fw": {
-		"src": fwPath + 'views/**/*.hbs',
+		"src": fwPath + 'pages/**/*.hbs',
         "dest": publicPathFW
 	},
 
@@ -102,8 +102,20 @@ module.exports =  {
     			"dest": publicPath + 'js',
 		    	"outputName": 'commons.js',
 		    	// Lista de modulos a requerir
-				"require": ['jquery', 'foundation']
+				"require": ['jquery', 'modernizr', 'foundation']
     		},
+            // APP Backbone bundle
+            {
+                "entries": appPath + '/js/app.js',
+                "dest": publicPath + 'js',
+                "outputName": 'app.js',
+                // Extensiones de archivo adicionales para hacerlas opcionales
+                "extensions": ['.hbs', '.html', '.htm'],
+                // Lista de modulos a requerir
+                "require": ['foundation.offcanvas'],
+                // Lista de modulos a requerir externamente
+                "external": ['jquery', 'modernizr', 'foundation']
+            },
             // APP Main bundle
             {
                 "entries": fwPath + '/scripts/main.js',
@@ -117,17 +129,7 @@ module.exports =  {
                 "entries": fwPath + '/scripts/inits.js',
                 "dest": publicPath + 'js',
                 "outputName": 'inits.js'
-            },
-    		// APP Backbone bundle
-    		{
-		    	"entries": appPath + '/js/app.js',
-		    	"dest": publicPath + 'js',
-		    	"outputName": 'app.js',
-				// Extensiones de archivo adicionales para hacerlas opcionales
-				"extensions": ['.hbs', '.html', '.htm'],
-				// Lista de modulos a requerir externamente
-				"external": ['jquery', 'foundation']
-  			}
+            }
   		]
 	}
 };

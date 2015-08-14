@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-  description: 'Starter Gulp + Browserify project to demonstrate some common tasks:',
-  tools: [
+  "description": 'Starter Gulp + Browserify project to demonstrate some common tasks:',
+  "tools": [
     'CommonJS bundling and watching',
     'Working with multiple bundles',
     'Factoring out shared dependencies',

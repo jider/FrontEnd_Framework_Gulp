@@ -18,7 +18,7 @@ module.exports = function() {
 	return {
 		view: _view,
 		params: homeView.defaultParams,
-		title: "Framework App",
+		headerTitle: "Framework App",
 		menu: 0
 	};
 };

@@ -7,7 +7,9 @@
  * ---------------------------------------------------------------
  */
 
-fwApp.modules.loader();
+fwApp.jQuery(function() {
+    fwApp.modules.loader();
+});
 
 
 /**
