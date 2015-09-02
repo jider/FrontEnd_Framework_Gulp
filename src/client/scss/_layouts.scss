@@ -1,0 +1,118 @@
+.l_1c {
+  .col {
+    @extend %bg_1;
+    @include grid-column(12);
+  }
+}
+
+.l_2c {
+  .col {
+    @extend %bg_2;
+    @include grid-column(12);
+
+    @media #{$medium-up} {
+      @include grid-column(6);
+    }
+  }
+}
+
+.l_3c {
+  .col {
+    @extend %bg_3;
+    @include grid-column(12);
+
+    @media #{$medium-up} {
+      @include grid-column(4);
+    }
+  }
+}
+
+.l_3c_B {
+  .col {
+    @extend %bg_4;
+    @include grid-column(6);
+
+    &:first-child {
+      @include grid-column(12);
+    }
+  }
+
+  @media #{$medium-up} {
+    .col, .col:first-child { @include grid-column(4); }
+  }
+}
+
+.l_4c {
+  .col {
+    @extend %bg_5;
+    @include grid-column(6);
+
+    @media #{$medium-up} {
+      @include grid-column(3);
+    }
+  }
+}
+
+.l_4c_B {
+  .col {
+    @extend %bg_6;
+    @include grid-column(12);
+
+    @media #{$medium-up} {
+      @include grid-column(3);
+    }
+  }
+}
+
+.l_4c_C {
+  .col {
+    @extend %bg_7;
+    @include grid-column(6);
+
+    &:first-child, &:last-child {
+      @include grid-column(12);
+    }
+  }
+
+  @media #{$medium-up} {
+    .col, .col:first-child, .col:last-child { @include grid-column(3); }
+  }
+}
+
+
+/// ---------------------------------------------------------------------------------------
+
+
+[class ^= "l_"] {
+  @include grid-row();
+  @extend %fullwidth;
+
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 1rem 0;
+  background-color: #eee;
+  transition: box-shadow .25s;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.col {
+  padding: 1.2em;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  font-size: 1.2em;
+  text-align:center;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+%bg_1 {  background-color: #ef9a9a ; }
+%bg_2 {  background-color: #f48fb1 ; }
+%bg_3 {  background-color: #ce93d8 ; }
+%bg_4 {  background-color: #b39ddb ; }
+%bg_5 {  background-color: #9fa8da ; }
+%bg_6 {  background-color: #90caf9 ; }
+%bg_7 {  background-color: #80cbc4 ; }

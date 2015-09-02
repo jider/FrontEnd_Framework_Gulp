@@ -66,6 +66,8 @@
   },
   "dependencies": {
     "backbone": "^1.2.1",
+    "express": "^4.13.3",
+    "express-handlebars": "^2.0.1",
     "foundation-sites": "^5.5.2"
   }
 }

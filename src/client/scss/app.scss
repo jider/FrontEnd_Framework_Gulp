@@ -48,12 +48,13 @@
 
 /// Custom styles
 /// ---------------------------------------
+@import "layouts";
 
-.fullWidth {
-   width: 100% !important;
-   margin-left: auto !important;
-   margin-right: auto !important;
-   max-width: initial !important;
+%fullwidth, .fullwidth {
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: initial !important;
 }
 
 .header-breadcrumbs {
@@ -62,4 +63,8 @@
 
 .mainNav, .inner-wrap {
 	min-height: 100vh;
+}
+
+#mainContent {
+  padding: 0 2rem;
 }
