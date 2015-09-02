@@ -5,6 +5,46 @@
 @import "general-new/mixins";
 @import "general-new/extends";
 
+.main-header{
+  background: #00AADB;
+  border-bottom: 10px solid white;
+  img{
+    width: 100%;
+    margin-left: -10%;
+  }
+}
+.main-footer{
+
+  background: black;
+  color: white;
+  ul{
+    padding: 1rem;
+    margin: 0;
+  }
+
+  .footer-link-group{
+    width:100%;
+    padding: 1rem;
+    float: left;
+    list-style: none;
+    text-align: center;
+    border-top: 1px solid white;
+    &:first-child{
+      border-top: 0px;
+    }
+      li{
+        list-style: none;
+      }
+
+    @media #{$medium-up} {
+      width: 33%;
+      border-top: 0px;
+      text-align: left;
+    }
+  }
+}
+
+
 .general-new{
   font-size: 1rem;
 
