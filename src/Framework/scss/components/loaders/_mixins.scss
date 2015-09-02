@@ -1,0 +1,59 @@
+/* == Keyframes
+   ==================== */
+@include keyframes( spinner ){
+  0% {
+    @include transform( rotate(0deg) );
+  }
+  100% {
+    @include transform( rotate(360deg) );
+  }
+}
+
+@include keyframes( invertedSpinner ){
+  0% {
+    @include transform( rotate(0deg) );
+  }
+  100% {
+    @include transform( rotate(-360deg) );
+  }
+}
+
+/* Specific Keyframes for loader-7 & 8 */
+@include keyframes( quarter-spinner ) {
+  0% {
+    @include transform(rotateY(0deg));
+  }
+  50% {
+    @include transform(rotateY(90deg));
+  }
+}
+
+@include keyframes( scale ){
+  0% {
+    @include transform( scale(1) );
+  }
+  50% {
+    @include transform( scale(.95) );
+  }
+}
+
+@mixin set_border_color($color,$side) {
+
+  @if $side  == all{
+    border: $loader-thickness solid lighten(map-get($loader-borders-color, $color), 15% );
+  }
+  @else{
+    border-#{$side}: $loader-thickness solid lighten(map-get($loader-borders-color, $color), 15% );
+  }
+
+
+}
+@mixin set_atom_border_color($color,$side) {
+  @if $side  == all{
+    border: $atom-loader-thickness solid lighten(map-get($loader-borders-color, $color), 15% );
+  }
+  @else{
+    border-#{$side}: $atom-loader-thickness solid lighten(map-get($loader-borders-color, $color), 15% );
+  }
+
+}

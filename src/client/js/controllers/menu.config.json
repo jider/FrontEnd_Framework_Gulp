@@ -49,41 +49,75 @@
           }
         },
         {
-          "name": "Module_Name_2",
+          "name": "Modals",
           "subsection": {
-            "title": "Module_Name_2",
+            "title": "Modals",
             "items": [
               {
-                "name": "Module_Name_2_1",
-                "link": "#modules"
-              },
-              {
-                "name": "Module_Name_2_2",
-                "link": "#modules"
-              },
-              {
-                "name": "Module_Name_2_3",
-                "link": "#modules"
+                "name": "Modals",
+                "link": "#modules/modals/modals"
               }
             ]
           }
         },
         {
-          "name": "Module_Name_3",
+          "name": "General New",
           "subsection": {
-            "title": "Module_Name_3",
+            "title": "General New",
             "items": [
               {
-                "name": "Module_Name_3_1",
-                "link": "#modules"
+                "name": "General New",
+                "link": "#modules/generalNew/generalNew"
+              }
+            ]
+          }
+        }
+
+      ]
+    },
+    {
+      "title": "Components",
+      "items": [
+        {
+          "name": "Loaders",
+          "subsection": {
+            "title": "Loaders",
+            "items": [
+              {
+                "name": "Loaders",
+                "link": "#components/loaders"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Pagination",
+          "subsection": {
+            "title": "Pagination",
+            "items": [
+              {
+                "name": "Pagination",
+                "link": "#components/pagination"
               },
               {
-                "name": "Module_Name_3_2",
-                "link": "#modules"
+                "name": "Pagination2",
+                "link": "#components/pagination/pagination2/180"
               },
               {
-                "name": "Module_Name_3_3",
-                "link": "#modules"
+                "name": "Pagination3",
+                "link": "#components/pagination/pagination3"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Cards",
+          "subsection": {
+            "title": "Cards",
+            "items": [
+              {
+                "name": "Cards",
+                "link": "#components/cards"
               }
             ]
           }
@@ -94,8 +128,8 @@
       "title": "Sites",
       "items": [
         {
-          "name": "Site_Name_1",
-          "link": "#sites/cuatro/25",
+          "name": "Site test",
+          "link": "#sites/sitetest.html"
         },
         {
           "name": "Site_Name_2",

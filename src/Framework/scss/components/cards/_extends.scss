@@ -1,0 +1,55 @@
+%card {
+
+  @include card(1, $white-card-background, $white-card-hover-background);
+  @include ripple_effect(rgba(255, 171, 64, .15));
+
+  .card-image {
+    position: relative;
+    @include remove_highlight_select;
+
+    img {
+      border-radius: 2px 2px 0 0;
+      position: relative;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .card-title {
+      color: #fff;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 20px;
+      text-shadow: 1px 1px 2px #222;
+    }
+  }
+
+  .card-title {
+    font-size: 24px;
+    font-weight: 300;
+
+  }
+  .card-content {
+    margin: 0;
+    padding: 20px;
+    border-radius: 0 0 2px 2px;
+    p {
+      margin-bottom: 0.5em;
+      padding: 0;
+    }
+  }
+  .card-action {
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    padding: 20px;
+    a {
+      color: #ffab40;
+      margin-right: 20px;
+      @include transition(color, .3s, ease);
+      text-transform: uppercase;
+    }
+  }
+
+}

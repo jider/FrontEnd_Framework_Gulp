@@ -1,0 +1,70 @@
+///
+/// Spinners component - Functional Imports
+///
+@import "loaders/config";
+@import "loaders/mixins";
+@import "loaders/extends";
+
+.loader-content{
+  @extend %loader-content;
+}
+
+.loader-container {
+  @extend %loader-container;
+}
+
+.loader-number {
+  @extend %loader-number;
+}
+
+.loader {
+  @extend %loader;
+}
+
+/* == Loader 1
+   ==================== */
+.loader-1{
+  @extend %loader-type-1
+}
+
+/* == Loader 2
+   ==================== */
+.loader-2 {
+  @extend %loader-type-2;
+}
+
+/* == Loader 3
+   ==================== */
+.loader-3 {
+  @extend %loader-type-3;
+}
+
+/* == Loader 4
+   ==================== */
+.loader-4 {
+  @extend %loader-type-4;
+}
+
+/* == Loader 5
+   ==================== */
+.loader-5{
+  @extend %loader-type-5;
+}
+
+/* == Loader 6
+   ==================== */
+.loader-6{
+  @extend %loader-type-6;
+}
+
+/* == Loader 7
+   ==================== */
+.loader-7{
+  @extend %loader-type-7;
+}
+
+/* == Loader 8 - atom loader
+   ==================== */
+.loader-8{
+  @extend %loader-type-8;
+}

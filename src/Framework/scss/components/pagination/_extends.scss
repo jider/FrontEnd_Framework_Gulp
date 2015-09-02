@@ -1,0 +1,77 @@
+///
+/// Placeholder principal del componente de paginacion.
+/// Todo componente de pagination debe extender de este placeholder.
+///
+
+%pagination {
+  display: inline-block;
+  border: 1px solid #CDCDCD;
+  border-radius: 3px;
+
+  a {
+    display: block;
+    float: left;
+    width: 1.5em;
+    height: 1.5em;
+    outline: none;
+    border-right: 1px solid #CDCDCD;
+    border-left: 1px solid #CDCDCD;
+    color: #555555;
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    @include linear-gradient($india_gray, $hotel_gray);
+    &:hover, &:focus, &:active {
+      @include linear-gradient($india_gray, $fox_gray, $fallback: $fox_gray);
+      text-decoration: none;
+    }
+    &.disabled, &.disabled:hover, &.disabled:focus, &.disabled:active {
+      @include linear-gradient($india_gray, $hotel_gray);
+      background: #F3F3F3;
+      color: #A8A8A8;
+      cursor: default;
+    }
+  }
+
+  a:first-child {
+    border: none;
+    border-radius: 2px 0 0 2px;
+  }
+
+  a:last-child {
+    border: none;
+    border-radius: 0 2px 2px 0;
+  }
+
+  input {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 10em;
+    height: 1.7em;
+    outline: none;
+    border: none;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+}
+
+%gigantic {
+  margin: 30px 0;
+
+  a {
+    height: 60px;
+    width: 60px;
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  input {
+    width: 300px;
+    height: 60px;
+    font-size: 30px;
+  }
+}

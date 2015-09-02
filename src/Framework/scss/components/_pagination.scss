@@ -1,0 +1,19 @@
+///
+/// Pagination component - Functional Imports
+///
+@import "pagination/config";
+@import "pagination/mixins";
+@import "pagination/extends";
+
+.pagination {
+  @extend %pagination;
+
+  &.-gigantic {
+    @extend %gigantic;
+  }
+}
+
+.pagination-gigantic {
+  @extend %pagination;
+  @extend %gigantic;
+}

@@ -2,10 +2,13 @@
 
 var _satelite = require('./modules/satelite');
 var _messages = require('./modules/messages');
+var _modal = require('./modules/modal');
+
 
 // Modules mapping
 var _modules = {
-    "messages": _messages
+    "messages": _messages,
+    "modal": _modal
 };
 
 
@@ -41,3 +44,4 @@ module.exports.loadModule = loadModule;
 // Modules exposed
 module.exports.satelite = _satelite;
 module.exports.messages = _messages;
+module.exports.modal = _modal;

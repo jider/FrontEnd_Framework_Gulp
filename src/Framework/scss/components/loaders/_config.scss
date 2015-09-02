@@ -1,0 +1,18 @@
+$bg-color: #333;
+$loader-thickness: 3px;
+$loader-width: 5rem;
+$loader-height: $loader-width;
+
+///
+/// Mapa de color de los loader
+/// @type map
+///
+$loader-borders-color: (
+        blue:$bravo_primary,
+        red: $alpha_primary
+);
+
+//loader 8 - must have independent thickness and width cause of distortion
+$atom-loader-thickness: 1px;
+$atom-loader-width: 5rem;
+$atom-loader-width: $atom-loader-width;

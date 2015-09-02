@@ -9,6 +9,7 @@ module.exports = {
 		args = args || {};
 
 		return Backbone.View.extend({
+
     		template: tpl,
 
 		    initialize: function() {

@@ -1,0 +1,21 @@
+
+///
+/// modals module - Functional Imports
+///
+@import "modals/config";
+@import "modals/mixins";
+@import "modals/extends";
+
+#modal-overlay{
+  @extend %modal-overlay;
+}
+#modal-container{
+  @extend %modal-container;
+}
+#modal-close-button{
+  @extend %modal-close-button;
+}
+
+.my-custom-modal{
+  display: none;
+}

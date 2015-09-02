@@ -1,0 +1,10 @@
+///
+/// Badges component - Functional Imports
+///
+@import "badges/config";
+@import "badges/mixins";
+@import "badges/extends";
+
+.mdl-badge[data-badge]{
+  @extend %badge;
+}

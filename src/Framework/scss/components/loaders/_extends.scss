@@ -1,0 +1,281 @@
+%loader-container {
+  background: lighten($bg-color, 2%);
+  display: inline-block;
+  overflow: hidden;
+  -webkit-transition: all .15s linear;
+  transition: all .15s linear;
+  &:hover {
+    background: lighten($bg-color, 4%);
+  }
+}
+
+%loader-number {
+  color: lighten($bg-color, 50%);
+  float: right;
+  margin: 10px;
+}
+
+%loader {
+  height: $loader-height;
+  width: $loader-width;
+  margin: 3em;
+  position: relative;
+  &:before, &:after {
+    content: "";
+    top: $loader-thickness;
+    left: $loader-thickness;
+    right: $loader-thickness;
+    bottom: $loader-thickness;
+    position: absolute;
+  }
+}
+
+%loader-content{
+  color: #fff;
+  position: absolute;
+  margin-top: -4.5%;
+  margin-left: -2.6%;
+}
+
+//basic circle types of the loader
+
+%loader-circle-transparent {
+  border: $loader-thickness solid transparent;
+  border-radius: 50%;
+}
+
+%loader-circle-lighten {
+  @include set_border_color(blue, all);
+  border-radius: 50%;
+
+  &.-red {
+    @include set_border_color(red, all);
+  }
+}
+
+%atom-loader-circle-lighten {
+  @include set_atom_border_color(blue, all);
+  border-radius: 50%;
+
+  &.-red {
+    @include set_atom_border_color(red, all);
+  }
+
+}
+
+//predefined loaders types
+
+%loader-type-1 {
+  @extend %loader-circle-transparent;
+  @include set_border_color(blue, top);
+
+  //animation
+  @extend %right-spinner-animation;
+
+  &:before {
+    @extend %loader-circle-lighten;
+  }
+
+  &.-red {
+    @include set_border_color(red, top);
+  }
+
+}
+
+%loader-type-2 {
+  @extend %loader-circle-transparent;
+  @include set_border_color(blue, top);
+  @include set_border_color(blue, bottom);
+
+  //animation
+  @extend %right-spinner-animation;
+
+  &:before {
+    @extend %loader-circle-transparent;
+    @include set_border_color(blue, left);
+    @include set_border_color(blue, right);
+
+    //animation
+    @extend %left-spinner-animation;
+  }
+
+  &.-red {
+    @include set_border_color(red, top);
+    @include set_border_color(red, bottom);
+    &:before {
+      @include set_border_color(red, left);
+      @include set_border_color(red, right);
+    }
+  }
+
+}
+
+%loader-type-3 {
+  @extend %loader-circle-lighten;
+
+  &:before {
+    @extend %loader-circle-transparent;
+    @include set_border_color(blue, left);
+    @include set_border_color(blue, right);
+
+    //animation
+    @extend %right-spinner-animation;
+  }
+
+  &.-red {
+    &:before {
+      @include set_border_color(red, left);
+      @include set_border_color(red, right);
+    }
+  }
+}
+
+%loader-type-4 {
+  @extend %loader-circle-transparent;
+  @include set_border_color(blue, top);
+  @include set_border_color(blue, bottom);
+
+  //animation
+  @extend %left-spinner-animation;
+
+  &:before {
+    @extend %loader-circle-lighten;
+
+    //animation
+    @extend %pulse-spinner-animation;
+  }
+
+  &.-red {
+    @include set_border_color(red, top);
+    @include set_border_color(red, bottom);
+  }
+
+}
+
+%loader-type-5 {
+  @extend %loader-circle-lighten;
+
+  &:before {
+    @extend %loader-circle-transparent;
+    @include set_border_color(blue, top);
+
+    //animation
+    @extend %right-spinner-animation;
+  }
+
+  &:after {
+    @extend %loader-circle-transparent;
+    @include set_border_color(blue, bottom);
+
+    //animation
+    @extend %left-spinner-animation;
+
+  }
+
+  &.-red {
+    &:before {
+      @extend %loader-circle-transparent;
+      @include set_border_color(red, top);
+    }
+    &:after {
+      @extend %loader-circle-transparent;
+      @include set_border_color(red, bottom);
+
+    }
+  }
+
+}
+
+%loader-type-6 {
+  @extend %loader-circle-lighten;
+
+  &:before {
+    @extend %loader-circle-transparent;
+    @include set_border_color(blue, right);
+
+    //animation
+    @extend %easeout-spinner-animation;
+  }
+
+  &.-red {
+    &:before {
+      @include set_border_color(red, right);
+    }
+  }
+
+}
+
+%loader-type-7 {
+  @extend %loader-circle-transparent;
+  @include transform(rotate(45deg));
+
+  &:before {
+    @extend %loader-circle-lighten;
+
+    //animation
+    @extend %quarter-spinner-animation;
+  }
+
+  &:after {
+    @extend %loader-circle-lighten;
+
+    //animation
+    @extend %quarter-spinner-animation-slow;
+  }
+
+}
+
+%loader-type-8 {
+  @extend %atom-loader-circle-lighten;
+  @include transform(rotate(45deg));
+  height: $atom-loader-width;
+  width: $atom-loader-width;
+
+  &:before {
+    @extend %atom-loader-circle-lighten;
+    bottom: $atom-loader-thickness * 10;
+    top: $atom-loader-thickness * 10;
+    left: $atom-loader-thickness * 10;
+    right: $atom-loader-thickness * 10;
+
+    //animation
+    @extend %quarter-spinner-animation;
+  }
+  &:after {
+    @extend %atom-loader-circle-lighten;
+    bottom: $atom-loader-thickness * 20;
+    top: $atom-loader-thickness * 20;
+    left: $atom-loader-thickness * 20;
+    right: $atom-loader-thickness * 20;
+
+    //animation
+    @extend %quarter-spinner-animation-slow;
+  }
+}
+
+
+//predefined spinner animations
+
+%right-spinner-animation{
+  @include animation( spinner 1s linear infinite );
+}
+
+%left-spinner-animation{
+  @include animation( invertedSpinner 1.5s linear infinite );
+}
+
+%easeout-spinner-animation{
+  @include animation( spinner 1s ease-out infinite );
+}
+
+%quarter-spinner-animation{
+  @include animation( quarter-spinner 1s linear infinite );
+}
+%quarter-spinner-animation-slow{
+  @include animation( quarter-spinner 1.5s linear infinite );
+}
+
+%pulse-spinner-animation{
+  @include animation( scale 1s linear infinite );
+}
+

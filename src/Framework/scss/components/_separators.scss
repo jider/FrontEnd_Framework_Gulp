@@ -1,0 +1,21 @@
+///
+/// separators components - Functional Imports
+///
+@import "separators/config";
+@import "separators/mixins";
+@import "separators/extends";
+
+.kicker{
+  background: #06a9df;
+  color: white;
+  padding: 1px 5px;
+  text-transform: uppercase;
+  clear: both;
+}
+
+.separator-line{
+  width: 100%;
+  height: 1px;
+  background: #eaebec;
+  clear: both;
+}

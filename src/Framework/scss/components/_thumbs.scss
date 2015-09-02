@@ -1,0 +1,39 @@
+///
+/// Thumns component - Functional Imports
+///
+@import "thumbs/config";
+@import "thumbs/mixins";
+@import "thumbs/extends";
+
+.thumb-block{
+  font-size: 1em;
+  margin-left: 0;
+  margin: 0 auto;
+  width: 100%;
+
+  img{
+    display: inline-block;
+    width: 100%;
+  }
+  li{
+    list-style: none;
+    width: 100%;
+  }
+  p{
+    font-weight: bold;
+  }
+
+  @media #{$medium-up} {
+    li{
+      list-style: none;
+      width: 32%;
+      margin-left: 2%;
+      float: left;
+      &:first-child{
+        margin-left: 0;
+      }
+
+    }
+
+  }
+}

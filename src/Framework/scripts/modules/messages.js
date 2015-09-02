@@ -1,6 +1,6 @@
 'use strict';
 
-var jquery = require('jquery');
+var _ = require('lodash');
 
 // Custom events
 var Util   = require('util');
@@ -21,12 +21,18 @@ function Message (el) {
     var _self = this;
     this.$el = jQuery(el);
 
+
+
     // Unique message ID
     this.id = myNS + Math.random().toString().slice(10);
     this.$el.attr('id', this.id);
 
     // jquery Events
     this.$el.click(function() {
+        _self.close();
+    });
+
+    Satelite.on('closeMessages', function() {
         _self.close();
     });
 
@@ -84,17 +90,22 @@ Message.prototype.close = function() {
 
 // Module Private methods  -----------------------------------------------------------------------
 
-var _createMessage = function(classes, text, type) {
-    type = type || 'msg';
+var _createMessage = function(options) {
 
-    classes = classes ? type + ' ' + classes : type;
-    var $msg = jquery('<p class="' + classes + '">' + text + '</p>');
-    var msgObj = new Message($msg[0]);
+    options = _.defaults(options || {}, {
+        text: 'default',
+        classes: '',
+        type: 'msg'
+    });
 
-    jquery('#mainContent').append($msg);
+    var classesString = (options.type + ' ' + options.classes).trim(),
+        $msg = jQuery('<p class="' + classesString + '">' + options.text + '</p>'),
+        msgObj = new Message($msg[0]);
+
+    jQuery('#mainContent').append($msg);
 
     // Provoca los eventos asociados al tipo de mensaje
-    msgObj.emit(myNS + type);
+    msgObj.emit(myNS + options.type);
 
     // Mensaje creado
     msgObj.emit(myNS + 'show');
@@ -105,7 +116,7 @@ var _createMessage = function(classes, text, type) {
 
 // Initializer  ----------
 var initMessages = function() {
-    jquery(cssClassObj).each(function(index, el) {
+    jQuery(cssClassObj).each(function(index, el) {
         new Message(el);
     });
 };

@@ -1,0 +1,21 @@
+///
+/// social share components - Functional Imports
+///
+@import "social-shares/config";
+@import "social-shares/mixins";
+@import "social-shares/extends";
+
+.share-toolbar{
+  margin-top: 1px;
+  padding-right: 7px;
+  background: #303030 url(http://telecincostatic-a.akamaihd.net/static/TL5Telecinco/images/bg-cp_tbar.png?hash=394092bff79173637796f51ffa7c426e) repeat-x;
+  text-align: right;
+  color: #fff;
+  margin-left: 0;
+  li{
+    display: inline-block;
+  }
+  a{
+    color: #fff;
+  }
+}

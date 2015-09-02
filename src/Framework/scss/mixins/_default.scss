@@ -160,7 +160,7 @@
 
 /////// transition //////////
 // -----------------------------------------------------------------------------
-@mixin transition ($property, $duration, $timing_function, $delay, $prefixes: $prefix_defaults) {
+@mixin transition ($property, $duration, $timing_function, $delay:null, $prefixes: $prefix_defaults) {
   @each $prefix in $prefixes {
     #{$prefix}transition: $property $duration $timing_function $delay;
   }
@@ -175,3 +175,116 @@
     #{$prefix}transform: $function;
   }
 }
+/////// linear gradient //////////
+// -----------------------------------------------------------------------------
+@mixin linear-gradient($pos, $g1, $g2: null,
+                       $g3: null, $g4: null,
+                       $g5: null, $g6: null,
+                       $g7: null, $g8: null,
+                       $g9: null, $g10: null,
+                       $fallback: null) {
+  // Detect what type of value exists in $pos
+  $pos-type: type-of(nth($pos, 1));
+  $pos-spec: null;
+  $pos-degree: null;
+
+  // If $pos is missing from mixin, reassign vars and add default position
+  @if ($pos-type == color) or (nth($pos, 1) == "transparent")  {
+    $g10: $g9; $g9: $g8; $g8: $g7; $g7: $g6; $g6: $g5;
+    $g5: $g4; $g4: $g3; $g3: $g2; $g2: $g1; $g1: $pos;
+    $pos: null;
+  }
+
+  @if $pos {
+    $positions: _linear-positions-parser($pos);
+    $pos-degree: nth($positions, 1);
+    $pos-spec:   nth($positions, 2);
+  }
+
+  $full: $g1, $g2, $g3, $g4, $g5, $g6, $g7, $g8, $g9, $g10;
+
+  // Set $g1 as the default fallback color
+  $fallback-color: nth($g1, 1);
+
+  // If $fallback is a color use that color as the fallback color
+  @if (type-of($fallback) == color) or ($fallback == "transparent") {
+    $fallback-color: $fallback;
+  }
+
+  background-color: $fallback-color;
+  background-image: -webkit-linear-gradient($pos-degree $full); // Safari 5.1+, Chrome
+  background-image: unquote("linear-gradient(#{$pos-spec}#{$full})");
+}
+
+// == Animations ====================
+
+// -- Keyframes --------------------
+@mixin keyframes( $keyframes-name ){
+  @-webkit-keyframes #{$keyframes-name} {
+    @content;
+  }
+  @-moz-keyframes #{$keyframes-name} {
+    @content;
+  }
+  @-o-keyframes #{$keyframes-name} {
+    @content;
+  }
+  @keyframes #{$keyframes-name} {
+    @content;
+  }
+}
+// -- Animation --------------------
+@mixin animation( $str ){
+  @each $prefix in -webkit-, -moz-, -o-, '' {
+    #{$prefix}animation: #{$str};
+  }
+}
+
+//-- Ripple effect ------------------
+
+@mixin ripple_effect( $background-color ) {
+
+  transition: background-color .5s;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    display: block;
+    width: 0;
+    padding-top: 0;
+    border-radius: 100%;
+    background-color: $background-color;
+    @include transform(translate3d(-50%, -50%, 0));
+  }
+
+  &:active:before {
+    -webkit-backface-visibility: hidden;
+    width: 130%;
+    padding-top: 130%;
+    transition: width .2s ease-out, padding-top .2s ease-out;
+  }
+}
+
+////////////// hide user select ////////////
+// -----------------------------------------------------------------------------
+@mixin remove_highlight_select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+//////////////  generic crossbrowser prefix ////////////
+
+@mixin generic_browsers_prefix($name, $argument){
+  -webkit-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+

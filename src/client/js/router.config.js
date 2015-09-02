@@ -6,7 +6,9 @@ var controllers = {
     'sites': require('./controllers/sites.controller.js'),
     'modules': require('./controllers/modules.controller.js'),
     'docs': require('./controllers/doc.controller.js'),
-    'fw': require('./controllers/fw.controller.js')
+    'fw': require('./controllers/fw.controller.js'),
+	'components':require('./controllers/components.controller.js'),
+	'components/:component(/:tpl)': 'components'
 };
 
 // Routes mapping
@@ -15,7 +17,9 @@ var _routes = {
 	'sites/:name(/:id)': 'sites',
 	'modules/:module/:tpl': 'modules',
 	'docs(/:id)' : 'docs',
-	'fw' : 'fw'
+	'fw' : 'fw',
+	'components/:component(/:tpl)(/:pag)': 'components'
+
 };
 
 

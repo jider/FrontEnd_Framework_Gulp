@@ -45,6 +45,9 @@ h6 {
 p {
   margin-bottom: baseline-margin($font_size);
   text-indent: 0;
+
+  font-size: em($large_point_size);
+  line-height: baseline($large_point_size);
 }
 
 b {

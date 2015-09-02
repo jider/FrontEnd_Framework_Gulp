@@ -1,0 +1,13 @@
+///
+/// Cards component - Functional Imports
+///
+@import "cards/config";
+@import "cards/mixins";
+@import "cards/extends";
+
+
+
+.card{
+  @extend %card;
+}
+
