@@ -19,3 +19,38 @@
     color: #fff;
   }
 }
+.follow-social-list{
+  margin-left: 0;
+  margin-bottom: 0;
+  margin-top: 0.5em;
+  li{
+    display: inline-block;
+    a{
+      display: block;
+      width: 56px;
+      height: 47px;
+      background: #000 url(http://telecincostatic-a.akamaihd.net/static/TL5Telecinco/images/sprites/tl5_bg-sprites-social.png?hash=2f1e6960fa82974c58c0ac93581011ac) no-repeat 0 0;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      &.btn-fb{
+        background-position: -16px -11px;
+      }
+      &.btn-tw{
+        background-position: -95px -11px;
+      }
+      &.btn-gal{
+        background-position: -592px -11px;
+      }
+      &.btn-fl{
+        background-position: -255px -11px;
+      }
+      &.btn-rss{
+        background-position: -336px -11px;
+      }
+      span{
+        display: none;
+      }
+    }
+  }
+}

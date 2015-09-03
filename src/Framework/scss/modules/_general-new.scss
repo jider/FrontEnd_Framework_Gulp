@@ -5,6 +5,44 @@
 @import "general-new/mixins";
 @import "general-new/extends";
 
+
+.layout-left-column{
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  @media #{$medium-up}{
+    width: 63%;
+  }
+
+}
+
+.layout-right-column{
+  display: inline-block;
+  vertical-align: top;
+
+  width: 100%;
+  text-align: center;
+
+  @media #{$medium-up}{
+    margin-left: -4px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 37%;
+  }
+}
+
+.small-gallery{
+    margin: 1em 0 0;
+    padding: 0;
+
+  li{
+    display: inline-block;
+    list-style: none;
+    margin-bottom: 0.3em;
+
+  }
+}
+
 .general-new{
   font-size: 1rem;
 
