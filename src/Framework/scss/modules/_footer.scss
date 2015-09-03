@@ -1,0 +1,53 @@
+///
+/// footer module - Functional Imports
+///
+@import "footer/config";
+@import "footer/mixins";
+@import "footer/extends";
+
+.main-footer{
+
+  width:100%;
+  color: white;
+  ul{
+    padding: 1rem;
+    margin: 0;
+  }
+  .footer-links-groups{
+    background: black;
+  }
+  .footer-link-group{
+    width:100%;
+    padding: 1rem;
+    float: left;
+    list-style: none;
+    text-align: center;
+    border-top: 1px solid white;
+    &:first-child{
+      border-top: 0px;
+    }
+    li{
+      list-style: none;
+    }
+
+    @media #{$medium-up} {
+      width: 33%;
+      border-top: 0px;
+      text-align: left;
+    }
+  }
+
+  .footer-branding-area{
+    text-align: center;
+
+    .ico-mds {
+      background: transparent url(http://telecincostatic-a.akamaihd.net/static/MDSMediaset/cobranded/cobranded_footer/mds_sprite_footer.png?hash=9ba8fe4d8bb9e69431fef83a4a20606a) 0 0 no-repeat;
+      background-position: -592px 0px;
+      width: 279px;
+      height: 40px;
+      margin: 2rem auto;
+
+    }
+  }
+
+}
