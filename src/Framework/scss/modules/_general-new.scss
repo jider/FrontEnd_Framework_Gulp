@@ -1,0 +1,93 @@
+///
+/// general new module - Functional Imports
+///
+.general-new{
+  font-size: 1rem;
+
+  .general-new-img {
+    display: none;
+  }
+
+  @media #{$medium-up} {
+    .general-new-img{
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
+
+.video-share-new{
+  margin-top: 0.5rem;
+  .video-share-video{
+    width: 100%;
+    img{
+      width: 100%;
+    }
+  }
+  .video-share-text{
+    width: 100%;
+
+    h2{
+      font-size: 18px;
+    }
+  }
+
+  @media #{$medium-only} {
+    .video-share-video{
+      width: 70%;
+      img{
+        width: 100%;
+      }
+      float: left;
+    }
+    .video-share-text{
+      width: 30%;
+      float: left;
+      padding-left: 1em;
+    }
+  }
+
+}
+
+.group-news{
+  margin-left: 0;
+  .group-news-item{
+    list-style: none;
+
+    margin-top: 1em;
+
+    .group-news-item-image {
+      display: none;
+      img{
+
+        width: 100%;
+      }
+    }
+    .group-news-item-text {
+
+      float: left;
+      width: 100%;
+      h2 {
+        font-size: 18px;
+      }
+
+    }
+
+    @media #{$medium-up} {
+
+      .group-news-item-image {
+        display: block;
+        float: left;
+        width: 25%;
+      }
+
+      .group-news-item-text {
+        padding-left: 1rem;
+        float: left;
+        width: 75%;
+
+      }
+
+    }
+  }
+}

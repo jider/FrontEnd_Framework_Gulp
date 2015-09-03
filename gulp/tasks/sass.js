@@ -10,10 +10,10 @@ var autoprefixer 	= require('gulp-autoprefixer');
 var browserSync 	= require('browser-sync');
 var logger 			= require('../util/logger');
 var handleErrors	= require('../util/handleErrors');
-var config       	= require('../config').sass_lib;
+var config       	= require('../config').sass;
 
 
-gulp.task('sass:lib', function() {
+gulp.task('sass', function() {
 	return gulp
 		// Busca todos los ficheros '.scss' en el directorio de origen especificado en 'cssInput'
 		.src(config.src)

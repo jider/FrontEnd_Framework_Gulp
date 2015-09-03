@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------
-// Configuration de las tareas automatizadas de GULP
+// Configuración de las tareas automatizadas de GULP
 // -----------------------------------------------------------------------------
 'use strict';
 
@@ -7,10 +7,11 @@ var root			= './src/';
 var appPath 		= root + 'client/';
 
 var fwPath			= root + 'Framework/';
-var fwBuildPath		= fwPath + 'build/';
 
-var publicPath		= './public/';
-var publicPathFW	= './public/fw';
+var publicPath	    = './public/';
+var publicView	    = publicPath + 'views/';
+var publicClient    = publicView + 'client/';
+var publicFW	    = publicView + 'fw/';
 
 var sassDev		= {
 	errLogToConsole: true,
@@ -25,21 +26,21 @@ var sassPro		= {
 
 
 module.exports =  {
-	production: {
-		jsSrc: publicPath + 'js/*.js',
-		cssSrc: publicPath + 'css/*.css',
-		jsDest: publicPath + 'js/',
-	    cssDest: publicPath + 'css/'
+	'production': {
+		'jsSrc': publicPath + 'js/*.js',
+		'cssSrc': publicPath + 'css/*.css',
+		'jsDest': publicPath + 'js/',
+	    'cssDest': publicPath + 'css/'
   	},
 
 	// Configuración para la creación del servidor y sincronización de la aplicación de desarrollo del framwork en diferentes dispositivos
 	"browserSync": {
 		"server": {
 			"baseDir": publicPath,
-			"index": "index.html",
-			"routes": {
+			"index": "index.html"
+			/*"routes": {
 		 		"/fw": "src/Framework/build"
-			}
+			}*/
 		}
 	},
 
@@ -48,13 +49,13 @@ module.exports =  {
 	},
 
 	"markup": {
-		"src": appPath + '*.html',
-		"dest": publicPath
+		"src": [appPath + '*.html', appPath + '*.hbs'],
+		"dest": publicClient
 	},
 
 	"markup_fw": {
-		"src": fwPath + 'pages/**/*.hbs',
-        "dest": publicPathFW
+		"src": [fwPath + '**/*.html', fwPath + '**/*.hbs'],
+        "dest": publicFW
 	},
 
 	"images": {
@@ -72,20 +73,13 @@ module.exports =  {
 		}
 	},
 
-	sass_lib: {
-		src: appPath + 'scss/**/*.scss',
-		dest: publicPath +'css',
-		srcMapDest: '.',
-		dev: sassDev,
-		pro: sassPro
+	sass: {
+		'src': [appPath + 'scss/**/*.scss', fwPath + 'scss/**/*.scss'],
+		'dest': publicPath + 'css',
+		'srcMapDest': '.',
+		'dev': sassDev,
+		'pro': sassPro
 	},
-	sass_fw: {
-		src: fwPath + 'scss/**/*.scss',
-		dest: fwBuildPath +'css',
-		srcMapDest: '.',
-		dev:sassDev,
-		pro:sassPro
-	}, 
 
     sassdoc: {
 		src: fwPath + 'scss/**/*.scss',

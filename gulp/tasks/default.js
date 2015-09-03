@@ -11,4 +11,4 @@ var browserSync = require('browser-sync');
 // de que se han cargado en el navegador todos los assets de 'dist'.
 // Puede no visualizarse correctamente la salida en el navegador la primera vez que se crean 
 // todos los ficheros a distribuir.
-gulp.task('default', ['sass:lib', 'sass:fw', 'images', 'markup', 'markup:fw', 'watch'], browserSync.reload);
+gulp.task('default', ['sass', 'images', 'markup', 'markup:fw', 'watch'], browserSync.reload);

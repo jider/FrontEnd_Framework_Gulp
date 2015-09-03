@@ -5,11 +5,7 @@ var router 	= express.Router();
 
 
 router.get('/', function(req, res) {
-    res.render('home');
-});
-
-router.get('/site/:site', function(req, res) {
-    res.render('test', {'data': req.params.site});
+    res.render('client/index', {layout: false} );
 });
 
 

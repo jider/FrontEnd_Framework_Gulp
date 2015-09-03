@@ -1,0 +1,76 @@
+///
+/// footer module - Functional Imports
+///
+.main-footer{
+
+  width:100%;
+  color: white;
+  ul{
+    padding: 1rem;
+    margin: 0;
+  }
+  .footer-links-groups{
+    background: black;
+  }
+  .footer-link-group{
+    width:100%;
+    padding: 1rem;
+    float: left;
+    list-style: none;
+    text-align: center;
+    border-top: 1px solid white;
+    &:first-child{
+      border-top: 0px;
+    }
+    li{
+      list-style: none;
+    }
+
+    @media #{$medium-up} {
+      width: 33%;
+      border-top: 0px;
+      text-align: left;
+    }
+  }
+
+  .footer-branding-area{
+    text-align: center;
+
+    [class^="ico-"], [class*="ico-"] {
+      background: transparent url(http://telecincostatic-a.akamaihd.net/static/MDSMediaset/cobranded/cobranded_footer/mds_sprite_footer.png?hash=9ba8fe4d8bb9e69431fef83a4a20606a) 0 0 no-repeat;
+      width: 39px;
+      height: 39px;
+    }
+    .ico-mds {
+      background-position: -592px 0px;
+      width: 279px;
+      height: 40px;
+      margin: 1.5rem auto auto;
+
+    }
+
+    .branding-icons li{
+      display: inline-block;
+    }
+
+    .ico-tl5{
+      background-position: -303px -34px;
+    }
+    .ico-cuatro{
+      background-position: -350px -34px;
+    }
+    .ico-fac{
+      background-position: -398px -34px;
+    }
+    .ico-boing{
+      background-position: -446px -34px;
+    }
+    .ico-div{
+      background-position: -493px -34px;
+    }
+    .ico-nrg{
+      background-position: -540px -34px;
+    }
+  }
+
+}

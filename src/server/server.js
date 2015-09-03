@@ -4,29 +4,27 @@ var express = require('express');
 var path 	= require('path');
 var exphbs 	= require('express-handlebars');
 
-var routes 	= require('./routes/index');
+var clientPages	= require('./routes/index');
+var fwPages	= require('./routes/framework');
 
 var app 	= express();
 
 
 // Settings
 app.set('port', process.env.PORT || 5000);
-app.set('views', path.join(__dirname + '/views'));
-
+app.set('views', path.join('public', 'views'));
 
 // View engine setup
 var hbs = exphbs.create({
-	defaultLayout: 'main'
-	/*
-	layoutsDir: app.get('views') + '/layouts',
+    layoutsDir: path.join(app.get('views'), 'fw', 'frames'),
 	partialsDir: [
-		'shared/templates',
-		'views/partials'
-	]
-	*/
+        path.join(app.get('views'), 'fw', 'templates')
+	],
+    defaultLayout: 'index',
+	extname: '.hbs'
 });
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+app.engine('hbs', hbs.engine);
+app.set('view engine', 'hbs');
 
 
 /*
@@ -62,12 +60,12 @@ function exposeTemplates(req, res, next) {
 */
 
 // Routing
-app.use(routes);
+app.use(clientPages);
+app.use(fwPages);
 
 // Static middleware
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static('public'));
 
-/*
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
 	var err = new Error('Not Found');
@@ -78,12 +76,11 @@ app.use(function (req, res, next) {
 // error handlers
 app.use(function (err, req, res, next) {
 	res.status(err.status || 500);
-	res.render('error', {
+	res.render('fw/pages/error', {
 		message: err.message,
 		error: err
 	});
 });
-*/
 
 
 // Start server

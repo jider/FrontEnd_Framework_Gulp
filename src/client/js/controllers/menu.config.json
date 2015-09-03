@@ -49,6 +49,18 @@
           }
         },
         {
+          "name": "General New",
+          "subsection": {
+            "title": "General New",
+            "items": [
+              {
+                "name": "General New",
+                "link": "#modules/generalNew/generalNew"
+              }
+            ]
+          }
+        },
+        {
           "name": "Module_Name_2",
           "subsection": {
             "title": "Module_Name_2",

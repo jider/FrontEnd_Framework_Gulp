@@ -1,13 +1,13 @@
 .l_1c {
+  @extend %bg_1;
   .col {
-    @extend %bg_1;
     @include grid-column(12);
   }
 }
 
 .l_2c {
+  @extend %bg_2;
   .col {
-    @extend %bg_2;
     @include grid-column(12);
 
     @media #{$medium-up} {
@@ -16,9 +16,9 @@
   }
 }
 
-.l_3c {
+.l_3c_A {
+  @extend %bg_3;
   .col {
-    @extend %bg_3;
     @include grid-column(12);
 
     @media #{$medium-up} {
@@ -28,8 +28,8 @@
 }
 
 .l_3c_B {
+  @extend %bg_4;
   .col {
-    @extend %bg_4;
     @include grid-column(6);
 
     &:first-child {
@@ -42,9 +42,9 @@
   }
 }
 
-.l_4c {
+.l_4c_A {
+  @extend %bg_5;
   .col {
-    @extend %bg_5;
     @include grid-column(6);
 
     @media #{$medium-up} {
@@ -54,8 +54,8 @@
 }
 
 .l_4c_B {
+  @extend %bg_6;
   .col {
-    @extend %bg_6;
     @include grid-column(12);
 
     @media #{$medium-up} {
@@ -65,8 +65,8 @@
 }
 
 .l_4c_C {
+  @extend %bg_7;
   .col {
-    @extend %bg_7;
     @include grid-column(6);
 
     &:first-child, &:last-child {
