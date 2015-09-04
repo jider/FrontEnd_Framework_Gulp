@@ -3,18 +3,29 @@
 var express = require('express');
 var path 	= require('path');
 var exphbs 	= require('express-handlebars');
+/*var Twig    = require('twig');*/
 
-var clientPages	= require('./routes/index');
-var fwPages	= require('./routes/framework');
+var clientRouter = require('./routes/client');
+var fwRouter	 = require('./routes/framework');
 
-var app 	= express();
+var app 	     = express();
 
 
 // Settings
-app.set('port', process.env.PORT || 5000);
+// ------------------------------------
+app.locals.port = process.env.PORT || 5000;
 app.set('views', path.join('public', 'views'));
 
+
 // View engine setup
+// ------------------------------------
+
+// Twig
+/*app.set('twig options', {
+    strict_variables: false
+});*/
+
+// Handlebars
 var hbs = exphbs.create({
     layoutsDir: path.join(app.get('views'), 'fw', 'frames'),
 	partialsDir: [
@@ -60,8 +71,8 @@ function exposeTemplates(req, res, next) {
 */
 
 // Routing
-app.use(clientPages);
-app.use(fwPages);
+app.use(clientRouter);
+app.use(fwRouter);
 
 // Static middleware
 app.use(express.static('public'));
@@ -84,7 +95,7 @@ app.use(function (err, req, res, next) {
 
 
 // Start server
-var server = app.listen(app.get('port'), function() {
+var server = app.listen(app.locals.port, function() {
 	var port = server.address().port;
 
 	console.log('App listen at http://localhost:%s', port);

@@ -12,3 +12,5 @@ var browserSync = require('browser-sync');
 // Puede no visualizarse correctamente la salida en el navegador la primera vez que se crean 
 // todos los ficheros a distribuir.
 gulp.task('default', ['sass', 'images', 'markup', 'markup:fw', 'watch'], browserSync.reload);
+
+gulp.task('default:server', ['sass', 'images', 'markup', 'markup:fw', 'watch:server'], browserSync.reload);

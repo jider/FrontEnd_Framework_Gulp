@@ -44,6 +44,11 @@ module.exports =  {
 		}
 	},
 
+    "browserSync_server": {
+        proxy: "http://localhost:5000",
+        files: ["public/**/*.*"]
+    },
+
 	"clean_js": {
 		"src": [publicPath + 'js/**/*.js']
 	},
