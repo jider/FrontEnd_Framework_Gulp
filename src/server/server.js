@@ -1,12 +1,12 @@
 'use strict';
 
-var express = require('express');
-var path 	= require('path');
-var exphbs 	= require('express-handlebars');
+var express = require('express'),
+    path 	= require('path'),
+    exphbs 	= require('express-handlebars');
 /*var Twig    = require('twig');*/
 
-var clientRouter = require('./routes/client');
-var fwRouter	 = require('./routes/framework');
+var clientRouter = require('./routes/client'),
+    fwRouter	 = require('./routes/framework');
 
 var app 	     = express();
 

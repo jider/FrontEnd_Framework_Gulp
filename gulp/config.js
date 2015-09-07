@@ -46,7 +46,8 @@ module.exports =  {
 
     "browserSync_server": {
         proxy: "http://localhost:5000",
-        files: ["public/**/*.*"]
+        files: ["public/**/*.*"],
+        browser: ['google-chrome']
     },
 
 	"clean_js": {
