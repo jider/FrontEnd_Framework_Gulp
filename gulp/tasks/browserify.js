@@ -62,7 +62,10 @@ var browserifyTask = function(devMode) {
 			// Wrap with watchify and rebundle on changes
 			b = watchify(b);
 			// Rebundle and update
-			b.on('update', bundle);
+			b.on('update', function() {
+				console.log('Watchify Update!!');
+				bundle();
+			});
 			
 			logger.bundle.watch(bundleConfig.outputName);
 		}

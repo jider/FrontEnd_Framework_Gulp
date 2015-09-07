@@ -13,10 +13,3 @@ gulp.task('watch', ['watchify', 'browserSync'], function() {
 	gulp.watch(config.markup.src, ['markup']);
 	gulp.watch(config.markup_fw.src, ['markup:fw']);
 });
-
-
-gulp.task('watch:server', ['watchify', 'browserSync:server'], function() {
-	gulp.watch(config.sass.src, ['sass']);
-	gulp.watch(config.markup.src, ['markup']);
-	gulp.watch(config.markup_fw.src, ['markup:fw']);
-});
