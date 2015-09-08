@@ -1,6 +1,7 @@
 'use strict';
 
-var express = require('express'),
+var config  = require('./config').server,
+    express = require('express'),
     path 	= require('path'),
     /*Twig    = require('twig');*/
     exphbs 	= require('express-handlebars');
@@ -58,7 +59,8 @@ app.use(function (err, req, res, next) {
 
 // Start server
 var server = app.listen(app.locals.port, function() {
-	var port = server.address().port;
-
-	console.log('App listen at http://localhost:%s', port);
+    // NO QUITAR!!!!
+    // Este log fuerza el refresco del navegador cada vez que modificamos un fichero de core en el server
+    // Conectado con la tarea de 'nodemon'
+    console.log(config.listenText);
 });

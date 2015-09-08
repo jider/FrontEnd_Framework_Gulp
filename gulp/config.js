@@ -3,12 +3,12 @@
 // -----------------------------------------------------------------------------
 'use strict';
 
-var root			= './src/';
+var root			= 'src/';
 var appPath 		= root + 'client/';
 
 var fwPath			= root + 'Framework/';
 
-var publicPath	    = './public/';
+var publicPath	    = 'public/';
 var publicView	    = publicPath + 'views/';
 var publicClient    = publicView + 'client/';
 var publicFW	    = publicView + 'fw/';
@@ -24,9 +24,14 @@ var sassPro		= {
 	outputStyle: 'compressed'
 };
 
+// Configuracion del servidor ExpressJs
+var serverCfg = require('../src/server/config').server;
+
 
 module.exports =  {
-	'production': {
+    'server': serverCfg,
+
+    'production': {
 		'jsSrc': publicPath + 'js/*.js',
 		'cssSrc': publicPath + 'css/*.css',
 		'jsDest': publicPath + 'js/',
@@ -49,12 +54,16 @@ module.exports =  {
         files: ["public/**/*.*"]
     },
 
-	"clean_js": {
-		"src": [publicPath + 'js/**/*.js']
+
+	"clean": {
+        'src': [publicPath],
+        'clean_js': {
+            "src": [publicPath + 'js/**/*.js']
+        }
 	},
 
 	"markup": {
-		"src": [appPath + '*.html', appPath + '*.hbs', appPath + '*.twig'],
+		"src": [appPath + '**/*.html', appPath + '**/*.hbs', appPath + '**/*.twig'],
 		"dest": publicClient
 	},
 

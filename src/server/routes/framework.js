@@ -41,5 +41,9 @@ router.get('/layouts', function(req, res) {
     res.render('fw/pages/layouts', data);
 });
 
+router.get('/test', function(req, res) {
+    res.render('fw/pages/test', {data: 'Hello World'});
+});
+
 
 module.exports = router;
