@@ -3,10 +3,9 @@
 // -----------------------------------------------------------------------------
 'use strict';
 
-var gulp		= require('gulp');
-var nodemon     = require('gulp-nodemon');
-var browserSync = require('browser-sync');
-var _ = require('lodash');
+var gulp		= require('gulp'),
+    nodemon     = require('gulp-nodemon'),
+    browserSync = require('browser-sync');
 
 
 // we'd need a slight delay to reload browsers
@@ -17,7 +16,6 @@ var BROWSER_SYNC_RELOAD_DELAY = 500;
 gulp.task('nodemon', ['watchify'], function (cb) {
 
     var called = false;
-    var _restart = false;
 
     return nodemon({
         script: 'src/server/server.js',
@@ -29,15 +27,11 @@ gulp.task('nodemon', ['watchify'], function (cb) {
             cb();
         }
         called = true;
-        _restart = true;
 
     }).on('restart', function() {
-        if (_restart) {
-            _restart = false;
-
-            setTimeout(function() {
-                browserSync.reload();
-            }, BROWSER_SYNC_RELOAD_DELAY);
-        }
+        // to avoid nodemon being restarted multiple times
+        setTimeout(function() {
+            browserSync.reload();
+        }, BROWSER_SYNC_RELOAD_DELAY);
     });
 });

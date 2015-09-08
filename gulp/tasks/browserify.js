@@ -12,7 +12,6 @@
 var gulp 			= require('gulp');
 var _				= require('lodash');
 var browserify 		= require('browserify');
-var browserSync 	= require('browser-sync');
 var watchify 		= require('watchify');
 var mergeStream		= require('merge-stream');
 var source 			= require('vinyl-source-stream');
@@ -46,9 +45,7 @@ var browserifyTask = function(devMode) {
 				.pipe(source(bundleConfig.outputName))				
 				// Specify the output destination
 				.pipe(gulp.dest(bundleConfig.dest))
-				.pipe(streamify(logger.bundle.pipeEnd()))
-				// Update browsers
-				.pipe(browserSync.stream());
+				.pipe(streamify(logger.bundle.pipeEnd()));
 		}
 
 		// Sort out shared dependencies.
@@ -62,10 +59,7 @@ var browserifyTask = function(devMode) {
 			// Wrap with watchify and rebundle on changes
 			b = watchify(b);
 			// Rebundle and update
-			b.on('update', function() {
-				console.log('Watchify Update!!');
-				bundle();
-			});
+			b.on('update', function() { bundle(); });
 			
 			logger.bundle.watch(bundleConfig.outputName);
 		}

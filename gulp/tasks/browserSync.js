@@ -1,26 +1,20 @@
 // -----------------------------------------------------------------------------
 // Serve and sync browsers
 // -----------------------------------------------------------------------------
+'use strict';
 
-var gulp			= require('gulp');
-var browserSync 	= require('browser-sync');
-var config			= require('../config').browserSync;
-var config_server 	= require('../config').browserSync_server;
-var conf 	= require('../config');
-
-
-gulp.task('browserSync', function() {
-	// Inicializamos el servidor
-	browserSync(config);
-});
+var gulp		= require('gulp');
+var browserSync = require('browser-sync');
+var config 	    = require('../config');
 
 
-gulp.task('browserSync:server', ['nodemon'], function() {
-	// Inicializamos el servidor
-	//browserSync.create();
-	browserSync.init(config_server);
+/// ------------------------------------------------------------------------------------------
 
-    gulp.watch(conf.sass.src, ['sass']);
-    gulp.watch(conf.markup.src, ['markup']);
-    gulp.watch(conf.markup_fw.src, ['markup:fw']);
+
+gulp.task('browserSync', ['nodemon'], function() {
+    browserSync(config.browserSync_server);
+
+    gulp.watch(config.sass.src, ['sass']);
+    gulp.watch(config.markup.src, ['markup']);
+    gulp.watch(config.markup_fw.src, ['markup:fw']);
 });

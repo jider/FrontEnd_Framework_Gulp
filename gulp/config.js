@@ -46,8 +46,7 @@ module.exports =  {
 
     "browserSync_server": {
         proxy: "http://localhost:5000",
-        files: ["public/**/*.*"],
-        browser: ['google-chrome']
+        files: ["public/**/*.*"]
     },
 
 	"clean_js": {
@@ -55,12 +54,12 @@ module.exports =  {
 	},
 
 	"markup": {
-		"src": [appPath + '*.html', appPath + '*.hbs'],
+		"src": [appPath + '*.html', appPath + '*.hbs', appPath + '*.twig'],
 		"dest": publicClient
 	},
 
 	"markup_fw": {
-		"src": [fwPath + '**/*.html', fwPath + '**/*.hbs'],
+		"src": [fwPath + '**/*.html', fwPath + '**/*.hbs', fwPath + '**/*.twig'],
         "dest": publicFW
 	},
 

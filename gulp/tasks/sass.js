@@ -7,7 +7,6 @@ var gulp 			= require('gulp');
 var sass 			= require('gulp-sass');
 var sourcemaps 		= require('gulp-sourcemaps');
 var autoprefixer 	= require('gulp-autoprefixer');
-var browserSync 	= require('browser-sync');
 var logger 			= require('../util/logger');
 var handleErrors	= require('../util/handleErrors');
 var config       	= require('../config').sass;
@@ -30,7 +29,5 @@ gulp.task('sass', function() {
 		// Escribe el CSS resultante en la ruta de salida especificada en 'cssOutput'
 		.pipe(gulp.dest(config.dest))
 		// Log file size
-		.pipe(logger.fileEnd('Generated style file'))
-		// Refrescamos los navegadores
-		.pipe(browserSync.stream());
+		.pipe(logger.fileEnd('Generated style file'));
 });
