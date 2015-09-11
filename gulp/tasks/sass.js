@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------
-// Lib Sass Compilation
+// Sass Compilation
 // -----------------------------------------------------------------------------
 'use strict';
 
@@ -25,7 +25,7 @@ gulp.task('sass', function() {
 		// Insertamos los prefijos por vendor en el CSS generado
 		.pipe(autoprefixer())
 		// Escribe los mapas de código para el CSS generado
-		.pipe(sourcemaps.write(config.srcMapDest))		
+		.pipe(sourcemaps.write(config.srcMapDest))
 		// Escribe el CSS resultante en la ruta de salida especificada en 'cssOutput'
 		.pipe(gulp.dest(config.dest))
 		// Log file size

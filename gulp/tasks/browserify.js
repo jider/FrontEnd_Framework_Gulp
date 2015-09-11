@@ -15,7 +15,6 @@ var browserify 		= require('browserify');
 var watchify 		= require('watchify');
 var mergeStream		= require('merge-stream');
 var source 			= require('vinyl-source-stream');
-var streamify 		= require('gulp-streamify')
 var logger			= require('../util/logger');
 var handleErrors	= require('../util/handleErrors');
 var config 			= require('../config').browserify;
@@ -44,8 +43,7 @@ var browserifyTask = function(devMode) {
 				// Specify the desired output filename here.
 				.pipe(source(bundleConfig.outputName))				
 				// Specify the output destination
-				.pipe(gulp.dest(bundleConfig.dest))
-				.pipe(streamify(logger.bundle.pipeEnd()));
+				.pipe(gulp.dest(bundleConfig.dest));
 		}
 
 		// Sort out shared dependencies.

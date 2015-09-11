@@ -4,7 +4,6 @@ var Cfg  = require('./config').server,
     Express = require('express'),
     Path 	= require('path'),
     Twig    = require('twig');
-    /*exphbs 	= require('express-handlebars');*/
 
 var clientRouter = require('./routes/client'),
     fwRouter	 = require('./routes/framework');
@@ -20,18 +19,6 @@ app.set('view engine', 'twig');
 
 // Deshabilitamos la cache de Twig
 Twig.cache(false);
-
-// Handlebars
-/*var hbs = exphbs.create({
-    layoutsDir: path.join(app.get('views'), 'fw', 'frames'),
-	partialsDir: [
-        path.join(app.get('views'), 'fw', 'templates')
-	],
-    defaultLayout: 'index',
-	extname: '.hbs'
-});
-app.engine('hbs', hbs.engine);
-app.set('view engine', 'hbs');*/
 
 
 // Routing

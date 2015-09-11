@@ -3,17 +3,18 @@
 // -----------------------------------------------------------------------------
 'use strict';
 
-var root			= 'src/';
-var appPath 		= root + 'client/';
+var root	= 'src/',
+    appPath = root + 'client/',
+    fwPath	= root + 'Framework/';
 
-var fwPath			= root + 'Framework/';
+var publicPath	 = 'public/',
+    publicView	 = publicPath + 'views/',
+    publicClient = publicView + 'client/',
+    publicFW	 = publicView + 'fw/';
 
-var publicPath	    = 'public/';
-var publicView	    = publicPath + 'views/';
-var publicClient    = publicView + 'client/';
-var publicFW	    = publicView + 'fw/';
+var distPath	    = 'dist/';
 
-var sassDev		= {
+var sassDev	= {
 	errLogToConsole: true,
 	includePaths: ['node_modules/foundation-sites/scss'],
 	outputStyle: 'expanded'
@@ -28,14 +29,17 @@ var sassPro		= {
 var serverCfg = require('../src/server/config').server;
 
 
+/// -------------------------------------------------------------------------------------------------------
+
+
 module.exports =  {
     'server': serverCfg,
 
     'production': {
 		'jsSrc': publicPath + 'js/*.js',
 		'cssSrc': publicPath + 'css/*.css',
-		'jsDest': publicPath + 'js/',
-	    'cssDest': publicPath + 'css/'
+		'jsDest': distPath + 'js/',
+	    'cssDest': distPath + 'css/'
   	},
 
 	// Configuración para la creación del servidor y sincronización de la aplicación de desarrollo del framwork en diferentes dispositivos
@@ -56,19 +60,19 @@ module.exports =  {
 
 
 	"clean": {
-        'src': [publicPath],
-        'clean_js': {
-            "src": [publicPath + 'js/**/*.js']
-        }
+        'all': [publicPath, distPath],
+        'public': [publicPath],
+        "js": [publicPath + 'js/**/*.js'],
+        'dist': [distPath]
 	},
 
 	"markup": {
-		"src": [appPath + '**/*.html', appPath + '**/*.hbs', appPath + '**/*.twig'],
+		"src": [appPath + '**/*.html', appPath + '**/*.twig'],
 		"dest": publicClient
 	},
 
 	"markup_fw": {
-		"src": [fwPath + '**/*.html', fwPath + '**/*.hbs', fwPath + '**/*.twig'],
+		"src": [fwPath + '**/*.html', fwPath + '**/*.twig'],
         "dest": publicFW
 	},
 
@@ -112,18 +116,6 @@ module.exports =  {
 		    	// Lista de modulos a requerir
 				"require": ['jquery', 'modernizr', 'foundation']
     		},
-            // APP Backbone bundle
-            {
-                "entries": appPath + '/js/app.js',
-                "dest": publicPath + 'js',
-                "outputName": 'app.js',
-                // Extensiones de archivo adicionales para hacerlas opcionales
-                "extensions": ['.hbs', '.html', '.htm'],
-                // Lista de modulos a requerir
-                "require": ['foundation.offcanvas'],
-                // Lista de modulos a requerir externamente
-                "external": ['jquery', 'modernizr', 'foundation']
-            },
             // APP Main bundle
             {
                 "entries": fwPath + '/scripts/main.js',
