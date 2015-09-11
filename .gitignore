@@ -47,7 +47,7 @@ Temporary Items
 node_modules
 bower_components
 **/dist
-**/build
+**/public
 **/sassdoc
 **/jsdoc
 **/.sass-cache

@@ -2,9 +2,14 @@
 // Sass Documentation Generation - Framework
 // -----------------------------------------------------------------------------
 
-var gulp 	= require('gulp');
-var sassdoc = require('sassdoc');
-var config  = require('../config').sassdoc;
+var gulp 	= require('gulp'),
+	sassdoc = require('sassdoc');
+
+var	config  = require('../config').sassdoc;
+
+
+/// -------------------------------------------------------------------------------------------------------
+
 
 gulp.task('sassdoc', function() {
 	return gulp

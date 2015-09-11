@@ -3,13 +3,18 @@
 // -----------------------------------------------------------------------------
 'use strict';
 
-var gulp 			= require('gulp');
-var sass 			= require('gulp-sass');
-var sourcemaps 		= require('gulp-sourcemaps');
-var autoprefixer 	= require('gulp-autoprefixer');
-var logger 			= require('../util/logger');
-var handleErrors	= require('../util/handleErrors');
-var config       	= require('../config').sass;
+var gulp 			= require('gulp'),
+	sass 			= require('gulp-sass'),
+	sourcemaps 		= require('gulp-sourcemaps'),
+	autoprefixer 	= require('gulp-autoprefixer');
+
+var	logger 			= require('../util/logger'),
+	handleErrors	= require('../util/handleErrors');
+
+var	config       	= require('../config').sass;
+
+
+/// -------------------------------------------------------------------------------------------------------
 
 
 gulp.task('sass', function() {

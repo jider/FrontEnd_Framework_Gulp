@@ -3,8 +3,11 @@
 // -----------------------------------------------------------------------------
 'use strict';
 
-var gulp           = require('gulp');
-var browserifyTask = require('./browserify');
+var gulp           = require('gulp'),
+    browserifyTask = require('./browserify');
+
+
+/// -------------------------------------------------------------------------------------------------------
 
 
 // Monitoriza y compila al vuelo los ficheros JS de salida del proyecto de desarrollo del framework, cuando se detecta un cambio

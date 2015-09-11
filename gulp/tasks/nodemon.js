@@ -11,12 +11,15 @@ var serverCfg   = require('../config').server,
     serverInit  = new RegExp(serverCfg.listenText);
 
 
+/// -------------------------------------------------------------------------------------------------------
+
+
 gulp.task('nodemon', ['watchify'], function (cb) {
 
     var called = false;
 
     return nodemon({
-        script: 'src/server/server.js',
+        script: 'src/Server/server.js',
         ext: 'js',
         watch: ['src/server/'],
         stdout: false

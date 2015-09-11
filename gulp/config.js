@@ -3,14 +3,16 @@
 // -----------------------------------------------------------------------------
 'use strict';
 
-var root	= 'src/',
-    appPath = root + 'client/',
-    fwPath	= root + 'Framework/';
+var root		= 'src/',
+    appPath 	= root + 'Client/',
+    fwPath		= root + 'Framework/',
+	serverPath 	= root + 'Server/';
 
 var publicPath	 = 'public/',
     publicView	 = publicPath + 'views/',
     publicClient = publicView + 'client/',
-    publicFW	 = publicView + 'fw/';
+    publicFW	 = publicView + 'fw/',
+	publicServer = publicView + 'server/';
 
 var distPath	    = 'dist/';
 
@@ -26,7 +28,7 @@ var sassPro		= {
 };
 
 // Configuracion del servidor ExpressJs
-var serverCfg = require('../src/server/config').server;
+var serverCfg = require('../src/Server/config').server;
 
 
 /// -------------------------------------------------------------------------------------------------------
@@ -66,7 +68,7 @@ module.exports =  {
         'dist': [distPath]
 	},
 
-	"markup": {
+	"markup_client": {
 		"src": [appPath + '**/*.html', appPath + '**/*.twig'],
 		"dest": publicClient
 	},
@@ -74,6 +76,11 @@ module.exports =  {
 	"markup_fw": {
 		"src": [fwPath + '**/*.html', fwPath + '**/*.twig'],
         "dest": publicFW
+	},
+
+	"markup_server": {
+		"src": [serverPath + 'views/*.html', serverPath + 'views/*.twig'],
+		"dest": publicServer
 	},
 
 	"images": {

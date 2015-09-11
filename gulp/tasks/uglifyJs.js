@@ -3,11 +3,13 @@
 // -----------------------------------------------------------------------------
 'use strict'
 
-var gulp 	= require('gulp');
-var uglify 	= require('gulp-uglify');
-var md5     = require('../util/md5Rename');
-var logger 	= require('../util/logger');
-var config 	= require('../config').production;
+var gulp 	= require('gulp'),
+	uglify 	= require('gulp-uglify');
+
+var	md5     = require('../util/md5Rename'),
+	logger 	= require('../util/logger');
+
+var	config 	= require('../config').production;
 
 
 /// -------------------------------------------------------------------------------------------------------

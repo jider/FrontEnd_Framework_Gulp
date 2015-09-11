@@ -9,15 +9,20 @@
 
 'use strict';
 
-var gulp 			= require('gulp');
-var _				= require('lodash');
-var browserify 		= require('browserify');
-var watchify 		= require('watchify');
-var mergeStream		= require('merge-stream');
-var source 			= require('vinyl-source-stream');
-var logger			= require('../util/logger');
-var handleErrors	= require('../util/handleErrors');
-var config 			= require('../config').browserify;
+var gulp 			= require('gulp'),
+	browserify 		= require('browserify'),
+	watchify 		= require('watchify'),
+	mergeStream		= require('merge-stream'),
+	source 			= require('vinyl-source-stream'),
+	_				= require('lodash');
+
+var	logger			= require('../util/logger'),
+	handleErrors	= require('../util/handleErrors');
+
+var	config 			= require('../config').browserify;
+
+
+/// -------------------------------------------------------------------------------------------------------
 
 
 var browserifyTask = function(devMode) {

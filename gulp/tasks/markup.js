@@ -7,15 +7,25 @@ var gulp 		= require('gulp');
 var config 		= require('../config');
 
 
-// Tarea para el tratamiento del marcado HTML de la aplicación de desarrollo del framework
-gulp.task('markup', function() {
+/// -------------------------------------------------------------------------------------------------------
+
+
+gulp.task('markup', ['markup:server', 'markup:fw', 'markup:client']);
+
+gulp.task('markup:client', function() {
 	return gulp
-		.src(config.markup.src)
-		.pipe(gulp.dest(config.markup.dest));
+		.src(config.markup_client.src)
+		.pipe(gulp.dest(config.markup_client.dest));
 });
 
 gulp.task('markup:fw', function() {
 	return gulp
 		.src(config.markup_fw.src)
 		.pipe(gulp.dest(config.markup_fw.dest));
+});
+
+gulp.task('markup:server', function() {
+	return gulp
+		.src(config.markup_server.src)
+		.pipe(gulp.dest(config.markup_server.dest));
 });

@@ -3,10 +3,14 @@
 // -----------------------------------------------------------------------------
 'use strict';
 
-var gulp       	= require('gulp');
-var changed    	= require('gulp-changed');
-var imagemin   	= require('gulp-imagemin');
+var gulp       	= require('gulp'),
+	changed    	= require('gulp-changed'),
+	imagemin   	= require('gulp-imagemin');
+
 var config     	= require('../config').images;
+
+
+/// -------------------------------------------------------------------------------------------------------
 
 
 // Optimiza las imágenes utilizadas en la aplicación de desarrollo del framework

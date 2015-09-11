@@ -3,10 +3,15 @@
 // -----------------------------------------------------------------------------
 'use strict';
 
-var gulp 	= require('gulp');
-var del 	= require('del');
+var gulp 	= require('gulp'),
+	del 	= require('del');
+
 var config 	= require('../config').clean;
 
+
+/// -------------------------------------------------------------------------------------------------------
+
+// Limpia los directorios 'public' y de 'distribucion'
 gulp.task('clean', function(cb) {
     del(config.all, cb);
 });
