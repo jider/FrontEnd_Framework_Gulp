@@ -2,10 +2,12 @@
 
 var _satelite = require('./modules/satelite');
 var _messages = require('./modules/messages');
+var _modal = require('./modules/modal');
 
 // Modules mapping
 var _modules = {
-    "messages": _messages
+    "messages": _messages,
+    "modal": _modal
 };
 
 

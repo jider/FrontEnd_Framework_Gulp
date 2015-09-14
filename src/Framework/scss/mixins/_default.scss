@@ -175,3 +175,75 @@
     #{$prefix}transform: $function;
   }
 }
+
+// == Animations ====================
+
+// -- Keyframes --------------------
+@mixin keyframes( $keyframes-name ){
+  @-webkit-keyframes #{$keyframes-name} {
+    @content;
+  }
+  @-moz-keyframes #{$keyframes-name} {
+    @content;
+  }
+  @-o-keyframes #{$keyframes-name} {
+    @content;
+  }
+  @keyframes #{$keyframes-name} {
+    @content;
+  }
+}
+// -- Animation --------------------
+@mixin animation( $str ){
+  @each $prefix in -webkit-, -moz-, -o-, '' {
+    #{$prefix}animation: #{$str};
+  }
+}
+
+//-- Ripple effect ------------------
+
+@mixin ripple_effect( $background-color ) {
+
+  transition: background-color .5s;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    display: block;
+    width: 0;
+    padding-top: 0;
+    border-radius: 100%;
+    background-color: $background-color;
+    @include transform(translate3d(-50%, -50%, 0));
+  }
+
+  &:active:before {
+    -webkit-backface-visibility: hidden;
+    width: 130%;
+    padding-top: 130%;
+    transition: width .2s ease-out, padding-top .2s ease-out;
+  }
+}
+
+////////////// hide user select ////////////
+// -----------------------------------------------------------------------------
+@mixin remove_highlight_select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+//////////////  generic crossbrowser prefix ////////////
+
+@mixin generic_browsers_prefix($name, $argument){
+  -webkit-#{$name}: #{$argument};
+  -moz-#{$name}: #{$argument};
+  -ms-#{$name}: #{$argument};
+  -o-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}

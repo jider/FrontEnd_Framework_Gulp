@@ -71,5 +71,11 @@ router.get('/layouts', function(req, res) {
     res.render('fw/pages/layouts', data);
 });
 
+router.get('/modal', function(req, res) {
+    data.title = 'modal';
+    res.render('fw/pages/modal', data);
+});
+
+
 
 module.exports = router;
