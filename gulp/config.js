@@ -45,55 +45,60 @@ module.exports =  {
   	},
 
 	// Configuración para la creación del servidor y sincronización de la aplicación de desarrollo del framwork en diferentes dispositivos
-	"browserSync": {
-		"server": {
-			"baseDir": publicPath,
-			"index": "index.html"
-			/*"routes": {
-		 		"/fw": "src/Framework/build"
+	'browserSync': {
+		'server': {
+			'baseDir': publicPath,
+			'index': 'index.html'
+			/*'routes': {
+		 		'/fw': 'src/Framework/build'
 			}*/
 		}
 	},
 
-    "browserSync_server": {
-        proxy: "http://localhost:5000",
-        files: ["public/**/*.*"]
+    'browserSync_server': {
+        proxy: 'http://localhost:5000',
+        files: ['public/**/*.*']
     },
 
 
-	"clean": {
+	'clean': {
         'all': [publicPath, distPath],
         'public': [publicPath],
-        "js": [publicPath + 'js/**/*.js'],
+        'js': [publicPath + 'js/**/*.js'],
         'dist': [distPath]
 	},
 
-	"markup_client": {
-		"src": [appPath + '**/*.html', appPath + '**/*.twig'],
-		"dest": publicClient
+	'markup_client': {
+		'src': [appPath + 'views/**/*.html', appPath + 'views/**/*.twig'],
+		'dest': publicClient
 	},
 
-	"markup_fw": {
-		"src": [fwPath + '**/*.html', fwPath + '**/*.twig'],
-        "dest": publicFW
+	'markup_fw': {
+		'src': [fwPath + '**/*.html', fwPath + '**/*.twig'],
+        'dest': publicFW
 	},
 
-	"markup_server": {
-		"src": [serverPath + 'views/*.html', serverPath + 'views/*.twig'],
-		"dest": publicServer
+	'markup_server': {
+		'src': [serverPath + 'views/*.html', serverPath + 'views/*.twig'],
+		'dest': publicServer
 	},
 
-	"images": {
-		"src": appPath + "images/**",
-    	"dest": publicPath + "images"
+	'images': {
+		'src': appPath + 'images/**',
+    	'dest': publicPath + 'images'
   	},
+
+    'fonts': {
+        'src': appPath + 'fonts/**',
+        'dest': publicPath + 'fonts'
+    },
 
 	browserSync_fw: { 
 		server: {
 			baseDir: root + 'sites/',
-			index: "index.html",
+			index: 'index.html',
 			routes: {
-				"/dist" : "src/dist"
+				'/dist' : 'src/dist'
 			}
 		}
 	},
@@ -113,30 +118,38 @@ module.exports =  {
 		}
 	},
 
-    "browserify": {
+    'browserify': {
 	    // Se creará un bundle por cada configuración de bundle en la siguiente lista
-    	"bundleConfigs": [
+    	'bundleConfigs': [
     		// Vendors bundle
     		{
-    			"dest": publicPath + 'js',
-		    	"outputName": 'commons.js',
+    			'dest': publicPath + 'js',
+		    	'outputName': 'commons.js',
 		    	// Lista de modulos a requerir
-				"require": ['jquery', 'modernizr', 'foundation']
+				'require': ['jquery', 'modernizr', 'foundation']
     		},
             // APP Main bundle
             {
-                "entries": fwPath + '/scripts/main.js',
-                "dest": publicPath + 'js',
-                "outputName": 'main.js',
+                'entries': fwPath + '/scripts/main.js',
+                'dest': publicPath + 'js',
+                'outputName': 'main.js',
                 // Lista de modulos a requerir externamente
-                "external": ['jquery']
+                'external': ['jquery']
             },
             // Initialization bundle
             {
-                "entries": fwPath + '/scripts/inits.js',
-                "dest": publicPath + 'js',
-                "outputName": 'inits.js'
-            }
+                'entries': fwPath + '/scripts/inits.js',
+                'dest': publicPath + 'js',
+                'outputName': 'inits.js'
+            },
+			// Client bundle
+			{
+				'entries': appPath + 'client.js',
+				'dest': publicPath + 'js',
+				'outputName': 'client.js',
+				// Lista de modulos a requerir externamente
+				'external': ['jquery']
+			}
   		]
 	}
 };

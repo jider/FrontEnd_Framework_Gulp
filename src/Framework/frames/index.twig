@@ -75,10 +75,16 @@
 
     {# @TODO: Create wrapper helper #}
 
+    <!-- Header -->
+    {% block header %}{% endblock header %}
+
     <!-- Main content -->
     <main id="mainContent" role="content">
-        {% block body %}{% endblock %}
+        {% block body %}{% endblock body %}
     </main>
+
+    <!-- Footer -->
+    {% block footer %}{% endblock footer %}
 
     {# BOTTOM PAGE SCRIPTS #}
     {% block scripts_bottom %}

@@ -1,0 +1,31 @@
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+body {
+  background-color: #FCFCFC;
+  color: #333;
+  font-size: 1em;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  min-height: 500px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+}
+
+.clearfix:before, .clearfix:after { content: ''; display: table; }
+.clearfix:after { clear: both; }
+
+
+%fullwidth, .fullwidth {
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: initial !important;
+}
+
+%round, .round { border-radius: 50%; }

@@ -83,7 +83,6 @@ Message.prototype.close = function() {
 
 
 // Module Private methods  -----------------------------------------------------------------------
-
 var _createMessage = function(classes, text, type) {
     type = type || 'msg';
 

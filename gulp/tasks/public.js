@@ -7,5 +7,5 @@ var gulp = require('gulp');
 
 
 gulp.task('public', ['clean'], function() {
-    gulp.start('sass', 'images', 'markup', 'browserify');
+    gulp.start('sass', 'fonts', 'images', 'markup', 'browserify');
 });

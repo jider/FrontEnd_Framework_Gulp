@@ -1,0 +1,25 @@
+{% extends "client/index.twig" %}
+
+{% block body %}
+    <div class="row">
+        <h2>Default messages</h2>
+        {% for msg in messages.default %}
+            {% include 'fw/templates/modules/messages/message.twig' with {'class':msg.class, 'text':msg.text} %}
+        {% endfor %}
+
+        <h2>Small messages</h2>
+        {% for msg in messages.small %}
+            {% include 'fw/templates/modules/messages/message.twig' with {'class':msg.class, 'text':msg.text} %}
+        {% endfor %}
+
+        <h2>Large messages</h2>
+        {% for msg in messages.large %}
+            {% include 'fw/templates/modules/messages/message.twig' with {'class':msg.class, 'text':msg.text} %}
+        {% endfor %}
+
+        <h2>Extra Large messages</h2>
+        {% for msg in messages.xlarge %}
+            {% include 'fw/templates/modules/messages/message.twig' with {'class':msg.class, 'text':msg.text} %}
+        {% endfor %}
+    </div>
+{% endblock %}

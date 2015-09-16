@@ -1,12 +1,12 @@
 'use strict';
 
+
 var Cfg  = require('./config').server,
     Express = require('express'),
     Path 	= require('path'),
     Twig    = require('twig');
 
-var clientRouter = require('./routes/client'),
-    fwRouter	 = require('./routes/framework');
+var clientRouter = require('./routes/client');
 
 var app = Express();
 
@@ -21,13 +21,11 @@ app.set('view engine', 'twig');
 Twig.cache(false);
 
 
-// Routing
-app.use(clientRouter);
-app.use(fwRouter);
-
-
 // Static middleware
 app.use(Express.static('public'));
+
+// Routing
+app.use(clientRouter);
 
 
 // catch 404 and forward to error handler
