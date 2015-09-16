@@ -1,0 +1,32 @@
+$icon-jellyfish: "\e600";
+
+
+
+@font-face {
+  font-family: 'jellyfish';
+  src:url('../fonts/jellyfish.eot?-yh0w1b');
+  src:url('../fonts/jellyfish.eot?#iefix-yh0w1b') format('embedded-opentype'),
+  url('../fonts/jellyfish.ttf?-yh0w1b') format('truetype'),
+  url('../fonts/jellyfish.woff?-yh0w1b') format('woff'),
+  url('../fonts/jellyfish.svg?-yh0w1b#jellyfish') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'jellyfish';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jellyfish:before {
+  content: "\e600";
+}
