@@ -17,7 +17,7 @@ var data = {
         ],
         'js': [
             'js/commons.js',
-            'js/main.js',
+            'js/main.js'
         ],
         'initjs': [
             'js/inits.js',
@@ -83,6 +83,39 @@ router.get('/layouts', function(req, res) {
     data.title = 'Page Layouts';
 
     res.render('client/fwDoc/layouts', data);
+});
+
+router.get('/lists', function(req, res) {
+    data.title = 'Lists';
+
+    res.render('client/fwDoc/lists', data);
+});
+
+router.get('/imager', function(req, res) {
+
+    data.title = 'Imager';
+
+    data.width = 'prueba';
+    res.render('client/fwDoc/imager', data);
+});
+
+router.get('/loaders', function(req, res) {
+    data.title = 'Loaders';
+
+    data.loaders =[
+
+        {'number':1},
+        {'classes':'-red','number':2},
+        {'classes':'-red','number':3},
+        {'number':4},
+        {'number':5},
+        {'number':6},
+        {'classes':'-red','number':7},
+        {'classes':'-red','number':8},
+
+    ];
+
+    res.render('client/fwDoc/loaders', data);
 });
 
 
