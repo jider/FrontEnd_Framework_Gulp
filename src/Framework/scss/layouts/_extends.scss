@@ -76,6 +76,59 @@
   }
 }
 
+%l_5c_A {
+  .col {
+    @include grid-column(12);
+
+    @media #{$medium-up} {
+      @include grid-column(2.4);
+    }
+  }
+}
+
+%l_5c_B {
+  .col {
+    @include grid-column(4);
+
+    &:first-child, &:last-child {
+      @include grid-column(12);
+    }
+  }
+
+  @media #{$medium-up} {
+    .col, .col:first-child, .col:last-child { @include grid-column(2.4); }
+  }
+}
+
+
+%l_5c_C {
+  .col {
+    @include grid-column(6);
+
+    &:first-child {
+      @include grid-column(12);
+    }
+  }
+
+  @media #{$medium-up} {
+    .col, .col:first-child, .col:last-child { @include grid-column(2.4); }
+  }
+}
+
+%l_5c_D {
+  .col {
+    @include grid-column(6);
+
+    &:last-child {
+      @include grid-column(12);
+    }
+  }
+
+  @media #{$medium-up} {
+    .col, .col:first-child, .col:last-child { @include grid-column(2.4); }
+  }
+}
+
 %bg_1 {  background-color: #ef9a9a ; }
 %bg_2 {  background-color: #f48fb1 ; }
 %bg_3 {  background-color: #ce93d8 ; }
@@ -83,3 +136,7 @@
 %bg_5 {  background-color: #9fa8da ; }
 %bg_6 {  background-color: #90caf9 ; }
 %bg_7 {  background-color: #80cbc4 ; }
+%bg_8 {  background-color: #e2c178 ; }
+%bg_9 {  background-color: #bbbec5 ; }
+%bg_10 {  background-color: #3C4E47 ; }
+%bg_11 {  background-color: #1294A6 ; }
