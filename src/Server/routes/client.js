@@ -23,7 +23,39 @@ var data = {
             'js/inits.js',
             'js/client.js'
         ]
-    }
+    },
+    'menu':[
+        {
+        'title':'sites',
+        'items':[
+
+                {'href':'/','ico':'ico-tl5','title':'Telecinco'},
+                {'href':'#','ico':'ico-cuatro','title':'Cuatro'},
+                {'href':'#','ico':'ico-div','title':'Divinity'},
+
+            ]
+        },
+        {
+            'title':'modules/components',
+            'items':[
+
+                {'href':'/','ico':'ico-tl5','title':'Telecinco'},
+                {'href':'#','ico':'ico-cuatro','title':'Cuatro'},
+                {'href':'#','ico':'ico-div','title':'Divinity'},
+
+            ]
+        },
+        {
+            'title':'Documentation',
+            'items':[
+
+                {'href':'/color','ico':'ico-tl5','title':'Colors'},
+                {'href':'/layouts','ico':'ico-cuatro','title':'Layouts'},
+                {'href':'/messages','ico':'ico-div','title':'Menssages'},
+
+            ]
+        }
+    ]
 };
 
 
@@ -89,6 +121,12 @@ router.get('/lists', function(req, res) {
     data.title = 'Lists';
 
     res.render('client/fwDoc/lists', data);
+});
+
+router.get('/patterns', function(req, res) {
+    data.title = 'Patterns';
+
+    res.render('client/fwDoc/patterns', data);
 });
 
 router.get('/imager', function(req, res) {
