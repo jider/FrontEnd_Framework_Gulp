@@ -82,11 +82,12 @@
         <span class="morphmenu-close"></span>
     </div>
     <div class="overlay"></div>
-{% endblock header %}
+{% endblock %}
 
 {% block body %}
+    {{ super() }}
     <div class="page-bg">
         <span class="logo icon-jellyfish"></span>
         <h1 class="main-title">MEDUXA<strong class="main-subtitle">Mediaset User Xperience & Appearance</strong></h1>
     </div>
-{% endblock body %}
+{% endblock %}
