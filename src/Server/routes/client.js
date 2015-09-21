@@ -51,7 +51,7 @@ var data = {
 
                 {'href':'/color','ico':'ico-tl5','title':'Colors'},
                 {'href':'/layouts','ico':'ico-cuatro','title':'Layouts'},
-                {'href':'/messages','ico':'ico-div','title':'Menssages'},
+                {'href':'/messages','ico':'ico-div','title':'Messages'},
 
             ]
         }
