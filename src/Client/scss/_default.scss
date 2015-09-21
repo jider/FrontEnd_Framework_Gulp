@@ -17,6 +17,10 @@ a {
   outline: none;
 }
 
+#mainContent.hidden{
+  display: none;
+}
+
 .clearfix:before, .clearfix:after { content: ''; display: table; }
 .clearfix:after { clear: both; }
 

@@ -3,11 +3,13 @@
 
 (function() {
     var morphMenu = jQuery('.morphmenu'),
+        mainContent = jQuery('#mainContent'),
         trigger = morphMenu.children('.morphmenu-trigger'),
         isOpen = false;
 
     // Show/Hide main menu
     var toggleSearch = function(e) {
+        mainContent.toggleClass('hidden');
         morphMenu.toggleClass('open');
         isOpen = !isOpen;
     };
