@@ -1,0 +1,14 @@
+.loader-container {
+  background: lighten($bg-color, 2%);
+  display: inline-block;
+  overflow: hidden;
+  -webkit-transition: all .15s linear;
+  transition: all .15s linear;
+  position: relative;
+  width: 6rem;
+  height: 6rem;
+
+  &:hover {
+    background: lighten($bg-color, 4%);
+  }
+}

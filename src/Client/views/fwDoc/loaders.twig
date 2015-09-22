@@ -1,8 +1,7 @@
-{% extends "client/index.twig" %}
+{% extends docTemplate %}
 
-{% block body %}
-
-    <div class="text-center">
+{% block articles %}
+    <article class="article">
 
         {% for loader in loaders %}
             {% set parameters ={'classes':loader.classes, 'loaderNumber':loader.number} %}
@@ -16,6 +15,6 @@
 
         <div class="trigger">trigger</div>
 
-    </div>
+    </article>
 
 {% endblock %}
