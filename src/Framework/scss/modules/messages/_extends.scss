@@ -8,7 +8,7 @@
 
 ///
 /// Placeholder principal del módulo de mensajes.
-/// Todo módulo de mensaje debe extender de este placeholder.
+/// Los módulos de mensaje deben extender de este placeholder.
 /// 
 /// @example
 ///   .m-msg{
@@ -19,7 +19,7 @@
   	padding: $msg-size-m + rem;
 	margin-bottom: $msg-size-m + rem;
 	border: 1px solid;
-	border-radius: .15rem;
+	border-radius: 3px;
 	font-size: $msg-font-m + rem;
 	color: $msg-color;
 	border-color: lighten($msg-color, 20%);

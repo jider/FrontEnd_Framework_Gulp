@@ -67,7 +67,7 @@
  .msg-error{
    @extend %message;
    @extend %message--error;
-   @extend %message--xlarge;
+   @extend %message--large;
  }
 
 ///

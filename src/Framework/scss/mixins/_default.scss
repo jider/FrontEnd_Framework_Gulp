@@ -56,6 +56,16 @@
 }
 
 
+/////// hw_acceleration /////////
+// -----------------------------------------------------------------------------
+// David Walsh
+// http://davidwalsh.name/translate3d
+@mixin hw_acceleration() {
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}
+
 
 /////// input_placeholder /////////
 // -----------------------------------------------------------------------------
@@ -201,9 +211,7 @@
 }
 
 //-- Ripple effect ------------------
-
 @mixin ripple_effect( $background-color ) {
-
   transition: background-color .5s;
 
   &:before {

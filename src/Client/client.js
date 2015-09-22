@@ -2,14 +2,14 @@
 
 
 (function() {
-    var morphMenu = jQuery('.morphmenu'),
-        mainContent = jQuery('#mainContent'),
+    var mainContent = jQuery('#mainContent'),
+        morphMenu = jQuery('.morphmenu'),
         trigger = morphMenu.children('.morphmenu-trigger'),
         isOpen = false;
 
     // Show/Hide main menu
     var toggleSearch = function(e) {
-        mainContent.toggleClass('hidden');
+        mainContent.toggleClass('st--hidden');
         morphMenu.toggleClass('open');
         isOpen = !isOpen;
     };

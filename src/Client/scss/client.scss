@@ -1,11 +1,18 @@
-/// Custom styles
-/// ---------------------------------------
+// Framework Core
+// ------------------------------------------------------------------------------
+@import "../../Framework/scss/style";
 
+
+
+/// Client styles
+/// ---------------------------------------
 @import "default";
 @import "typography";
 
-/*@import "layouts";*/
+@import "layouts";
 @import "icons";
 @import "modules";
 
+@import "color_pallete";
+@import "documentation";
 @import "logo";

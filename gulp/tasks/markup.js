@@ -3,8 +3,10 @@
 // -----------------------------------------------------------------------------
 'use strict';
 
-var gulp 		= require('gulp');
-var config 		= require('../config');
+var gulp 	= require('gulp'),
+	replace	= require('gulp-replace');
+
+var config 	= require('../config');
 
 
 /// -------------------------------------------------------------------------------------------------------
@@ -28,4 +30,15 @@ gulp.task('markup:server', function() {
 	return gulp
 		.src(config.markup_server.src)
 		.pipe(gulp.dest(config.markup_server.dest));
+});
+
+gulp.task('markup:dist', function() {
+    var superRegExp = /{{\s*super\(\)\s*}}/g,
+        elifRegExp  = /{%\s*elif\s+/g;
+
+    return gulp
+        .src(config.markup_dist.src)
+        .pipe(replace(superRegExp, '{{ parent() }}', { skipBinary: true }))
+        .pipe(replace(elifRegExp, '{% elseif ', { skipBinary: true }))
+        .pipe(gulp.dest(config.markup_dist.dest));
 });

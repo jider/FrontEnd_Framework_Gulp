@@ -83,6 +83,11 @@ module.exports =  {
 		'dest': publicServer
 	},
 
+    'markup_dist': {
+        'src': [publicPath + 'views/**/*.twig'],
+        'dest': distPath + 'views'
+    },
+
 	'images': {
 		'src': appPath + 'images/**',
     	'dest': publicPath + 'images'

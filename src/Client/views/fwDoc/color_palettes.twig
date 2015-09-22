@@ -1,56 +1,59 @@
-{% extends "client/index.twig" %}
+{% extends docTemplate %}
 
-{% block body %}
-    <div class="row">
-        <header class="views_header">
-            <h1>Color palettes</h1>
-        </header>
+{% block articles %}
+    <article class="article">
+        <h3 class="article-title">Typography</h3>
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
 
-        <article class="colorcode">
-            <header class="views_subheader">
-                <h2>Typography</h2>
-            </header>
-            <div class="primary_header_color">
-                <p>$primary_header_color</p>
+            <div class="colorcode">
+                <div class="primary_header_color">
+                    <p>$primary_header_color</p>
+                </div>
+                <div class="primary_text">
+                    <p>$primary_text</p>
+                </div>
+                <div class="secondary_text">
+                    <p>$secondary_text</p>
+                </div>
+                <div class="href_color">
+                    <p>$href_color</p>
+                </div>
             </div>
-            <div class="primary_text">
-                <p>$primary_text</p>
-            </div>
-            <div class="secondary_text">
-                <p>$secondary_text</p>
-            </div>
-            <div class="href_color">
-                <p>$href_color</p>
-            </div>
-        </article>
+        </div>
+    </article>
 
+    <article class="article">
+        <h3 class="article-title">Borders, rules and shadows</h3>
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
 
-        <article class="colorcode">
-            <header class="views_subheader">
-                <h2>Borders, rules and shadows</h2>
-            </header>
-            <div class="shadow_color">
-                <p>$shadow_color</p>
+            <div class="colorcode">
+                <div class="shadow_color">
+                    <p>$shadow_color</p>
+                </div>
+                <div class="border_color">
+                    <p>$border_color</p>
+                </div>
+                <div class="standard_hr_color">
+                    <p>$standard_hr_color</p>
+                </div>
+                <div class="standard_border_color">
+                    <p>$standard_border_color</p>
+                </div>
             </div>
-            <div class="border_color">
-                <p>$border_color</p>
-            </div>
-            <div class="standard_hr_color">
-                <p>$standard_hr_color</p>
-            </div>
-            <div class="standard_border_color">
-                <p>$standard_border_color</p>
-            </div>
-        </article>
+        </div>
+    </article>
 
-        <article class="colorcode">
-            <header class="views_subheader">
-                <h2>HTML5 colors</h2>
-            </header>
-            <div class="webkit_tap_hightlight">
-                <p>$webkit_tap_hightlight</p>
-            </div>
-            <section class="hidden">
+    <article class="article">
+        <h3 class="article-title">HTML5 colors</h3>
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
+
+            <div class="colorcode">
+                <div class="webkit_tap_hightlight">
+                    <p>$webkit_tap_hightlight</p>
+                </div>
                 <div class="ins_color">
                     <p>$ins_color</p>
                 </div>
@@ -63,18 +66,19 @@
                 <div class="mark_color">
                     <p>$mark_color</p>
                 </div>
-            </section>
-        </article>
-
-
-        <article class="colorcode">
-            <header class="views_subheader">
-                <h2>grayscale</h2>
-            </header>
-            <div class="alpha_gray">
-                <p>$alpha_gray</p>
             </div>
-            <section class="hidden">
+        </div>
+    </article>
+
+    <article class="article">
+        <h3 class="article-title">Grayscale</h3>
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
+
+            <div class="colorcode">
+                <div class="alpha_gray">
+                    <p>$alpha_gray</p>
+                </div>
                 <div class="bravo_gray">
                     <p>$bravo_gray</p>
                 </div>
@@ -102,17 +106,19 @@
                 <div class="white">
                     <p>$white</p>
                 </div>
-            </section>
-        </article>
-
-        <article class="colorcode">
-            <header class="views_subheader">
-                <h2>alpha color scale</h2>
-            </header>
-            <div class="alpha_color">
-                <p>$alpha_color</p>
             </div>
-            <section class="hidden">
+        </div>
+    </article>
+
+    <article class="article">
+        <h3 class="article-title">Alpha color scale</h3>
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
+
+            <div class="colorcode">
+                <div class="alpha_color">
+                    <p>$alpha_color</p>
+                </div>
                 <div class="alpha_color_bravo">
                     <p>$alpha_color_bravo</p>
                 </div>
@@ -140,17 +146,19 @@
                 <div class="alpha_color_juliet">
                     <p>$alpha_color_juliet</p>
                 </div>
-            </section>
-        </article>
-
-        <article class="colorcode">
-            <header class="views_subheader">
-                <h2>bravo color scale</h2>
-            </header>
-            <div class="bravo_color">
-                <p>$bravo_color</p>
             </div>
-            <section class="hidden">
+        </div>
+    </article>
+
+    <article class="article">
+        <h3 class="article-title">Bravo color scale</h3>
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
+
+            <div class="colorcode">
+                <div class="bravo_color">
+                    <p>$bravo_color</p>
+                </div>
                 <div class="bravo_color_bravo">
                     <p>$bravo_color_bravo</p>
                 </div>
@@ -178,17 +186,19 @@
                 <div class="bravo_color_juliet">
                     <p>$bravo_color_juliet</p>
                 </div>
-            </section>
-        </article>
-
-        <article class="colorcode">
-            <header class="views_subheader">
-                <h2>charlie color scale</h2>
-            </header>
-            <div class="charlie_color">
-                <p>$charlie_color</p>
             </div>
-            <section class="hidden">
+        </div>
+    </article>
+
+    <article class="article">
+        <h3 class="article-title">Charlie color scale</h3>
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
+
+            <div class="colorcode">
+                <div class="charlie_color">
+                    <p>$charlie_color</p>
+                </div>
                 <div class="charlie_color_bravo">
                     <p>$charlie_color_bravo</p>
                 </div>
@@ -216,17 +226,19 @@
                 <div class="charlie_color_juliet">
                     <p>$charlie_color_juliet</p>
                 </div>
-            </section>
-        </article>
-
-        <article class="colorcode">
-            <header class="views_subheader">
-                <h2>delta color scale</h2>
-            </header>
-            <div class="delta_color">
-                <p>$delta_color</p>
             </div>
-            <section class="hidden">
+        </div>
+    </article>
+
+    <article class="article">
+        <h3 class="article-title">Delta color scale</h3>
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
+
+            <div class="colorcode">
+                <div class="delta_color">
+                    <p>$delta_color</p>
+                </div>
                 <div class="delta_color_bravo">
                     <p>$delta_color_bravo</p>
                 </div>
@@ -254,17 +266,19 @@
                 <div class="delta_color_juliet">
                     <p>$delta_color_juliet</p>
                 </div>
-            </section>
-        </article>
-
-        <article class="colorcode">
-            <header class="views_subheader">
-                <h2>echo color scale</h2>
-            </header>
-            <div class="echo_color">
-                <p>$echo_color</p>
             </div>
-            <section class="hidden">
+        </div>
+    </article>
+
+    <article class="article">
+        <h3 class="article-title">Echo color scale</h3>
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
+
+            <div class="colorcode">
+                <div class="echo_color">
+                    <p>$echo_color</p>
+                </div>
                 <div class="echo_color_bravo">
                     <p>$echo_color_bravo</p>
                 </div>
@@ -292,7 +306,7 @@
                 <div class="echo_color_juliet">
                     <p>$echo_color_juliet</p>
                 </div>
-            </section>
-        </article>
-    </div>
+            </div>
+        </div>
+    </article>
 {% endblock %}

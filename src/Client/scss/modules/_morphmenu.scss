@@ -1,6 +1,8 @@
 /* Morphmenu */
 /* -------------------------------------------------- */
 .morphmenu {
+  @include hw_acceleration;
+
   position: fixed;
   top: 0;
   left: 0;
@@ -197,17 +199,3 @@
 
 /* MEDIA QUERYS */
 /* -------------------------------------------------- */
-@media screen and (max-width: 53.125em) {
-  .morphmenu-header .morphmenu-title {
-    font-size: 2em;
-    line-height: 2em;
-  }
-
-  .dummy-column {
-    float: none;
-    width: auto;
-    padding: 0 0 2em;
-
-    &:nth-child(2) { margin: 0; }
-  }
-}

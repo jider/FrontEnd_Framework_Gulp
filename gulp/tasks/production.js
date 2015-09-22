@@ -10,5 +10,5 @@ var gulp = require('gulp');
 
 
 gulp.task('production', ['clean:dist'], function() {
-	gulp.start(['minifyCss', 'uglifyJs']);
+	gulp.start(['minifyCss', 'uglifyJs', 'markup:dist']);
 });

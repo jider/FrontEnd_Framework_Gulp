@@ -6,6 +6,8 @@ body {
   font-size: 1em;
   font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   min-height: 500px;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
 
   overflow-x: hidden;
   overflow-y: auto;
@@ -17,13 +19,8 @@ a {
   outline: none;
 }
 
-#mainContent.hidden{
-  display: none;
-}
-
 .clearfix:before, .clearfix:after { content: ''; display: table; }
 .clearfix:after { clear: both; }
-
 
 %fullwidth, .fullwidth {
   width: 100% !important;
@@ -33,3 +30,8 @@ a {
 }
 
 %round, .round { border-radius: 50%; }
+
+
+// --------------------------------------------------
+
+.st--hidden { display: none; }

@@ -1,25 +1,51 @@
-{% extends "client/index.twig" %}
+{% extends docTemplate %}
 
-{% block body %}
-    <div class="row">
-        <h2>Default messages</h2>
-        {% for msg in messages.default %}
-            {% include 'fw/templates/modules/messages/message.twig' with {'class':msg.class, 'text':msg.text} %}
-        {% endfor %}
+{% block articles %}
+    <article class="article">
+        <h3 class="article-title">Default messages</h3>
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
 
-        <h2>Small messages</h2>
-        {% for msg in messages.small %}
-            {% include 'fw/templates/modules/messages/message.twig' with {'class':msg.class, 'text':msg.text} %}
-        {% endfor %}
+            {% for msg in messages.default %}
+                {% set class, text = msg.class %}
+                {% include 'fw/templates/modules/messages/message.twig' %}
+            {% endfor %}
+        </div>
+    </article>
 
-        <h2>Large messages</h2>
-        {% for msg in messages.large %}
-            {% include 'fw/templates/modules/messages/message.twig' with {'class':msg.class, 'text':msg.text} %}
-        {% endfor %}
+    <article class="article">
+        <h3 class="article-title">Small messages</h3>
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
 
-        <h2>Extra Large messages</h2>
-        {% for msg in messages.xlarge %}
-            {% include 'fw/templates/modules/messages/message.twig' with {'class':msg.class, 'text':msg.text} %}
-        {% endfor %}
-    </div>
+            {% for msg in messages.small %}
+                {% set class, text = msg.class %}
+                {% include 'fw/templates/modules/messages/message.twig' %}
+            {% endfor %}
+        </div>
+    </article>
+
+    <article class="article">
+        <h3 class="article-title">Large messages</h3>
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
+
+            {% for msg in messages.large %}
+                {% set class, text = msg.class %}
+                {% include 'fw/templates/modules/messages/message.twig' %}
+            {% endfor %}
+        </div>
+    </article>
+
+    <article class="article">
+        <h3 class="article-title">Extra Large messages</h3>
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
+
+            {% for msg in messages.xlarge %}
+                {% set class, text = msg.class %}
+                {% include 'fw/templates/modules/messages/message.twig' %}
+            {% endfor %}
+        </div>
+    </article>
 {% endblock %}

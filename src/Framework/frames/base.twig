@@ -9,21 +9,17 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <title>{{title}}</title>
+        <title>{{context.title}}</title>
 
-        {% for info in descriptions %}
-            <meta name="description" content="{{ info }}">
+        {% for meta in context.metas %}
+            <meta name="{{ meta.name }}" content="{{ meta.content }}">
         {% endfor %}
-        {% for info in keywords %}
-            <meta name="keywords" content="{{ info }}">
-        {% endfor %}
-        <meta name="author" content="{{ author }}">
 
         <!--  Mobile Viewport Fix, use at own risk -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5 maximum-scale=1.0">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    {% endblock metas %}
+    {% endblock %}
 
     {# STYLE #}
     {% block links %}
@@ -35,36 +31,17 @@
         <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 
         <!-- CSS : implied media="screen" -->
-        {% for href in data.css %}
+        {% for href in context.css %}
             <link rel="stylesheet" href="{{ href }}" type="text/css">
         {% endfor %}
-        {% for href in data.mincss %}
-            <link rel="stylesheet" href="{{ href }}" type="text/css">
-        {% endfor %}
-
-        <!--[if lte IE 8]>
-        <link rel="stylesheet" media="all" href="css/ie.css"/>
-        <![endif]-->
-    {% endblock links %}
+    {% endblock %}
 
     {# SCRIPTS #}
     {% block scripts %}
-        <!-- libraries -->
-        {% for src in data.jsLib %}
+        {% for src in context.js %}
             <script src="{{ src }}"></script>
         {% endfor %}
-        <!-- plugins -->
-        {% for src in data.jsPlugs %}
-            <script src="{{ src }}"></script>
-        {% endfor %}
-        <!-- Own JS (minified or not)-->
-        {% for src in data.js %}
-            <script src="{{ src }}"></script>
-        {% endfor %}
-        {% for src in data.minjs %}
-            <script src="{{ src }}"></script>
-        {% endfor %}
-    {% endblock scripts %}
+    {% endblock %}
 </head>
 
 <body>
@@ -76,31 +53,22 @@
     {# @TODO: Create wrapper helper #}
 
     <!-- Header -->
-    {% block header %}{% endblock header %}
+    {% block header %}{% endblock %}
 
     <!-- Main content -->
     <main id="mainContent" role="content">
-        {% block body %}{% endblock body %}
+        {% block body %}{% endblock %}
     </main>
 
     <!-- Footer -->
-    {% block footer %}{% endblock footer %}
+    {% block footer %}{% endblock %}
 
     {# BOTTOM PAGE SCRIPTS #}
-    {% block scripts_bottom %}
-        <!-- inits js -->
-        {% for src in data.initjs %}
+    {% block bottom_scripts %}
+        {% for src in context.initjs %}
             <script src="{{ src }}"></script>
         {% endfor %}
-        {% for src in data.mininitjs %}
-            <script src="{{ src }}"></script>
-        {% endfor %}
-
-        <!-- IE js (polyfills) -->
-        {% for src in data.jsPolyfill %}
-            <script src="{{ src }}"></script>
-        {% endfor %}
-    {% endblock scripts_bottom %}
+    {% endblock %}
 </body>
 
 </html>

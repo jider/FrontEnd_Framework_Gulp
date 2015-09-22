@@ -9,7 +9,6 @@
 
 fwApp.jQuery(function() {
     fwApp.modules.loader();
-    fwApp.components.loader();
 });
 
 
@@ -31,6 +30,3 @@ fwApp.jQuery(function($){
  */
 
 console.log('inits.js Loaded!!');
-
-//provisional for use without require in a module.
-var _imagemanipulator = require('./modules/imagermanipulator').init();
