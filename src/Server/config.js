@@ -16,6 +16,7 @@ var menu = [
         'title': 'modules/components',
         'items': [
             {'href': '/module/messages', 'ico': 'ico-div', 'title': 'Messages'},
+            {'href': '/module/loaders', 'ico': 'ico-div', 'title': 'Loaders'},
         ]
     },
     {
