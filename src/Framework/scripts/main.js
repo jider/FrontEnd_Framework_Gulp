@@ -7,6 +7,7 @@ var _jquery = require('jquery');
 // Requerimos los módulos que necesitamos que tengan acceso global
 // Ej. var required_module_A = require('module_A');
 var _modulesGlobal =  require('./modules');
+var _componentsGlobal =  require('./components');
 
 
 /**
@@ -30,6 +31,8 @@ var _modulesGlobal =  require('./modules');
         // Especificamos los módulos que necesitamos que tengan acceso global
         // Ej. this.Module_A = required_module_A;
         this.modules = _modulesGlobal;
+
+        this.components = _componentsGlobal;
     };
 
     // Creamos el objeto de aplicación
