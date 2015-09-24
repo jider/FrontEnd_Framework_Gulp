@@ -131,7 +131,7 @@ module.exports =  {
     			'dest': publicPath + 'js',
 		    	'outputName': 'commons.js',
 		    	// Lista de modulos a requerir
-				'require': ['jquery', 'modernizr', 'foundation']
+				'require': ['jquery', 'modernizr']
     		},
             // APP Main bundle
             {

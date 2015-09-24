@@ -23,13 +23,11 @@
   "homepage": "https://github.com/jider/FrontEnd_Framework_Gulp",
   "browser": {
     "jquery": "./node_modules/foundation-sites/js/vendor/jquery.js",
-    "modernizr": "./node_modules/foundation-sites/js/vendor/modernizr.js",
-    "foundation": "./node_modules/foundation-sites/js/foundation/foundation.js"
+    "modernizr": "./node_modules/foundation-sites/js/vendor/modernizr.js"
   },
   "browserify-shim": {
     "jquery": "jQuery",
-    "modernizr": "modernizr",
-    "foundation": "foundation"
+    "modernizr": "modernizr"
   },
   "browserify": {
     "transform": [
