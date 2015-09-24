@@ -1,20 +1,25 @@
 .main-title {
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 0;
   right: 0;
   transform: translateY(-50%);
   margin: 0;
 
   font-family: 'Raleway', Arial, sans-serif;
-  font-size: 6em;
+  font-size: 3em;
   line-height: 1em;
   font-weight: 600;
   letter-spacing: .25em;
   color: #444;
   text-align: center;
-
   cursor: default;
+
+  @media #{$medium-up} {
+    font-size: 6em;
+    top: 50%;
+
+  }
 
   .main-subtitle {
     display: block;
