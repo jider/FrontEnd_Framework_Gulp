@@ -164,6 +164,10 @@
   min-height: 100%;
   background: rgba(241, 241, 241, 1);
   border-bottom-right-radius: 0;
+  overflow-y: auto;
+  @media #{$medium-up} {
+    overflow-y: hidden;
+  }
 
   .morphmenu-header {
     top: 0;
