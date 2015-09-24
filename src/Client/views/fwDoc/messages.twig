@@ -1,12 +1,19 @@
-{% extends docTemplate %}
+{% extends context.docTemplate %}
+{% import "../templates/code_highlight.twig" as macros %}
+
 
 {% block articles %}
+    {{ macros.code_highlight(doc.code.lang, doc.code.content) }}
+
     <article class="article">
         <h3 class="article-title">Default messages</h3>
-        <div class="article-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
 
-            {% for msg in messages.default %}
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque
+                dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus
+                doloremque similique temporibus unde!</p>
+
+            {% for msg in doc.messages.default %}
                 {% set class, text = msg.class %}
                 {% include 'fw/templates/modules/messages/message.twig' %}
             {% endfor %}
@@ -15,10 +22,13 @@
 
     <article class="article">
         <h3 class="article-title">Small messages</h3>
-        <div class="article-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
 
-            {% for msg in messages.small %}
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque
+                dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus
+                doloremque similique temporibus unde!</p>
+
+            {% for msg in doc.messages.small %}
                 {% set class, text = msg.class %}
                 {% include 'fw/templates/modules/messages/message.twig' %}
             {% endfor %}
@@ -27,10 +37,13 @@
 
     <article class="article">
         <h3 class="article-title">Large messages</h3>
-        <div class="article-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
 
-            {% for msg in messages.large %}
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque
+                dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus
+                doloremque similique temporibus unde!</p>
+
+            {% for msg in doc.messages.large %}
                 {% set class, text = msg.class %}
                 {% include 'fw/templates/modules/messages/message.twig' %}
             {% endfor %}
@@ -39,10 +52,13 @@
 
     <article class="article">
         <h3 class="article-title">Extra Large messages</h3>
-        <div class="article-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus doloremque similique temporibus unde!</p>
 
-            {% for msg in messages.xlarge %}
+        <div class="article-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, praesentium, quas! Beatae cumque
+                dignissimos dolorum et facilis, hic, libero magnam odio, officiis omnis sint voluptates! Accusamus
+                doloremque similique temporibus unde!</p>
+
+            {% for msg in doc.messages.xlarge %}
                 {% set class, text = msg.class %}
                 {% include 'fw/templates/modules/messages/message.twig' %}
             {% endfor %}

@@ -1,6 +1,13 @@
 'use strict';
 
+// Client modules
+// --------------------------------------------------
+var code_highlight = require('./scripts/modules/code_highlight');
 
+
+
+// Initialization on DOM Ready
+// --------------------------------------------------
 (function() {
     var mainContent = jQuery('#mainContent'),
         morphMenu = jQuery('.morphmenu'),
@@ -9,7 +16,10 @@
 
     // Show/Hide main menu
     var toggleSearch = function(e) {
-        mainContent.toggleClass('st--hidden');
+        setTimeout(function() {
+            mainContent.toggleClass('st--hidden');
+        }, isOpen ? 0 : 500);
+
         morphMenu.toggleClass('open');
         isOpen = !isOpen;
     };
@@ -26,8 +36,13 @@
         if( keyCode === 27 && isOpen ) {
             toggleSearch(e);
         }
-    } );
+    });
 
-    console.log('App.js Loaded!!');
+
+    // Initialize code highlighting module
+    code_highlight.init();
+
+
+    console.log('client.js Loaded!!');
 })();
 

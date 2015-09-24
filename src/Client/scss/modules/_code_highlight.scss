@@ -1,0 +1,29 @@
+.code {
+  @include clearfix;
+  margin-bottom: em(10);
+
+  .code-trigger {
+    display: block;
+    padding: em(10);
+    background-color: $color_aux;
+    color: $color_default;
+    cursor: pointer;
+
+    .title {
+      text-transform: uppercase;
+    }
+    .code-lang {
+      float: right;
+      font-weight: 300;
+    }
+  }
+
+  .code-content {
+    display: none;
+    white-space: pre;
+
+    &.active { display: block; }
+  }
+  
+  &.active .code-content { display: block; }
+}

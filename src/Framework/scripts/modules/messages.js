@@ -64,7 +64,6 @@ function Message (el) {
 Util.inherits(Message, EventEmitter);
 
 
-
 // Class methods  ----------
 Message.prototype.close = function() {
     var _self = this;

@@ -1,13 +1,3 @@
-$color_default: #ffffff;
-$color_light: #91D4DA;
-$color_dark: #41868F;
-$color_darkest: #433451;
-$color_aux: #DB495E;
-
-
-// --------------------------------------------------------------------------------
-
-
 .chapter {
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
@@ -33,28 +23,25 @@ $color_aux: #DB495E;
 
 .chapter-intro {
   border-bottom: 1px solid rgba(0, 0, 0, .25);
+  margin-bottom: em(40);
 
   .header {
     color: $color_dark;
-    font-weight: 300;
   }
 
   .caption {
     font-size: 1.25em;
     font-weight: 300;
-    margin-bottom: 30px;
+    margin-bottom: em(30);
   }
 }
 
 .article {
   padding-top: 1em;
 
-  .article-title {
-    margin-bottom: 30px;
-    font-weight: 400;
-    color: $color_dark;
-  }
+  .article-title { color: $color_dark; }
 
-  .article-content {
-  }
+  .article-subtitle { color: $color_darkest; }
+
+  .article-content {  }
 }

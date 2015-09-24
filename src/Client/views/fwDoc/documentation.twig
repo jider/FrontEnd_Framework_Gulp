@@ -7,10 +7,12 @@
         </header>
 
         <section class="chapter-content">
+            {% block intro %}
             <div class="chapter-intro">
                 <h2 class="header">{{ doc.intro_title }}</h2>
                 <p class="caption">{{ doc.intro_text }}</p>
             </div>
+            {% endblock %}
 
             {% block articles %}{% endblock %}
         </section>

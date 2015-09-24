@@ -69,32 +69,31 @@ module.exports.context = {
     },
 
     "docContext": {
-        "context" : {
-            "metas": [
-                {
-                    "name": "description",
-                    "content": "Front-end Framework Documentation Page"
-                },
-                {
-                    "name": "keywords",
-                    "content": "Front-end Framework Documentation"
-                }
-            ],
-            "css": [
-                "css/vendor/font-awesome.min.css",
-                "http://fonts.googleapis.com/css?family=Raleway:100,700,800",
-                "https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700",
-                "css/client.css"
-            ],
-            "js": [
-                "js/commons.js",
-                "js/main.js"
-            ],
-            "initjs": [
-                "js/inits.js",
-                "js/client.js"
-            ],
-            "menu": menu
-        }
+        "metas": [
+            {
+                "name": "description",
+                "content": "Front-end Framework Documentation Page"
+            },
+            {
+                "name": "keywords",
+                "content": "Front-end Framework Documentation"
+            }
+        ],
+        "css": [
+            "css/vendor/font-awesome.min.css",
+            "http://fonts.googleapis.com/css?family=Raleway:100,700,800",
+            "https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700",
+            "css/client.css"
+        ],
+        "js": [
+            "js/commons.js",
+            "js/main.js"
+        ],
+        "initjs": [
+            "js/inits.js",
+            "js/client.js"
+        ],
+        "menu": menu,
+        "docTemplate": "client/fwDoc/documentation.twig"
     }
 };

@@ -1,0 +1,11 @@
+{% macro code_highlight(lang, content) %}
+<div class="code">
+    <section class="code-trigger">
+        <span class="title">Show code</span>
+        {% if lang %}<span class="code-lang">Javascript</span>{% endif %}
+    </section>
+    <section class="code-content">
+        {{ content }}
+    </section>
+</div>
+{% endmacro %}
