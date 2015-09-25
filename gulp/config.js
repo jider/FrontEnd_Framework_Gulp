@@ -18,12 +18,12 @@ var distPath	    = 'dist/';
 
 var sassDev	= {
 	errLogToConsole: true,
-	includePaths: ['node_modules/foundation-sites/scss'],
+	includePaths: ['node_modules/foundation-sites/scss','node_modules/slick-carousel/slick'],
 	outputStyle: 'expanded'
 };
 var sassPro		= {
 	errLogToConsole: true,
-	includePaths: ['node_modules/foundation-sites/scss'],
+	includePaths: ['node_modules/foundation-sites/scss','node_modules/slick-carousel/slick'],
 	outputStyle: 'compressed'
 };
 
