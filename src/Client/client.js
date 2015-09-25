@@ -10,8 +10,8 @@ var code_highlight = require('./scripts/modules/code_highlight');
 // --------------------------------------------------
 (function() {
     var mainContent = jQuery('#mainContent'),
-        morphMenu = jQuery('.morphmenu'),
-        trigger = morphMenu.children('.morphmenu-trigger'),
+        morphMenu = jQuery('.mainmenu'),
+        trigger = morphMenu.children('.mainmenu-trigger'),
         isOpen = false;
 
     // Show/Hide main menu

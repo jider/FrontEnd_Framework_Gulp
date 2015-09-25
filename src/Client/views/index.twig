@@ -2,21 +2,21 @@
 
 <!-- Main content -->
 {% block header %}
-    <div id="morphmenu" class="morphmenu">
-        <i class="morphmenu-trigger fa fa-bars"></i>
-        <header class="morphmenu-header">
-            <h1 class="morphmenu-title">MEDUXA</h1>
-            <h3 class="morphmenu-subtitle">Mediaset User Xperience & Appearance</h3>
+    <div id="mainmenu" class="mainmenu">
+        <i class="mainmenu-trigger fa fa-bars"></i>
+        <header class="mainmenu-header">
+            <h1 class="mainmenu-title">MEDUXA</h1>
+            <h3 class="mainmenu-subtitle">Mediaset User Xperience & Appearance</h3>
         </header>
 
-        <!-- morphmenu-content -->
-        <div class="morphmenu-content row">
+        <!-- mainmenu-content -->
+        <div class="mainmenu-content">
             {% for column in context.menu %}
-            <div class="dummy-column small-12 medium-4 column">
+            <div class="items-column">
                 <h2>{{ column.title }}</h2>
 
                 {% for item in column.items %}
-                    <a class="dummy-media-object" href="{{ item.href }}">
+                    <a class="item" href="{{ item.href }}">
                         <span class="round brand_ico {{ item.ico }}"></span>
                         <h3>{{ item.title }}</h3>
                     </a>
@@ -24,9 +24,9 @@
             </div>
             {% endfor %}
         </div>
-        <!-- /morphmenu-content -->
+        <!-- /mainmenu-content -->
 
-        <span class="morphmenu-close"></span>
+        <span class="mainmenu-close"></span>
     </div>
     <div class="overlay"></div>
 {% endblock %}

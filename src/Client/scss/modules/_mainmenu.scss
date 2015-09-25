@@ -1,6 +1,6 @@
 /* Morphmenu */
 /* -------------------------------------------------- */
-.morphmenu {
+.mainmenu {
   @include hw_acceleration;
 
   position: fixed;
@@ -8,19 +8,18 @@
   left: 0;
   width: 3rem;
   min-height: 3rem;
-  max-height: 3rem;
   font-size: 1rem;
   background: rgba(241, 241, 241, .2);
   border-bottom-right-radius: 25%;
-  overflow: hidden;
   z-index: 10000;
+  overflow-y: auto;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 
   transform-origin: 0 0;
   transition-property: min-height, width, background, border-bottom-right-radius;
   transition-duration: 0.5s;
 
-  .morphmenu-trigger {
+  .mainmenu-trigger {
     position: relative;
     top: 7px;
     left: 7px;
@@ -28,8 +27,10 @@
     color: #000;
     cursor: pointer;
     opacity: .25;
-  /*  transition-property: opacity;
-    transition-duration: .3s;*/
+
+    transition-property: opacity;
+    transition-duration: .3s;
+
     &:hover {
       opacity: 1;
     }
@@ -38,7 +39,7 @@
 
 /* Menu header */
 /* -------------------------------------------------- */
-.morphmenu-header {
+.mainmenu-header {
   position: relative;
   top: -150px;
   height: 0;
@@ -49,20 +50,20 @@
   transition-property: opacity, top;
   transition-duration: .5s;
 
-  .morphmenu-title, .morphmenu-subtitle {
+  .mainmenu-title, .mainmenu-subtitle {
     font-family: 'Raleway', Arial, sans-serif;
-    font-size: .4em;
+    font-size: 0em;
     transition-property: font-size;
     transition-duration: .5s;
   }
-  .morphmenu-title {
+  .mainmenu-title {
     margin-top: .5em;
     margin-bottom: .2em;
     color: #444;
     font-weight: 600;
     letter-spacing: .25em;
   }
-  .morphmenu-subtitle {
+  .mainmenu-subtitle {
     margin: .2em 0;
     letter-spacing: .1em;
   }
@@ -70,38 +71,29 @@
 
 /* Menu main content */
 /* -------------------------------------------------- */
-.morphmenu-content {
-  margin-top: 4.5em;
+.mainmenu-content {
+  margin-top: 2em;
   width: 100%;
   height: 0;
   overflow: hidden;
- /* padding: 0 10.5%;*/
+  padding: 0 5%;
   background: #f1f1f1;
-/*  position: absolute;
-  left: 50%;*/
-  /*
-  margin-left: -31rem;
-  */
+  position: absolute;
   pointer-events: none;
   opacity: 0;
 }
 
 /* Menu columns */
 /* -------------------------------------------------- */
-.dummy-column {
-/*  width: 30%;
-  padding: 0 0 6em;
-  float: left;*/
-  opacity: 0;
+.items-column {
+  width: 100%;
+  padding-bottom: 1em;
+
   transform: translateY(100px);
   transition: transform 0.5s, opacity 0.5s;
 
-/*  &:nth-child(2) {
-    margin: 0 5%;
-  }*/
-
   h2 {
-    font-size: 1em;
+    font-size: .85em;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: 800;
@@ -112,7 +104,7 @@
 
 /* Media objects */
 /* -------------------------------------------------- */
-.dummy-media-object {
+.item {
   padding: 0.75em;
   display: block;
   margin: 0.3em 0;
@@ -158,34 +150,31 @@
 
 /* Morphmenu OPEN State */
 /* -------------------------------------------------- */
-.morphmenu.open {
+.mainmenu.open {
   width: 100%;
   min-height: 100%;
   background: rgba(241, 241, 241, 1);
   border-bottom-right-radius: 0;
-  overflow-y: auto;
-  @media #{$medium-up} {
-    overflow-y: hidden;
-  }
+  box-shadow: none;
 
-  .morphmenu-header {
+  .mainmenu-header {
     top: 0;
     opacity: 1;
     height: auto;
-    overflow: visible;
+    overflow: visible; /* this breaks the transition of the children in FF: https://bugzilla.mozilla.org/show_bug.cgi?id=625289 */
     transition-delay: .3s;
 
-    .morphmenu-title {
+    .mainmenu-title {
       font-size: 3em;
       transition-delay: .2s;
     }
-    .morphmenu-subtitle {
-      font-size: 2em;
+    .mainmenu-subtitle {
+      font-size: 1em;
       transition-delay: .3s;
     }
   }
 
-  .morphmenu-content {
+  .mainmenu-content {
     opacity: 1;
     height: auto;
     overflow: visible; /* this breaks the transition of the children in FF: https://bugzilla.mozilla.org/show_bug.cgi?id=625289 */
@@ -193,13 +182,13 @@
     transition: opacity 0.3s 0.5s;
   }
 
-  .dummy-column {
+  .items-column {
     opacity: 1;
     transform: translate3d(0,0,0);
   }
-  .dummy-column:first-child { transition-delay: 0.4s; }
-  .dummy-column:nth-child(2) { transition-delay: 0.45s; }
-  .dummy-column:nth-child(3) { transition-delay: 0.5s; }
+  .items-column:first-child { transition-delay: 0.4s; }
+  .items-column:nth-child(2) { transition-delay: 0.45s; }
+  .items-column:nth-child(3) { transition-delay: 0.5s; }
 
   ~ .overlay { opacity: 1; }
 }
@@ -207,3 +196,37 @@
 
 /* MEDIA QUERYS */
 /* -------------------------------------------------- */
+@media #{$medium-up} {
+  /* Menu main content */
+  /* -------------------------------------------------- */
+  .mainmenu-content {
+    margin-top: 4.5em;
+    padding: 0 10.5%;
+  }
+
+  /* Menu columns */
+  /* -------------------------------------------------- */
+  .items-column {
+    width: 30%;
+    padding-bottom: 3em;
+    float: left;
+
+    h2 {
+      font-size: 1em;
+    }
+
+    &:nth-child(2) {
+      margin: 0 5%;
+    }
+  }
+
+  /* Morphmenu OPEN State */
+  /* -------------------------------------------------- */
+  .mainmenu.open {
+
+    .mainmenu-header {
+      .mainmenu-title { font-size: 4em; }
+      .mainmenu-subtitle { font-size: 2em; }
+    }
+  }
+}
