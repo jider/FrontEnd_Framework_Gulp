@@ -10,9 +10,9 @@
         </header>
 
         <!-- morphmenu-content -->
-        <div class="morphmenu-content">
+        <div class="morphmenu-content row">
             {% for column in context.menu %}
-            <div class="dummy-column">
+            <div class="dummy-column small-12 medium-4 column">
                 <h2>{{ column.title }}</h2>
 
                 {% for item in column.items %}
