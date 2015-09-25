@@ -1,9 +1,9 @@
-{% extends docTemplate %}
+{% extends context.docTemplate %}
 
 {% block articles %}
     <article class="article">
 
-        {% for loader in loaders %}
+        {% for loader in doc.loaders %}
             {% set parameters ={'classes':loader.classes, 'loaderNumber':loader.number} %}
             {% include 'fw/templates/components/loader.twig' %}
         {% endfor %}

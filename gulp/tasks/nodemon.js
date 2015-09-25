@@ -20,7 +20,7 @@ gulp.task('nodemon', ['watchify'], function (cb) {
 
     return nodemon({
         script: 'src/Server/server.js',
-        ext: 'js',
+        ext: 'js,txt',
         watch: ['src/Server/'],
         stdout: false
 
