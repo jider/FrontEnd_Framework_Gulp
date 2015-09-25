@@ -12,11 +12,7 @@ var config 	= require('../config').clean;
 /// -------------------------------------------------------------------------------------------------------
 
 // Limpia los directorios 'public' y de 'distribucion'
-gulp.task('clean', function(cb) {
-    del(config.all).then(function(paths) {
-		cb();
-	});
-});
+gulp.task('clean', ['clean:public', 'clean:dist']);
 
 // Limpia el directorio publico
 gulp.task('clean:public', function(cb) {

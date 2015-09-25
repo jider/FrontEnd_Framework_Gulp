@@ -49,9 +49,6 @@ module.exports =  {
 		'server': {
 			'baseDir': publicPath,
 			'index': 'index.html'
-			/*'routes': {
-		 		'/fw': 'src/Framework/build'
-			}*/
 		}
 	},
 
@@ -62,31 +59,19 @@ module.exports =  {
 
 
 	'clean': {
-        'all': [publicPath, distPath],
         'public': [publicPath],
         'js': [publicPath + 'js/**/*.js'],
         'dist': [distPath]
 	},
 
-	'markup_client': {
-		'src': [appPath + 'views/**/*.html', appPath + 'views/**/*.twig'],
-		'dest': publicClient
+	'markup': {
+		'clientSrc': [appPath + 'views/**/*.html', appPath + 'views/**/*.twig'],
+		'clientDest': publicClient,
+		'fwSrc': [fwPath + '**/*.html', fwPath + '**/*.twig'],
+		'fwDest': publicFW,
+		'distSrc': [publicPath + 'views/fw/**/*.twig'],
+		'distDest': distPath + 'views'
 	},
-
-	'markup_fw': {
-		'src': [fwPath + '**/*.html', fwPath + '**/*.twig'],
-        'dest': publicFW
-	},
-
-	'markup_server': {
-		'src': [serverPath + 'views/*.html', serverPath + 'views/*.twig'],
-		'dest': publicServer
-	},
-
-    'markup_dist': {
-        'src': [publicPath + 'views/**/*.twig'],
-        'dest': distPath + 'views'
-    },
 
 	'images': {
 		'src': appPath + 'images/**',

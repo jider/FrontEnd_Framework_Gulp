@@ -1,4 +1,3 @@
-
 import {x, y} as p from 'point';
 const ANSWER = 42;
 

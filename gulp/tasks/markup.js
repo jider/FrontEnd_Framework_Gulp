@@ -6,30 +6,24 @@
 var gulp 	= require('gulp'),
 	replace	= require('gulp-replace');
 
-var config 	= require('../config');
+var config 	= require('../config').markup;
 
 
 /// -------------------------------------------------------------------------------------------------------
 
 
-gulp.task('markup', ['markup:server', 'markup:fw', 'markup:client']);
+gulp.task('markup', ['markup:fw', 'markup:client']);
 
 gulp.task('markup:client', function() {
 	return gulp
-		.src(config.markup_client.src)
-		.pipe(gulp.dest(config.markup_client.dest));
+		.src(config.clientSrc)
+		.pipe(gulp.dest(config.clientDest));
 });
 
 gulp.task('markup:fw', function() {
 	return gulp
-		.src(config.markup_fw.src)
-		.pipe(gulp.dest(config.markup_fw.dest));
-});
-
-gulp.task('markup:server', function() {
-	return gulp
-		.src(config.markup_server.src)
-		.pipe(gulp.dest(config.markup_server.dest));
+		.src(config.fwSrc)
+		.pipe(gulp.dest(config.fwDest));
 });
 
 gulp.task('markup:dist', function() {
@@ -37,8 +31,8 @@ gulp.task('markup:dist', function() {
         elifRegExp  = /{%\s*elif\s+/g;
 
     return gulp
-        .src(config.markup_dist.src)
+        .src(config.distSrc)
         .pipe(replace(superRegExp, '{{ parent() }}', { skipBinary: true }))
         .pipe(replace(elifRegExp, '{% elseif ', { skipBinary: true }))
-        .pipe(gulp.dest(config.markup_dist.dest));
+        .pipe(gulp.dest(config.distDest));
 });

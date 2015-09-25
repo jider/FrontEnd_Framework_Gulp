@@ -16,7 +16,6 @@ gulp.task('browserSync', ['nodemon'], function() {
     browserSync(config.browserSync_server);
 
     gulp.watch(config.sass.src, ['sass'], browserSync.reload);
-    gulp.watch(config.markup_client.src, ['markup:client']);
-    gulp.watch(config.markup_fw.src, ['markup:fw']);
-    gulp.watch(config.markup_server.src, ['markup:server']);
+    gulp.watch(config.markup.clientSrc, ['markup:client']);
+    gulp.watch(config.markup.fwSrc, ['markup:fw']);
 });

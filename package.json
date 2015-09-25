@@ -1,71 +1,77 @@
 {
-  "name": "frontend_framework_gulp",
-  "private": true,
-  "version": "0.0.1",
-  "description": "Front-End Framework using Gulp as task builder",
-  "main": "index.js",
-  "scripts": {
-    "env": "env",
-    "publish": "echo \"Don't publish me, bro!\" && exit 1",
-    "start": "npm install && gulp",
-    "clean": "gulp clean && rm -rf node_modules",
-    "server": "gulp public && node src/server/server.js"
-  },
-  "author": "Ignacio Díaz Rovina <velanor@gmail.com>",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jider/FrontEnd_Framework_Gulp.git"
-  },
-  "bugs": {
-    "url": "https://github.com/jider/FrontEnd_Framework_Gulp/issues"
-  },
-  "homepage": "https://github.com/jider/FrontEnd_Framework_Gulp",
-  "browser": {
-    "jquery": "./node_modules/foundation-sites/js/vendor/jquery.js",
-    "modernizr": "./node_modules/foundation-sites/js/vendor/modernizr.js"
-  },
-  "browserify-shim": {
-    "jquery": "jQuery",
-    "modernizr": "modernizr"
-  },
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
-  },
-  "devDependencies": {
-    "browser-sync": "^2.7.12",
-    "browserify": "^11.1.0",
-    "browserify-shim": "^3.8.9",
-    "del": "^2.0.2",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.0.1",
-    "gulp-changed": "^1.2.1",
-    "gulp-imagemin": "^2.3.0",
-    "gulp-minify-css": "^1.2.0",
-    "gulp-nodemon": "^2.0.4",
-    "gulp-notify": "^2.2.0",
-    "gulp-replace": "^0.5.4",
-    "gulp-sass": "^2.0.1",
-    "gulp-sequence": "^0.4.1",
-    "gulp-sourcemaps": "^1.5.2",
-    "gulp-uglify": "^1.2.0",
-    "gulp-util": "^3.0.6",
-    "lodash": "^3.9.3",
-    "map-stream": "0.0.6",
-    "merge-stream": "^1.0.0",
-    "nunjucks": "^2.0.0",
-    "pretty-hrtime": "^1.0.0",
-    "require-dir": "^0.3.0",
-    "sassdoc": "^2.1.15",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.2.3"
-  },
-  "dependencies": {
-    "express": "^4.13.3",
-    "foundation-sites": "^5.5.2",
-    "imager.js": "^0.5.0",
-    "twig": "^0.8.2"
-  }
+    "name": "Meduxa",
+    "version": "0.1.0",
+    "description": "Mediaset User Xperience & appearance",
+    "author": "Mega-media",
+    "private": true,
+    "scripts": {
+        "env": "env",
+        "publish": "echo \"Don't publish me, bro!\" && exit 1",
+        "start": "npm install && gulp",
+        "clean": "gulp clean && rm -rf node_modules",
+        "server": "gulp public && node src/server/server.js"
+    },
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git@git.tele5.int:Meduxa"
+    },
+    "bugs": {
+        "url": "http://gitlist.tele5.int/Meduxa.git/"
+    },
+    "homepage": "http://gitlist.tele5.int/Meduxa.git/",
+    "keywords": [
+        "node.js / Express",
+        "Gulp",
+        "Sass",
+        "Nunjucks / Twig",
+        "Browserify",
+        "Browsersync"
+    ],
+    "browser": {
+        "jquery": "./node_modules/foundation-sites/js/vendor/jquery.js",
+        "modernizr": "./node_modules/foundation-sites/js/vendor/modernizr.js"
+    },
+    "browserify-shim": {
+        "jquery": "jQuery",
+        "modernizr": "modernizr"
+    },
+    "browserify": {
+        "transform": [
+            "browserify-shim"
+        ]
+    },
+    "devDependencies": {
+        "browser-sync": "^2.7.12",
+        "browserify": "^11.1.0",
+        "browserify-shim": "^3.8.9",
+        "del": "^2.0.2",
+        "gulp": "^3.9.0",
+        "gulp-autoprefixer": "^3.0.1",
+        "gulp-changed": "^1.2.1",
+        "gulp-imagemin": "^2.3.0",
+        "gulp-minify-css": "^1.2.0",
+        "gulp-nodemon": "^2.0.4",
+        "gulp-notify": "^2.2.0",
+        "gulp-replace": "^0.5.4",
+        "gulp-sass": "^2.0.1",
+        "gulp-sequence": "^0.4.1",
+        "gulp-sourcemaps": "^1.5.2",
+        "gulp-uglify": "^1.2.0",
+        "gulp-util": "^3.0.6",
+        "imager.js": "^0.5.0",
+        "lodash": "^3.9.3",
+        "map-stream": "0.0.6",
+        "merge-stream": "^1.0.0",
+        "nunjucks": "^2.0.0",
+        "pretty-hrtime": "^1.0.0",
+        "require-dir": "^0.3.0",
+        "sassdoc": "^2.1.15",
+        "vinyl-source-stream": "^1.1.0",
+        "watchify": "^3.2.3"
+    },
+    "dependencies": {
+        "express": "^4.13.3",
+        "foundation-sites": "^5.5.2"
+    }
 }
